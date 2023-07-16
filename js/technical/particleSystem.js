@@ -133,6 +133,8 @@ function updateMouse(event) {
     mouseY = event.clientY
 }
 
+document.body.setAttribute('onmousemove', 'updateMouse(event)')
+
 function getOpacity(particle) {
     if ((particle.time < particle.fadeOutTime) && particle.fadeOutTime)
         return particle.time / particle.fadeOutTime

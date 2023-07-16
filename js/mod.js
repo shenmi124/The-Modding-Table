@@ -14,6 +14,8 @@ let modInfo = {
 	offlineLimit: 1,  // In hours
 }
 
+var langs = ['zh_CN']
+
 var colors = {
 	default: {
 		1: "#ffffff",//Branch color 1
