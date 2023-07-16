@@ -1,0 +1,139 @@
+
+#optionWheel {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 50px;
+	width: 50px;
+	cursor: pointer;
+}
+
+#optionWheel:hover {
+	transform: rotate(360deg);
+}
+
+#info {
+	font-size: 20px;
+	color: white;
+	position: absolute;
+	top: 50px;
+	left: 4px;
+	cursor: pointer;
+	width: 40px;
+	height: 40px;
+	-webkit-text-stroke-width: 1px;
+	-webkit-text-stroke-color: #02f2f2;
+}
+
+#info:hover {
+	transform: scale(1.2, 1.2);
+	text-shadow: 5px 0 10px #02f2f2,
+              -3px 0 12px #02f2f2;
+}
+
+#discord {
+	position: absolute;
+	top: 120px;
+	left: 4px;
+	width: 40px;
+	height: 40px;
+}
+
+#discord img {
+	width: 100%;
+	height: 100%;
+}
+
+#discord-links {
+	position: absolute;
+	top: 0;
+	padding-top: 44px;
+	left: -244px;
+	width: 200px;
+	transition: left .3s ease;
+}
+
+#discord:hover #discord-links {
+	left: -4px;
+}
+
+#version {
+	position: absolute;
+	right: 4px;
+	top: 4px;
+	text-align: right;
+	color: var(--points);
+	text-shadow: 0 0 10px var(--points);
+	cursor: pointer;
+	transition: 0.4s;
+    mix-blend-mode: difference;
+}
+
+#version:hover {
+	transform: scale(1.1, 1.1);
+	right: 4.8px;
+}
+
+a {
+	color: #007fff;
+	text-decoration-line: none;
+	cursor: pointer
+}
+
+.link {
+	display: block;
+	color: #41f5f5;
+	cursor: pointer;
+	font-family: "Courier New", "Courier Prime", "Lucida Console",'Noto Sans SC', monospace;
+	-webkit-text-stroke-width: 1px;
+	-webkit-text-stroke-color: #02f2f2;
+	text-decoration: none;
+	transition: 0.4s;
+}
+
+.link:hover {
+	transform: scale(1.2, 1.2);
+	text-shadow: 5px 0 10px #02f2f2,
+              -3px 0 12px #02f2f2;
+}
+
+.opt {
+	height: 100px;
+	width: 200px;
+	border-radius: 1%;
+	border: 2px solid;
+	border-color: rgba(0, 0, 0, 0.185);
+	color: rgba(0, 0, 0, 0.781);
+	cursor: pointer;
+	transition: 0.4s;
+	font-size: 16px;
+}
+
+.opt:hover {
+	background-color: #ffffff;
+	color: rgb(0, 0, 0);
+}
+
+#loading {
+    position: absolute;
+    background: rgb(0, 0, 0);
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 999999999999999999999;
+}
+
+.loader {
+    width: 250px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: 90;
+    color: rgb(255, 255, 255);
+    letter-spacing: 4px;
+}

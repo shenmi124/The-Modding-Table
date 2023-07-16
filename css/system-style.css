@@ -1,0 +1,277 @@
+* {
+	text-align: center;
+	font-family: "Inconsolata", 'Noto Sans SC', cursive, monospace;
+	font-weight: bold;
+	table-align: center;
+	margin: auto;
+	-webkit-text-size-adjust: none;
+	text-size-adjust: none;
+	user-select: none;
+}
+
+h1, h2, h3, b, input, .pesterlog > * > * {
+	display: inline;
+	font-family: "Courier New", "Courier Prime", "Lucida Console",'Noto Sans SC', monospace;
+}
+
+*:focus {
+	outline: none;
+	webkit-outline: none;
+}
+
+html, body {
+	min-height: 100%;
+	height: 100%;
+}
+
+td {
+	padding: 0
+}
+
+.upgTable {
+	display: flex !important;
+	flex-flow: column wrap;
+	justify-content: center;
+	align-items: center;
+	max-width: 100%;
+	margin: 0 auto;
+}
+
+.upgRow {
+	display: flex !important;
+	flex-flow: row wrap;
+	justify-content: center;
+	align-items: center;
+	max-width: 100%;
+	margin: 0 auto;
+}
+
+.upgAlign {
+	vertical-align: 0
+}
+
+.bigUpgAlign {
+	vertical-align: 0
+}
+
+.treeThing {
+	margin: 0 10px 0 10px;
+	vertical-align: middle;
+}
+
+.can.upg:hover {
+	z-index: 2
+}
+
+.can.buyable:hover {
+	z-index: 2
+}
+
+.back {
+	position: absolute;
+	top: -4px;
+	left: 8px;
+	background-color: transparent;
+	border: 1px solid transparent;
+	color: var(--color);
+	font-size: 40px;
+	cursor: pointer;
+	transition: 0.4s;
+	font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+
+.other-back {
+	position: absolute;
+	top: 0;
+	left: 60px;
+	background-color: transparent;
+	border: 1px solid transparent;
+	color: var(--color);
+	font-size: 60px;
+	cursor: pointer;
+}
+
+.back:hover {
+	transform: scale(1.1, 1.1);
+	text-shadow: 0 0 7px var(--color);
+}
+
+.hidden {
+	visibility: hidden;
+	height: 90px !important;
+}
+
+.canvas {
+	top: 0;
+	left: 0;
+	position: absolute;
+	z-index: -999;
+}
+
+.left {
+	position: absolute;
+	left: 0;
+}
+
+.remove {
+	height: 24px;
+	width: 24px;
+	cursor: pointer;
+}
+
+.remove:hover {
+	transform: scale(1.1, 1.1);
+}
+
+.col {
+	width: 303px;
+	height: 100%;
+	min-height: 100%;
+	column-span: 1;
+	position: absolute;
+	overflow-y: auto;
+	overflow-x: hidden;
+	transition-duration: 0s
+}
+
+.col::-webkit-scrollbar {
+    width: 6px;
+}
+
+.col::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: rgb(180, 180, 180);
+}
+
+.col2 {
+	width: calc(100% - 303px);
+	height: 100%;
+	left: 303px;
+	min-height: 100%;
+	column-span: 1;
+	position: absolute;
+	overflow-y: auto;
+	overflow-x: auto;
+	transition-duration: 0s
+}
+
+.instant {
+	transition-duration: 0s !important;
+	z-index: -1;
+}
+
+.fast {
+	transition:color none
+}
+
+.col.right {
+	top: 0;
+	right: 0;
+}
+
+#app {
+	column-count: 2;
+	column-width: 50%;
+	min-height: 100%;
+}
+
+.vl2 {
+	border-left: 3px solid var(--color);
+	height: 100%;
+}
+
+ul {
+	list-style-type: none;
+}
+
+.fullWidth {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	min-width: 100%;
+	overflow-y: auto;
+	overflow-x: auto;
+	transition-duration: 0s
+}
+
+.tooltipBox { 
+	position: relative;
+  }
+  
+  .tooltipBox:hover .tooltip{
+	opacity: 1;
+  }
+
+  .forceTooltip .tooltip{
+	opacity: 1;
+  }
+  
+.respecCheckbox {
+	display: inline-block;
+}
+
+
+#loadingSection {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.treeOverlay {
+	pointer-events:none;
+	overflow:hidden;
+}
+
+.front {
+	z-index: 30000
+}
+
+.overlayThing {
+	z-index: 10000;
+	pointer-events:auto;
+}
+
+.sideLayers {
+	z-index: 10000;
+	pointer-events:auto;
+	position: absolute;
+	right: 15px;
+	top: 125px;
+	background-color: transparent;
+}
+
+button > * {
+	pointer-events:none;
+}
+
+.ghost {
+	visibility: hidden
+}
+
+#treeTab td button {
+    margin: 0 10px;
+}
+
+.bg {
+	z-index: -9000;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	background-color: transparent;
+	top: 0
+}
+
+.bg2 {
+	z-index: -9009;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0
+}
+
+.noBackground {
+	background: transparent !important;
+	background-image: none !important;
+	--background: transparent !important;
+}
+

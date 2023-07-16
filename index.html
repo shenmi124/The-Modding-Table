@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+
+<head>
+
+	<link rel="stylesheet" type="text/css" href="css/system-style.css" />
+	<link rel="stylesheet" type="text/css" href="css/bars.css" />
+	<link rel="stylesheet" type="text/css" href="css/components.css" />
+	<link rel="stylesheet" type="text/css" href="css/general-style.css" />
+	<link rel="stylesheet" type="text/css" href="css/misc.css" />
+	<link rel="stylesheet" type="text/css" href="css/other-tabs.css" />
+	<link rel="stylesheet" type="text/css" href="css/popup.css" />
+	<link rel="stylesheet" type="text/css" href="css/tree-node.css" />
+	<link rel="stylesheet" type="text/css" href="css/node.css" />
+
+	<link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Major+Mono+Display" rel="stylesheet">
+
+	<script src="js/vue.js"></script>
+	<script src="js/jQ.js"></script>
+	<script src="js/technical/break_eternity.js"></script>
+	<script src="js/technical/layerSupport.js"></script>
+
+	<script src="js/mod.js"></script>
+	<script src="js/lag.js"></script>
+	<script src="js/setting.js"></script>
+	<script src="js/technical/loader.js"></script>
+	<script src="js/technical/others.js"></script>
+
+	<script src="js/technical/temp.js"></script>
+	<script src="js/technical/displays.js"></script>
+	
+	<script src="js/game.js"></script>
+	<script src="js/utils.js"></script>
+	<script src="js/utils/easyAccess.js"></script>
+	<script src="js/technical/systemComponents.js"></script>
+	<script src="js/components.js"></script>
+	<script src="js/technical/canvas.js"></script>
+	<script src="js/technical/particleSystem.js"></script>
+	<script src="js/utils/NumberFormating.js"></script>
+	<script src="js/utils/options.js"></script>
+	<script src="js/utils/save.js"></script>
+	<script src="js/utils/themes.js"></script>
+</head>
+
+
+<body onload="load();" onmousemove="updateMouse(event)">
+	<div id="loading">
+		<div id="loading_bg">
+			<div class="loader">
+				*Loading...*
+			</div>
+		</div>
+	</div>
+	<div id="app">
+		<canvas id="treeCanvas" class="canvas" v-if="!(tmp.gameEnded && !player.keepGoing)"></canvas>
+		<div class="vl" v-if="player.navTab !== 'none' && !(tmp.gameEnded && !player.keepGoing)"></div>
+		<div v-if="(tmp.gameEnded && !player.keepGoing)" class="fullWidth">
+			<br>
+			<h2>{{modInfo.name}} {{VERSION.withoutName}}</h2><br><br>
+			<h3>抵达残局</h3><br><br>
+			<div v-if="!player.timePlayedReset">恭喜你已经浪费了 {{formatTime(player.timePlayed)}} 去玩这个游戏</div>
+			<br><button class="longUpg can" onclick="keepGoing()">继续</button>
+		</div>
+		<div id="version" onclick="showTab('changelog-tab');getActiveClass('Changelog')" class="overlayThing" style="margin-right: 4px" >
+			{{VERSION.withoutName}}</div>
+
+		<div id="treeOverlay" v-if="!(tmp.gameEnded && !player.keepGoing)" class="treeOverlay" onscroll="resizeCanvas()"
+			v-bind:class="{ 
+			fullWidth: player.navTab == 'none', 
+			col: player.navTab !== 'none', 
+			left: player.navTab !== 'none'}"
+			 :style="{'margin-top': !readData(layoutInfo.showTree) && player.tab == 'info-tab' ? '50px' : ''}">
+			<overlay-head v-if="!(tmp.gameEnded && !player.keepGoing)"></overlay-head>
+			<div class="sideLayers">
+				<div v-for="(node, index) in OTHER_LAYERS['side']">
+					<tree-node :layer='node' :abb='tmp[node].symbol' :size="'small'" :key="'side' + index"></tree-node>
+				</div>
+			</div>
+		</div>
+		
+		<div v-if="!(tmp.gameEnded && !player.keepGoing)" id="treeTab"  onscroll="resizeCanvas()" 
+			v-bind:class="{ fullWidth:player.navTab == 'none', col: player.navTab !== 'none', left: player.navTab !== 'none'}" style="overflow-x: hidden;">
+			<overlay-head id="fakeHead" style="visibility: hidden;">
+			</overlay-head>
+			<layer-tab :layer="player.navTab == 'none' ? player.tab : player.navTab" :key="'left'"></layer-tab>
+			<bg :layer="player.navTab == 'none' ? player.tab : player.navTab" ></bg>
+		</div>
+
+		<!-- Popups -->
+		<div class="popup-container">
+			<transition-group name="fade">
+				<div v-for="popup,index in activePopups" class="popup" v-bind:class="popup.type"
+					v-bind:key="'p' + popup.id" v-on:click="() => {activePopups.splice(index, 1)}" v-bind:style="popup.color ? {'background-color': popup.color} : {}">
+					<h3>{{popup.title}}</h3><br>
+					<h2 v-html="popup.message"></h2>
+				</div>
+			</transition-group>
+		</div>
+		<div class="particle-container">
+				<div v-for="particle,index in particles">
+					<particle :data="particle" :index="index" v-bind:key="'b' + particle.id"></particle>
+				</div>
+		</div>
+
+		<div v-if="player.navTab !== 'none' && player.tab !== 'none' && !(tmp.gameEnded && !player.keepGoing)" onscroll="resizeCanvas()" v-bind:class="{ fullWidth: player.navTab == 'none' || !readData(layoutInfo.showTree), col2: player.navTab != 'none', right: player.navTab != 'none', fast: true, tab: true}">
+			<div v-for="layer in LAYERS">
+				<div v-if="player.tab==layer">
+					<layer-tab :layer="layer" :back="'none'" :spacing="'50px'" :key="'left'"></layer-tab>
+				</div>
+			</div>
+			<bg :layer="player.tab" ></bg>
+
+		</div>
+		<div class = "bg2" v-bind:style = "tmp.backgroundStyle"></div>
+
+	</div>
+</body>

@@ -1,0 +1,141 @@
+
+/* Prestige button */
+.reset {
+	height: 120px;
+	width: 180px;
+    border-radius: 5%;
+	border: 4px solid;
+	border-color: rgba(0, 0, 0, 0.125);
+    transition-duration: 0.4s;
+}
+
+.tabButton {
+    background-color: transparent;
+    color: var(--color);
+    font-size: 25px;
+    padding: 8px 20px;
+    padding-bottom: 18px;
+    margin: 5px;
+    border: 3px solid;
+    border-bottom: hidden;
+    color: var(--color);
+    transition: 0.4s;
+	transform: translateY(10px);
+    cursor: pointer;
+}
+
+.tabButton.AcSub {
+    background-color: #686868;
+	transform: translateY(0px);
+}
+
+.tabButton:hover {
+	transform: translateY(0px);
+	text-shadow: 0 0 7px var(--color);
+    z-index: -1;
+}
+
+.tooltip { 
+    pointer-events: none;
+    text-align: center;
+    width: 360px;
+    font-size: 16px;
+    line-height: 1.2;
+    bottom: 100%;
+    left: 50%;
+    margin-bottom: 5px;
+    transform: translateX(-50%);
+    padding: 7px;
+	font-family: "Courier New", "Courier Prime", "Lucida Console",'Noto Sans SC', monospace;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    opacity: 0;
+    transition: opacity 0.5s;
+  
+    position: absolute;
+    z-index: 20000;
+  
+    background-color: var(--background_tooltip);
+    color: var(--points);
+    content: attr(tooltip);
+    font-size:14px;
+
+}
+
+.tooltip::after {
+    content: " ";
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: var(--background_tooltip) transparent transparent transparent;
+}
+
+/* Horizontal/vertical lines */
+.vl {
+	border-left: 5px solid #ffffff;
+	height: 100%;
+	position: absolute;
+	left: 300px;
+	margin-left: -2px;
+	top: 0;
+}
+
+.vl2 {
+	border-top: 5px solid #ffffff;
+    left: -0px;
+    width: calc(100%);
+    border-left: none;
+    position: absolute;
+    z-index: -1;
+}
+
+.vl3 {
+	border-top: 3px solid #ffffff;
+    left: 0px;
+    width: calc(100%);
+    border-left: none;
+    position: absolute;
+    margin-top: 52px;
+}
+
+.vlBlock {
+    width: calc(100% - 20px);
+    height: 12px;
+    margin-top: 71px;
+    position: absolute;
+    background-color: #0F0F13;
+    transform: translateY(-2px);
+}
+
+.hl {
+	border-top: 3px solid var(--color);
+}
+
+/* Other */
+.digitalTime {
+	font-family: "Courier New", "Courier Prime", "Lucida Console",'Noto Sans SC', monospace;
+    background-color:black;
+    border: 4px solid #686868;
+    color: red;
+    border-radius: 0%;
+    padding: 5px 5px 5px 5px;
+    min-width: 150px;
+}
+
+.res {
+    font-size: 17px;
+    text-align: left;
+    left: 308px;
+    top: 0px;
+    position: fixed;
+    z-index: 9;
+    pointer-events: none;
+    mix-blend-mode: difference;
+}

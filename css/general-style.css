@@ -1,0 +1,65 @@
+/* Global things */
+body {
+	color: var(--color);
+	overflow: hidden;
+	--background: #0f0f0f;
+	--color: #dfdfdf;
+	--points: #ffffff;
+	background: var(--background);
+	font-family: "Courier New", "Courier Prime", "Lucida Console", monospace;
+}
+
+spoiler:active {
+    background-color: transparent;
+    color: var(--color);
+}
+
+spoiler {
+    background-color: var(--color);
+    border-radius: 5px;
+    transition-duration: 0.1s;
+    cursor: pointer;
+    color: transparent;
+}
+
+/* General text */
+h1, h2, h3, b, input {
+	display: inline;
+}
+
+/* These are styles for different states of components. You can make layer-specific versions with .c.locked, for example */
+.locked {
+	background-color: #bf8f8f;
+	cursor: not-allowed;
+}
+
+/* Can meens can be clicked/bought/etc */
+.can {
+	cursor: pointer;
+}
+
+.can:hover {
+	transform: scale(1.15, 1.15);
+	box-shadow: 0 0 20px var(--points)
+}
+
+.bought {
+	background-color: #77bf5f;
+	cursor: default;
+}
+
+#points {
+	color: var(--points);
+	text-shadow: 0 0 10px var(--points);
+}
+
+*::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+    background-color: rgb(255, 255, 255);
+}
+
+*::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+	background-color: #888;
+}
