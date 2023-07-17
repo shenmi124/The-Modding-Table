@@ -1,0 +1,52 @@
+.popup {
+	border: 4px solid;
+	border-radius: 7px;
+	width: 300px;
+	min-height: 60px;
+	color: #000000;
+	display: block;
+	margin-top: 30px;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	border-color: rgba(0, 0, 0, 0.25);
+}
+
+
+.popup-container {
+	position: absolute;
+	z-index: 9999999999999999999999999999999999;
+	right: 30px;
+	width: 300px;
+}
+
+.achievement-popup {
+	background: #7182BC;
+}
+
+.milestone-popup {
+	background: #D1C23C;
+}
+
+.fade-enter-active, .fade-leave-active {
+	transition: opacity .3s
+}
+
+.fade-transition {
+	transition: opacity .3s
+}
+
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+	opacity: 0
+}
+
+.redtext {
+	color: red;
+}
+
+.particle {
+	background-color: transparent;
+	display: block;
+	position:absolute;
+	z-index: 99999;
+	background-size:contain;
+}
