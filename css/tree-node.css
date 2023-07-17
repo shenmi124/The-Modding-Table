@@ -16,6 +16,7 @@
 	left: -3px;
 	top: 2px;
 	transition-duration: 0.5s;
+    position: relative;
 }
 
 .treeNode.small {
@@ -39,6 +40,7 @@
 	left: -3px;
 	top: 2px;
 	transition-duration: 0.5s;
+    position: relative;
 }
 
 .treeButton {
@@ -53,6 +55,7 @@
 	color: rgba(0, 0, 0, 0.5);
 	text-shadow: var(--hqProperty3);
 	padding: 0;
+    position: relative;
 }
 
 .smallNode {
@@ -60,6 +63,7 @@
 	width: 60px;
 	font-size: 30px;
 	margin: 50px 105px 0px 10px;
+    position: relative;
 }
 
 .resetNotify {
@@ -73,6 +77,7 @@
 	padding-left: 20px;
 	color: black;
 	text-shadow: rgb(88, 88, 88) 1px 1px;
+    position: relative;
 }
 
 .treeNode.can:not(.active):not(.small):hover {
@@ -81,18 +86,21 @@
 	box-shadow: 0 0 0px var(--points);
 	padding-left: 15px;
 	color: black;
+    position: relative;
 }
 
 .treeNode.can.small.active {
 	transform: scale(1, 1);
 	box-shadow: 0 0 0px var(--points);
 	color: black;
+    position: relative;
 }
 
 .treeNode.can.small:hover {
 	transform: scale(1, 1);
 	box-shadow: 0 0 0px var(--points);
 	color: black;
+    position: relative;
 }
 .notify {
 	transform: scale(1.05, 1.05);

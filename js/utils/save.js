@@ -226,7 +226,6 @@ function load() {
 	}
 
 	if(modInfo.otherLanguageMod===true && options.ch===undefined){
-		getActiveClass('Language')
 		showTab('Language')
 	}else{
 		getActiveClass(player.tab)

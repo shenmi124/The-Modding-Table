@@ -5,7 +5,7 @@ let modInfo = {
 	author: "nobody",
 	pointsName: "points",
 	modFiles: ["layers.js", "tree.js"],
-	otherLanguageMod: false,// 开启时玩家会在开始游戏时询问并选择语言
+	otherLanguageMod: true,// 开启时玩家会在开始游戏时询问并选择语言
 	languageMod: true,// 关闭otherLanguageMod时使用,默认为 true->英文 false->中文
 
 	discordName: "",
@@ -36,6 +36,7 @@ let VERSION = {
 let changelog = `
 	<br><br><br><h1>更新日志:</h1><br>(不存在<span style='color: red'><s>剧透警告</s></span>)<br><br>
 	<span style="font-size: 17px;">
+		<h3><s>你应该自己写这个</s></h3><br><br>
 		<h3>v0.0 - 史无前例的改动</h3><br>
 			- 开发了 The Modding Table, 这何尝不是一种TMT<br>
 		<br><br>
@@ -43,7 +44,7 @@ let changelog = `
 
 // When you open the otherLanguageMod, this is the second language
 let changelogEN = `
-	<br><br><br><h1>更新日志:</h1><br>(不存在<span style='color: red'><s>剧透警告</s></span>)<br><br>
+	<br><br><br><h1>Changelog:</h1><br>(不存在<span style='color: red'><s>剧透警告</s></span>)<br><br>
 	<span style="font-size: 17px;">
 		<h3>v0.0 - 史无前例的改动</h3><br>
 			- 开发了 The Modding Table, 这何尝不是一种TMT<br>
@@ -108,6 +109,9 @@ function getPointsDisplay(){
 	a += '<br>'
 	if(options.ch !== undefined){
 		a += `<span class="overlayThing">${(options.ch?"你有":"You have")} <h2  class="overlayThing" id="points"> ${format(player.points)}</h2> ${modInfo.pointsName}</span>`
+		if(canGenPoints()){
+			a += `<br><span class="overlayThing">(`+(tmp.other.oompsMag != 0 ? format(tmp.other.oomps) + " OOM" + (tmp.other.oompsMag < 0 ? "^OOM" : tmp.other.oompsMag > 1 ? "^" + tmp.other.oompsMag : "") + "s" : formatSmall(getPointGen()))+`/sec)</span>`
+		}
 	}
 	a += tmp.displayThings
 	a += '<br><br>'

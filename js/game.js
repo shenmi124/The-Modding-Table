@@ -204,7 +204,6 @@ function doReset(layer, force=false) {
 					if (!player[lrs[lr]].unlocked) player[lrs[lr]].unlockOrder++
 			}
 		}
-	
 	}
 
 	if (run(layers[layer].resetsNothing, layers[layer])) return

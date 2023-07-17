@@ -6,7 +6,6 @@ addLayer("p", {
         unlocked: true,
 		points: new Decimal(0),
     }},
-    tooltip() { return false }, // The modding Table默认是打开addLayer中的tooltip的,但不确定开启时效果如何,建议关闭
     color: "#4BDC13",
     requires: new Decimal(10), // Can be a function that takes requirement increases into account
     resource: "prestige points", // Name of prestige currency

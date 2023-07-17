@@ -72,7 +72,7 @@ var systemComponents = {
 				treeButton: !tmp[layer].isLayer,
 				smallNode: size == 'small',
 				[layer]: true,
-				tooltipBox: true,
+				tooltipBox: false,
 				forceTooltip: player[layer].forceTooltip,
 				ghost: tmp[layer].layerShown == 'ghost',
 				hidden: !tmp[layer].layerShown,
@@ -81,6 +81,7 @@ var systemComponents = {
 				resetNotify: tmp[layer].prestigeNotify,
 				can: ((player[layer].unlocked || tmp[layer].canReset) && tmp[layer].isLayer) || (!tmp[layer].isLayer && tmp[layer].canClick),
 				front: !tmp.scrolled,
+				active: player.tab==layer,
 			}"
 			v-bind:style="constructNodeStyle(layer)">
 			<span v-html="(abb !== '' && tmp[layer].image === undefined) ? abb : '&nbsp;'"></span>
@@ -98,8 +99,6 @@ var systemComponents = {
 		</button>
 		`
 	},
-
-	
 	
 	'layer-tab': {
 		props: ['layer', 'back', 'spacing', 'embedded'],
@@ -151,7 +150,7 @@ var systemComponents = {
 		<div style="border: 3px solid #888; width:300px; height:30px; margin-top: 8px; padding:15px; border-radius: 5px; display: inline-table">
 			<h3>{{ options.ch?"本模组作者":"Mod Author" }}:</h3><br>
 			{{ modInfo.author }}<br><br>
-			<h6 style="color:#aaa">({{ options.ch?"本Mod基于Shinwmyste的The Modding Table制作":"Developed Based On Shinwmyste\'s The Modding Table" }})</h6>
+			<h6 style="color:#aaa">({{ options.ch?"本Mod基于Shinwmyste的The Modding Table制作":"Based On Shinwmyste\'s The Modding Table" }})</h6>
 		</div>
 		<div style="border: 3px solid #888; width:300px; height:30px; margin-top: 8px; padding:15px; border-radius: 5px; display: inline-table">
 			<h3>{{ options.ch?"新模板主要作者":"The Modding Table Author" }}:</h3><br>
@@ -230,7 +229,7 @@ var systemComponents = {
 			<tr>
 				<td><button class="opt" v-if="modInfo.otherLanguageMod==true" onclick="
                 options.ch = !options.ch;
-                needsCanvasUpdate = true; document.title = options.ch?{{modInfo.name}}:{{modInfo.nameEN}};
+                needsCanvasUpdate = true; document.title = (options.ch? modInfo.name : modInfo.nameEN);
                 VERSION.withName = VERSION.withoutName + (VERSION.name ? ': ' + (options.ch? VERSION.name :VERSION.nameEN) : '')
                 ">{{options.ch?'语言':'Language'}}: {{ options.ch?"中文(Chinese)":"英文(English)" }}</button></td>
 			</tr>
