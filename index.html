@@ -15,35 +15,14 @@
 	<link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Major+Mono+Display" rel="stylesheet">
 
-	<script src="js/vue.js"></script>
-	<script src="js/jQ.js"></script>
-	<script src="js/technical/break_eternity.js"></script>
-	<script src="js/technical/layerSupport.js"></script>
+	<script src="resources/vue.js"></script>
+	<script src="resources/jQ.js"></script>
+	<script src="js/technical/preLoader.js" type="module"></script>
 
-	<script src="js/mod.js"></script>
-	<script src="js/lag.js"></script>
-	<script src="js/setting.js"></script>
-	<script src="js/technical/loader.js"></script>
-	<script src="js/technical/others.js"></script>
-
-	<script src="js/technical/temp.js"></script>
-	<script src="js/technical/displays.js"></script>
-	
-	<script src="js/game.js"></script>
-	<script src="js/utils.js"></script>
-	<script src="js/utils/easyAccess.js"></script>
-	<script src="js/technical/systemComponents.js"></script>
-	<script src="js/components.js"></script>
-	<script src="js/technical/canvas.js"></script>
-	<script src="js/technical/particleSystem.js"></script>
-	<script src="js/utils/NumberFormating.js"></script>
-	<script src="js/utils/options.js"></script>
-	<script src="js/utils/save.js"></script>
-	<script src="js/utils/themes.js"></script>
 </head>
 
 
-<body onload="load();" onmousemove="updateMouse(event)">
+<body>
 	<div id="loading">
 		<div id="loading_bg">
 			<div class="loader">
@@ -65,9 +44,9 @@
 			{{VERSION.withoutName}}</div>
 
 		<div id="treeOverlay" v-if="!(tmp.gameEnded && !player.keepGoing)" class="treeOverlay" onscroll="resizeCanvas()"
-			v-bind:class="{ 
-			fullWidth: player.navTab == 'none', 
-			col: player.navTab !== 'none', 
+			v-bind:class="{
+			fullWidth: player.navTab == 'none',
+			col: player.navTab !== 'none',
 			left: player.navTab !== 'none'}"
 			 :style="{'margin-top': !readData(layoutInfo.showTree) && player.tab == 'info-tab' ? '50px' : ''}">
 			<overlay-head v-if="!(tmp.gameEnded && !player.keepGoing)"></overlay-head>
@@ -77,8 +56,8 @@
 				</div>
 			</div>
 		</div>
-		
-		<div v-if="!(tmp.gameEnded && !player.keepGoing)" id="treeTab"  onscroll="resizeCanvas()" 
+
+		<div v-if="!(tmp.gameEnded && !player.keepGoing)" id="treeTab"  onscroll="resizeCanvas()"
 			v-bind:class="{ fullWidth:player.navTab == 'none', col: player.navTab !== 'none', left: player.navTab !== 'none'}" style="overflow-x: hidden;">
 			<overlay-head id="fakeHead" style="visibility: hidden;">
 			</overlay-head>
