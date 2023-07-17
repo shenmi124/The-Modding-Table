@@ -12,6 +12,8 @@ let modInfo = {
 	discordLink: "",
 	initialStartPoints: new Decimal (10), // Used for hard resets and new players
 	offlineLimit: 1,  // In hours
+
+	langs: ['zh_CN']
 }
 
 var colors = {
@@ -97,7 +99,7 @@ function isEndgame() {
 	return false
 }
 
-// 
+//
 function getPointsDisplay(){
 	let a = ''
 	if(player.devSpeed && player.devSpeed != 1){

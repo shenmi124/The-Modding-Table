@@ -7,3 +7,6 @@ for (file in modInfo.modFiles) {
     document.head.insertBefore(script, document.getElementById("temp"));
 }
 
+// Load langs
+
+registerLangs(...modInfo.langs)
