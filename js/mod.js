@@ -1,15 +1,13 @@
 let modInfo = {
 	name: "The ??? Tree",
-	nameEN: "The ??? Tree",// When you're using "otherLanguageMod", this will show as the second language
+	nameEN: "The ??? Tree",// When you open the otherLanguageMod, this is the second language
 	id: "mymod2",
 	author: "nobody",
 	pointsName: "points",
 	modFiles: ["layers.js", "tree.js"],
-	otherLanguageMod: true,// 开启时玩家会在开始游戏时询问并选择语言
+	otherLanguageMod: false,// 开启时玩家会在开始游戏时询问并选择语言
 	languageMod: true,// 关闭otherLanguageMod时使用,默认为 true->英文 false->中文
 
-	discordName: "",
-	discordLink: "",
 	initialStartPoints: new Decimal (10), // Used for hard resets and new players
 	offlineLimit: 1,  // In hours
 }

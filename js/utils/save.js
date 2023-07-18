@@ -223,6 +223,8 @@ function load() {
 		}
 	}else if(modInfo.otherLanguageMod===true && player.Language.sure===false){
 		options.ch = undefined
+	}else if(modInfo.otherLanguageMod===false){
+		options.ch = undefined
 	}
 
 	if(modInfo.otherLanguageMod===true && options.ch===undefined){

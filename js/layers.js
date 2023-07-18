@@ -1,3 +1,21 @@
+addLayer("1layer small", {// 添加一个[ small]以生成一个较为不一样的层级
+    name: "↓ layer 1 ↓",
+    position: -1,
+    row: 0,
+    symbol() {return '↓ layer 1 ↓'},
+    nodeStyle: {"font-size": "15px", "text-center": "center", "height": "30px"},// 推荐大小,非默认
+    startData() { return {
+        unlocked: true,
+        small: true,
+        points: new Decimal(0),
+    }},
+    color: "#fefefe",
+    type: "none",
+    tooltip(){return false},
+    layerShown(){return layerDisplayTotal(['p'])},// 数组中的任意一个层级如果结果返回true否则则是false
+    tabFormat: [],
+})
+
 addLayer("p", {
     name: "prestige", // This is optional, only used in a few places, If absent it just uses the layer id.
     symbol: "P", // This appears on the layer's node. Default is the id with the first letter capitalized
