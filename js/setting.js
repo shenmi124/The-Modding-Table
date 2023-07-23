@@ -18,9 +18,8 @@ addLayer("OtherTab small", {
     name: "AllLayer",
     position: -1,
     row: 999,
-    symbol() {
-        return options.ch ? '↓ 其他页面 ↓' : '↓ Other Tab ↓'
-    },
+    symbol() {return (options.ch || modInfo.languageMod==false) ? '↓ 其他页面 ↓' : '↓ Other Tab ↓'},
+    symbolEN() {return (options.ch || modInfo.languageMod==false) ? '↓ 其他页面 ↓' : '↓ Other Tab ↓'},
     nodeStyle: {"font-size": "15px", "text-center": "center", "height": "30px"},
     startData() { return {
         unlocked: true,
@@ -40,9 +39,8 @@ addLayer("Setting", {
     name: "Setting",
     position: 0,
     row: 999,
-    symbol() {
-        return options.ch ? '设置' : 'Setting'
-    },
+    symbol() {return (options.ch || modInfo.languageMod==false) ? '设置' : 'Setting'},
+    symbolEN() {return (options.ch || modInfo.languageMod==false) ? '设置' : 'Setting'},
     startData() { return {
         unlocked: true,
         small: true,
@@ -60,9 +58,8 @@ addLayer("Information", {
     name: "Information",
     position: 2,
     row: 999,
-    symbol() {
-        return options.ch ? '信息' : 'Information'
-    },
+    symbol() {return (options.ch || modInfo.languageMod==false) ? '信息' : 'Information'},
+    symbolEN() {return (options.ch || modInfo.languageMod==false) ? '信息' : 'Information'},
     startData() { return {
         unlocked: true,
         small: true,
@@ -80,9 +77,8 @@ addLayer("Changelog", {
     name: "Changelog",
     position: 3,
     row: 999,
-    symbol() {
-        return options.ch ? '更新日志' : 'Changelog'
-    },
+    symbol() {return (options.ch || modInfo.languageMod==false) ? '更新日志' : 'Changelog'},
+    symbolEN() {return (options.ch || modInfo.languageMod==false) ? '更新日志' : 'Changelog'},
     startData() { return {
         unlocked: true,
         small: true,

@@ -82,7 +82,7 @@
 	border-left: 5px solid #ffffff;
 	height: 100%;
 	position: absolute;
-	left: 300px;
+	left: calc(var(--tabWidth) - 3px);
 	margin-left: -2px;
 	top: 0;
 }
@@ -132,7 +132,7 @@
 .res {
     font-size: 17px;
     text-align: left;
-    left: 308px;
+	left: calc(var(--tabWidth) + 5px);
     top: 0px;
     position: fixed;
     z-index: 9;

@@ -124,7 +124,7 @@ td {
 }
 
 .col {
-	width: 303px;
+	width: var(--tabWidth);
 	height: 100%;
 	min-height: 100%;
 	column-span: 1;
@@ -144,9 +144,9 @@ td {
 }
 
 .col2 {
-	width: calc(100% - 303px);
+	width: calc(100% - var(--tabWidth));
 	height: 100%;
-	left: 303px;
+	left: var(--tabWidth);
 	min-height: 100%;
 	column-span: 1;
 	position: absolute;
