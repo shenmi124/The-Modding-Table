@@ -229,7 +229,8 @@ var systemComponents = {
 				<td><button class="opt" v-if="modInfo.otherLanguageMod==true" onclick="
                 options.ch=!options.ch;
                 needsCanvasUpdate = true; document.title = ((options.ch || modInfo.languageMod==false)? modInfo.name : modInfo.nameEN);
-                VERSION.withName = VERSION.withoutName + (VERSION.name ? ': ' + ((options.ch || modInfo.languageMod==false)? VERSION.name :VERSION.nameEN) : '')
+                VERSION.withName = VERSION.withoutName + (VERSION.name ? ': ' + ((options.ch || modInfo.languageMod==false)? VERSION.name :VERSION.nameEN) : '');
+				setupModInfo();
                 ">{{(options.ch || modInfo.languageMod==false)?'语言':'Language'}}: {{ (options.ch || modInfo.languageMod==false)?"中文(Chinese)":"英文(English)" }}</button></td>
 			</tr>
         </table>`

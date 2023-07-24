@@ -253,8 +253,8 @@ function loadOptions() {
 }
 
 function setupModInfo() {
-	modInfo.changelog = changelog;
-	modInfo.winText = winText ? winText : `Congratulations! You have reached the end and beaten this game, but for now...`;
+	modInfo.changelog = changelog();
+	modInfo.winText = winText();
 
 }
 function fixNaNs() {

@@ -34,30 +34,27 @@ let VERSION = {
 	name: "Literally nothing",
 }
 
+function changelog(){
+	return (options.ch || modInfo.languageMod==false)?`
+		<br><br><br><h1>更新日志:</h1><br>(不存在<span style='color: red'><s>剧透警告</s></span>)<br><br>
+		<span style="font-size: 17px;">
+			<h3><s>不,你应该自己写这个</s></h3><br><br>
+			<h3>v3.0 - 史无前例的改动</h3><br>
+				- 开发了 The Modding Table, 这何尝不是一种TMT<br>
+			<br><br>
+		`:`
+		<br><br><br><h1>ChangeLog:</h1><br>(No<span style='color: red'><s> Spoiler Warning!</s></span>)<br><br>
+		<span style="font-size: 17px;">
+			<h3><s>NO, YOU SHOULD WRITE THIS YOURSELF</s></h3><br><br>
+			<h3>v3.0 - Unprecedented changes</h3><br>
+				- Developed The Modding Table, Which, you could say, is another form of TMT<br>
+			<br><br>
+	`
+} 
 
-//要用中文自己换
-/*let changelog = `
-	<br><br><br><h1>更新日志:</h1><br>(不存在<span style='color: red'><s>剧透警告</s></span>)<br><br>
-	<span style="font-size: 17px;">
-		<h3><s>不,你应该自己写这个</s></h3><br><br>
-		<h3>v3.0 - 史无前例的改动</h3><br>
-			- 开发了 The Modding Table, 这何尝不是一种TMT<br>
-		<br><br>
-`*/
-
-let changelog = `
-	<br><br><br><h1>ChangeLog:</h1><br>(No<span style='color: red'><s> Spoiler Warning!</s></span>)<br><br>
-	<span style="font-size: 17px;">
-		<h3><s>NO, YOU SHOULD WRITE THIS YOURSELF</s></h3><br><br>
-		<h3>v3.0 - Unprecedented changes</h3><br>
-			- Developed The Modding Table, Which, you could say, is another form of TMT<br>
-		<br><br>
-`
-
-
-//let winText = `你暂时完成了游戏!`
-
-let winText = `Congratulations! You have reached the end and beaten this game, but for now...`
+function winText(){
+	return (options.ch || modInfo.languageMod==false)?`你暂时完成了游戏!`:`Congratulations! You have reached the end and beaten this game, but for now...`
+}
 
 // If you add new functions anywhere inside of a layer, and those functions have an effect when called, add them here.
 // (The ones here are examples, all official functions are already taken care of)
@@ -113,7 +110,7 @@ function getPointsDisplay(){
 		a += options.ch ? '<br>离线加速剩余时间: '+formatTime(player.offTime.remain) : '<br>Offline Time: '+formatTime(player.offTime.remain)
 	}
 	a += '<br>'
-	if((options.ch!==undefined && modInfo.otherLanguageMod==true) || modInfo.otherLanguageMod==false){
+	if((options.ch!==undefined && modInfo.otherLanguageMod==false) || modInfo.otherLanguageMod==true){
 		a += `<span class="overlayThing">${(options.ch?"你有":"You have")} <h2  class="overlayThing" id="points"> ${format(player.points)}</h2> ${modInfo.pointsName}</span>`
 		if(canGenPoints()){
 			a += `<br><span class="overlayThing">(`+(tmp.other.oompsMag != 0 ? format(tmp.other.oomps) + " OOM" + (tmp.other.oompsMag < 0 ? "^OOM" : tmp.other.oompsMag > 1 ? "^" + tmp.other.oompsMag : "") + "s" : formatSmall(getPointGen()))+`/sec)</span>`
