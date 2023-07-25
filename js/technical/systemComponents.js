@@ -223,7 +223,7 @@ var systemComponents = {
                 <td><button class="opt" onclick="adjustMSDisp()">{{(options.ch || modInfo.languageMod==false)?'显示里程碑':'Show Milestones'}}: {{(options.ch || modInfo.languageMod==false)? MS_DISPLAYS[MS_SETTINGS.indexOf(options.msDisplay)] : MS_DISPLAYS_EN[MS_SETTINGS.indexOf(options.msDisplay)]}}</button></td>
 			</tr> <br>
 			<tr>
-                <td><button class="opt" onclick="toggleOpt('mouse')">{{(options.ch || modInfo.languageMod==false)?'优化鼠标操作' :'Optimized mouse operation'}}: {{ options.mouse ? ((options.ch || modInfo.languageMod==false)?"已关闭":"OFF"):((options.ch || modInfo.languageMod==false)?"已开启":"ON")}}</button></td>
+                <td><button class="opt" onclick="toggleOpt('mouse')">{{(options.ch || modInfo.languageMod==false)?'优化鼠标操作' :'Optimized mouse operation'}}: {{ options.mouse ? ((options.ch || modInfo.languageMod==false)?"已开启":"ON"):((options.ch || modInfo.languageMod==false)?"已关闭":"OFF")}}</button></td>
 			</tr><br>
 			<tr>
 				<td><button class="opt" v-if="modInfo.otherLanguageMod==true" onclick="
