@@ -85,7 +85,7 @@ function addedPlayerData() { return {
 // Display extra things at the top of the page
 var displayThings = [
 	function() {
-		if(options.ch==undefined && modInfo.otherLanguageMod==true){return '<big><br>You should choose your language first<br>你需要先选择语言</big>'}
+		if((options.ch!==undefined && modInfo.otherLanguageMod==false) || modInfo.otherLanguageMod==true){return '<big><br>You should choose your language first<br>你需要先选择语言</big>'}
 		return '<div class="res">'+displayThingsRes()+'</div><br><div class="vl2"></div></span>'
 	}
 ]
