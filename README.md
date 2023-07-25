@@ -5,6 +5,6 @@ An incremental game engine based on The Modding Tree. It still requires programm
 
 Doc has not yet been made
 
-Thinks:
-[Acamaeda](https://github.com/Acamaeda)
+Thinks:<br>
+[Acamaeda](https://github.com/Acamaeda)<br>
 [Acamaeda](https://github.com/Acamaeda)
