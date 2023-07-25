@@ -85,7 +85,7 @@ function addedPlayerData() { return {
 // Display extra things at the top of the page
 var displayThings = [
 	function() {
-		if((options.ch!==undefined && modInfo.otherLanguageMod==false) || modInfo.otherLanguageMod==true){return '<big><br>You should choose your language first<br>你需要先选择语言</big>'}
+		if(options.ch==undefined && modInfo.otherLanguageMod==true){return '<big><br>You should choose your language first<br>你需要先选择语言</big>'}
 		return '<div class="res">'+displayThingsRes()+'</div><br><div class="vl2"></div></span>'
 	}
 ]
@@ -110,7 +110,7 @@ function getPointsDisplay(){
 		a += options.ch ? '<br>离线加速剩余时间: '+formatTime(player.offTime.remain) : '<br>Offline Time: '+formatTime(player.offTime.remain)
 	}
 	a += '<br>'
-	if((options.ch!==undefined && modInfo.otherLanguageMod==false) || modInfo.otherLanguageMod==true){
+	if(!(options.ch==undefined && modInfo.otherLanguageMod==true)){
 		a += `<span class="overlayThing">${(options.ch?"你有":"You have")} <h2  class="overlayThing" id="points"> ${format(player.points)}</h2> ${modInfo.pointsName}</span>`
 		if(canGenPoints()){
 			a += `<br><span class="overlayThing">(`+(tmp.other.oompsMag != 0 ? format(tmp.other.oomps) + " OOM" + (tmp.other.oompsMag < 0 ? "^OOM" : tmp.other.oompsMag > 1 ? "^" + tmp.other.oompsMag : "") + "s" : formatSmall(getPointGen()))+`/sec)</span>`
