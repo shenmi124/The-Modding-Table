@@ -7,7 +7,7 @@ let modInfo = {
 	modFiles: ["layers.js", "tree.js"],
 
 	otherLanguageMod: false,// When on, it will ask the player to choose a language at the beginning of the game
-	languageMod: true,// Use when otherLanguageMod is off, default are true -> English, false -> Chinese
+	languageMod: false,// Use when otherLanguageMod is off, default are true -> English, false -> Chinese
 
 	forceOneTab: false,// Enable Single-Tab Mode ( This feature doen't work fluently as you'd imagine, it's made for expert, and if you open it, it will show 'none' page everytime you refresh the page ( ps: you can change that at save.js, line 234 ) )
 
@@ -111,7 +111,7 @@ function getPointsDisplay(){
 	}
 	a += '<br>'
 	if(!(options.ch==undefined && modInfo.otherLanguageMod==true)){
-		a += `<span class="overlayThing">${(options.ch?"你有":"You have")} <h2  class="overlayThing" id="points"> ${format(player.points)}</h2> ${modInfo.pointsName}</span>`
+		a += `<span class="overlayThing">${((options.ch || modInfo.languageMod==false)?"你有":"You have")} <h2  class="overlayThing" id="points"> ${format(player.points)}</h2> ${modInfo.pointsName}</span>`
 		if(canGenPoints()){
 			a += `<br><span class="overlayThing">(`+(tmp.other.oompsMag != 0 ? format(tmp.other.oomps) + " OOM" + (tmp.other.oompsMag < 0 ? "^OOM" : tmp.other.oompsMag > 1 ? "^" + tmp.other.oompsMag : "") + "s" : formatSmall(getPointGen()))+`/sec)</span>`
 		}
