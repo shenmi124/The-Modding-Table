@@ -233,7 +233,7 @@ function load() {
 
 	if(modInfo.forceOneTab==true){
 		options.forceOneTab = true
-		showTab('none')
+		showTab('tree-tab')
 	}else{
 		options.forceOneTab = false
 	}

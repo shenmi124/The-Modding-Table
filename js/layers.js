@@ -14,7 +14,9 @@ addLayer("1layer small", {// Add a * small* to generate a slightly different lay
     type: "none",
     tooltip(){return false},
     layerShown(){return layerDisplayTotal(['p'])},// If any layer in the array is unlocked, it will returns true. Otherwise it will return false.
-    tabFormat: [],
+	tabFormat: [
+        ["display-text", function() { return getPointsDisplay() }]
+    ],
 })
 
 addLayer("p", {

@@ -4,8 +4,6 @@ var layoutInfo = {
 	showTree: true,
 
     treeLayout: ""
-
-    
 }
 
 
