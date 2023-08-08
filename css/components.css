@@ -1,7 +1,7 @@
 .upg {
 	min-height: 120px;
 	width: 120px;
-	border-radius: 25%;
+	border-radius: 5%;
 	border: 2px solid;
 	border-color: rgba(0, 0, 0, 0.125);
 	font-size: 10px;
@@ -14,7 +14,7 @@
 .achievement {
 	height: 90px;
 	width: 90px;
-	border-radius: 25%;
+	border-radius: 5%;
 	border: 2px solid;
 	border-color: rgba(0, 0, 0, 0.125);
 	font-size: 12px;
@@ -30,7 +30,7 @@
 .buyable {
 	height: 200px;
 	width: 200px;
-	border-radius: 25%;
+	border-radius: 5%;
 	border: 2px solid;
 	border-color: rgba(0, 0, 0, 0.125);
 	font-size: 10px;
@@ -133,7 +133,7 @@
 .tile {
 	height: 80px;
 	width: 80px;
-	border-radius: 15%;
+	border-radius: 5%;
 	border: 2px solid;
 	border-color: rgba(0, 0, 0, 0.125);
 	font-size: 10px;
@@ -150,7 +150,7 @@
 .upgBig {
 	height: 200px;
 	width: 200px;
-	border-radius: 25%;
+	border-radius: 5%;
 	border: 2px solid;
 	border-color: rgba(0, 0, 0, 0.125);
 }

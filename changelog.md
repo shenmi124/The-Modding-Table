@@ -1,5 +1,9 @@
 # The Modding Table changelog:
 
+# v3.0.1.9 = 25/7/23
+	 - Fix a bug about clickables.
+	 - Modify the css.
+
 # v3.0.1.7 = 25/7/23
 	 - Fix a bug again.
 	 - Modify the text again.

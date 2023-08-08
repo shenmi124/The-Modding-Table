@@ -338,11 +338,10 @@ function loadVue() {
 			v-bind:class="{ upg: true, tooltipBox: true, can: tmp[layer].clickables[data].canClick, locked: !tmp[layer].clickables[data].canClick}"
 			v-bind:style="[tmp[layer].clickables[data].canClick ? {'background-color': tmp[layer].color} : {}, tmp[layer].clickables[data].style]"
 			v-on:click="if(!interval) clickClickable(layer, data)" :id='"clickable-" + layer + "-" + data' @mousedown="start" @mouseleave="stop" @mouseup="stop" @touchstart="start" @touchend="stop" @touchcancel="stop">
-			<span v-if= "tmp[layer].clickables[data].title"><h2 v-html="tmp[layer].clickables[data].title"></h2><br></span>
-			<span v-bind:style="{'white-space': 'pre-line'}" v-html="run((options.ch || modInfo.languageMod==false)?layers[layer].clickables[data].display:layers[layer].clickables[data].displayEN, layers[layer].clickables[data])"></span>
+			<span><h2 v-html="(options.ch || modInfo.languageMod==false)?tmp[layer].clickables[data].title:tmp[layer].clickables[data].titleEN"></h2><br>
+			<span v-bind:style="{'white-space': 'pre-line'}" v-html="run((options.ch || modInfo.languageMod==false)?layers[layer].clickables[data].display:layers[layer].clickables[data].displayEN, layers[layer].clickables[data])"></span></span>
 			<node-mark :layer='layer' :data='tmp[layer].clickables[data].marked'></node-mark>
 			<tooltip v-if="tmp[layer].clickables[data].tooltip" :text="(options.ch || modInfo.languageMod==false)?tmp[layer].clickables[data].tooltip:tmp[layer].clickables[data].tooltipEN"></tooltip>
-
 		</button>
 		`,
 		data() { return { interval: false, time: 0,}},
