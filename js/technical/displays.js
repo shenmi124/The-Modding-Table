@@ -58,7 +58,12 @@ function updateWidth() {
 	tmp.other.screenHeight = window.innerHeight
 
 	if(splitScreen==false) document.body.style.setProperty('--tabWidth', '0px');
-	else document.body.style.setProperty('--tabWidth', '303px');
+	else{
+		document.body.style.setProperty('--tabWidth', colors.button.width)
+		document.body.style.setProperty('--tabHeight', colors.button.height)
+		document.body.style.setProperty('--tabFont', colors.button.font)
+		document.body.style.setProperty('--tabBorder', colors.button.border)
+	}
 
 	tmp.other.splitScreen = splitScreen
 	tmp.other.lastPoints = player.points

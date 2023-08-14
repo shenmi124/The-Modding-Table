@@ -1,5 +1,9 @@
 # The Modding Table changelog:
 
+# v3.0.2.11 = 8/8/23
+	 - Fix two bugs.
+	 - Now you can change the Tree Button.
+
 # v3.0.1.9 = 8/8/23
 	 - Fix a bug about clickables.
 	 - Modify the css.

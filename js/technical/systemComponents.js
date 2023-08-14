@@ -153,11 +153,11 @@ var systemComponents = {
 			<h6 style="color:#aaa">({{ (options.ch || modInfo.languageMod==false)?"本Mod基于Shinwmyste的The Modding Table制作":"Based On Shinwmyste\'s The Modding Table" }})</h6>
 		</div>
 		<div style="border: 3px solid #888; width:300px; height:30px; margin-top: 8px; padding:15px; border-radius: 5px; display: inline-table">
-			<h3>{{ (options.ch || modInfo.languageMod==false)?"新模板主要作者":"The Modding Table Author" }}:</h3><br>
+			<h3>{{ (options.ch || modInfo.languageMod==false)?"模组页主要作者":"The Modding Table Author" }}:</h3><br>
 			Shinwmyste<br><br><h6 style="color:#aaa">({{ (options.ch || modInfo.languageMod==false)?"制作":"Developed" }} The Modding Tree <a v-bind:href="'https://github.com/shenmi124/The-Modding-Table/blob/main/changelog.md'" target="_blank" class="link" v-bind:style = "{'font-size': '10px', 'display': 'inline'}">{{TMT_VERSION.newtmtNum}}</a>)</h6>
 		</div>
 		<div style="border: 3px solid #888; width:300px; height:30px; margin-top: 8px; padding:15px; border-radius: 5px; display: inline-table">
-			<h3>{{ (options.ch || modInfo.languageMod==false)?"新模板主次要作者":"New TMT Secondary Author" }}:</h3><br>
+			<h3>{{ (options.ch || modInfo.languageMod==false)?"模组页主要帮助者":"The Modding Table Main Helper" }}:</h3><br>
 			QwQe308<br><br>
 			<h6 style="color:#aaa">({{ (options.ch || modInfo.languageMod==false)?"一些零碎的改动":"Made Some Minor Changes" }})</h6>
 		</div>
