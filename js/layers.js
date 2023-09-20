@@ -21,8 +21,8 @@ addLayer("1layer small", {// Add a * small* to generate a slightly different lay
 
 addLayer("p", {
     name: "prestige", // This is optional, only used in a few places, If absent it just uses the layer id
-    symbol: "P", // This appears on the layer's node. Default is the id with the first letter capitalized
-    symbolEN: "P", // The second name of this appears on the layer's node ( If you open otherLanguageMod )
+    symbol: "Prestige", // This appears on the layer's node. Default is the id with the first letter capitalized
+    symbolEN: "Prestige", // The second name of this appears on the layer's node ( If you open otherLanguageMod )
     position: 0, // Horizontal position within a row. By default it uses the layer id and sorts in alphabetical order
     startData() { return {
         unlocked: true,
