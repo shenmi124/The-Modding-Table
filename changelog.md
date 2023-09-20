@@ -1,5 +1,8 @@
 # The Modding Table changelog:
 
+# v3.0.3 = 23/9/20
+	 - Fix subtab
+
 # v3.0.2.11 = 8/8/23
 	 - Fix two bugs.
 	 - Now you can change the Tree Button.
