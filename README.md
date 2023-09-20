@@ -11,7 +11,7 @@ Thanks<s>(::thinks::)</s>:
 [Acamaeda](https://github.com/Acamaeda)
 <br>
 <br>
-(Team Member)
+(Main Helper)
 <br>
 [QwQe308](https://github.com/QwQe308)
 <br>
