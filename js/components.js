@@ -177,9 +177,9 @@ function loadVue() {
 			v-bind:style="[((!hasUpgrade(layer, data) && canAffordUpgrade(layer, data)) ? {'background-color': tmp[layer].color} : {}), tmp[layer].upgrades[data].style]">
 			<span v-if="layers[layer].upgrades[data].fullDisplay" v-html="run(layers[layer].upgrades[data].fullDisplay, layers[layer].upgrades[data])"></span>
 			<span v-else>
-				<span v-if= "tmp[layer].upgrades[data].title && options.ch"><h3 v-html="tmp[layer].upgrades[data].title"></h3><br></span>
-				<span v-if= "tmp[layer].upgrades[data].title && !options.ch"><h3 v-html="tmp[layer].upgrades[data].titleEN"></h3><br></span>
-				<span v-if= "options.ch" v-html="tmp[layer].upgrades[data].description"></span><span v-else v-html="tmp[layer].upgrades[data].descriptionEN"></span>
+				<span v-if= "tmp[layer].upgrades[data].title && (options.ch || modInfo.languageMod==false)"><h3 v-html="tmp[layer].upgrades[data].title"></h3><br></span>
+				<span v-if= "tmp[layer].upgrades[data].title && !(options.ch || modInfo.languageMod==false)"><h3 v-html="tmp[layer].upgrades[data].titleEN"></h3><br></span>
+				<span v-if= "(options.ch || modInfo.languageMod==false)" v-html="tmp[layer].upgrades[data].description"></span><span v-else v-html="tmp[layer].upgrades[data].descriptionEN"></span>
 				<span v-if="layers[layer].upgrades[data].effectDisplay"><br>{{(options.ch || modInfo.languageMod==false)?'当前效果':'Currently'}}: <span v-html="run((options.ch || modInfo.languageMod==false)?layers[layer].upgrades[data].effectDisplay:(layers[layer].upgrades[data].effectDisplayEN?layers[layer].upgrades[data].effectDisplayEN:layers[layer].upgrades[data].effectDisplay), layers[layer].upgrades[data])"></span></span>
 				<br><br>{{(options.ch || modInfo.languageMod==false)?'价格':'Cost'}}: {{ formatWhole(tmp[layer].upgrades[data].cost) }} {{(tmp[layer].upgrades[data].currencyDisplayName ? tmp[layer].upgrades[data].currencyDisplayName : ((options.ch || modInfo.languageMod==false)?tmp[layer].resource:tmp[layer].resourceEN))}}
 			</span>	
@@ -206,8 +206,8 @@ function loadVue() {
 		props: ['layer', 'data'],
 		template: `
 		<td v-if="tmp[layer].milestones && tmp[layer].milestones[data]!== undefined && milestoneShown(layer, data) && tmp[layer].milestones[data].unlocked" v-bind:style="[tmp[layer].milestones[data].style]" v-bind:class="{milestone: !hasMilestone(layer, data), tooltipBox: true, milestoneDone: hasMilestone(layer, data)}">
-			<br><h3 v-if="options.ch && tmp[layer].milestones[data].requirementDescription" v-html="tmp[layer].milestones[data].requirementDescription"></h3><h3 v-if="tmp[layer].milestones[data].requirementDescription&&!options.ch" v-html="tmp[layer].milestones[data].requirementDescriptionEN"></h3><br>
-			<span v-if="options.ch" v-html="run(layers[layer].milestones[data].effectDescription, layers[layer].milestones[data])"></span><span v-if="!options.ch" v-html="run(layers[layer].milestones[data].effectDescriptionEN, layers[layer].milestones[data])"></span><br>
+			<br><h3 v-if="(options.ch || modinfo.languagemod==false) && tmp[layer].milestones[data].requirementDescription" v-html="tmp[layer].milestones[data].requirementDescription"></h3><h3 v-if="tmp[layer].milestones[data].requirementDescription&&!(options.ch || modinfo.languagemod==false)" v-html="tmp[layer].milestones[data].requirementDescriptionEN"></h3><br>
+			<span v-if="(options.ch || modinfo.languagemod==false)" v-html="run(layers[layer].milestones[data].effectDescription, layers[layer].milestones[data])"></span><span v-if="!(options.ch || modinfo.languagemod==false)" v-html="run(layers[layer].milestones[data].effectDescriptionEN, layers[layer].milestones[data])"></span><br>
 			<tooltip v-if="tmp[layer].milestones[data].tooltip" :text="tmp[layer].milestones[data].tooltip"></tooltip>
 		<span v-if="(tmp[layer].milestones[data].toggles)&&(hasMilestone(layer, data))" v-for="toggle in tmp[layer].milestones[data].toggles"><toggle :layer= "layer" :data= "toggle" v-bind:style="tmp[layer].componentStyles.toggle"></toggle>&nbsp;</span></td></tr>
 		`
