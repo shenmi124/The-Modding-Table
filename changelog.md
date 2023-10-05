@@ -1,6 +1,9 @@
 # The Modding Table changelog:
 
-# v3.0.3 = 23/9/20
+# v3.0.3.1 = 5/10/23
+	 - Fix lag
+
+# v3.0.3 = 20/9/23
 	 - Fix subtab
 
 # v3.0.2.11 = 8/8/23

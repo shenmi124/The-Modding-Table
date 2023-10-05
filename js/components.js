@@ -180,8 +180,8 @@ function loadVue() {
 				<span v-if= "tmp[layer].upgrades[data].title && options.ch"><h3 v-html="tmp[layer].upgrades[data].title"></h3><br></span>
 				<span v-if= "tmp[layer].upgrades[data].title && !options.ch"><h3 v-html="tmp[layer].upgrades[data].titleEN"></h3><br></span>
 				<span v-if= "options.ch" v-html="tmp[layer].upgrades[data].description"></span><span v-else v-html="tmp[layer].upgrades[data].descriptionEN"></span>
-				<span v-if="layers[layer].upgrades[data].effectDisplay"><br>{{options.ch?'当前效果':'Currently'}}: <span v-html="run(options.ch?layers[layer].upgrades[data].effectDisplay:(layers[layer].upgrades[data].effectDisplayEN?layers[layer].upgrades[data].effectDisplayEN:layers[layer].upgrades[data].effectDisplay), layers[layer].upgrades[data])"></span></span>
-				<br><br>{{options.ch?'价格':'Cost'}}: {{ formatWhole(tmp[layer].upgrades[data].cost) }} {{(tmp[layer].upgrades[data].currencyDisplayName ? tmp[layer].upgrades[data].currencyDisplayName : (options.ch?tmp[layer].resource:tmp[layer].resourceEN))}}
+				<span v-if="layers[layer].upgrades[data].effectDisplay"><br>{{(options.ch || modInfo.languageMod==false)?'当前效果':'Currently'}}: <span v-html="run((options.ch || modInfo.languageMod==false)?layers[layer].upgrades[data].effectDisplay:(layers[layer].upgrades[data].effectDisplayEN?layers[layer].upgrades[data].effectDisplayEN:layers[layer].upgrades[data].effectDisplay), layers[layer].upgrades[data])"></span></span>
+				<br><br>{{(options.ch || modInfo.languageMod==false)?'价格':'Cost'}}: {{ formatWhole(tmp[layer].upgrades[data].cost) }} {{(tmp[layer].upgrades[data].currencyDisplayName ? tmp[layer].upgrades[data].currencyDisplayName : ((options.ch || modInfo.languageMod==false)?tmp[layer].resource:tmp[layer].resourceEN))}}
 			</span>	
 			</button>
 		`
@@ -216,7 +216,7 @@ function loadVue() {
 	Vue.component('toggle', {
 		props: ['layer', 'data'],
 		template: `
-		<button class="smallUpg can" v-bind:style="{'background-color': tmp[data[0]].color}" v-on:click="toggleAuto(data)">{{player[data[0]][data[1]]?(options.ch?"已开启":"ON"):(options.ch?"已关闭":"OFF")}}</button>
+		<button class="smallUpg can" v-bind:style="{'background-color': tmp[data[0]].color}" v-on:click="toggleAuto(data)">{{player[data[0]][data[1]]?((options.ch || modInfo.languageMod==false)?"已开启":"ON"):((options.ch || modInfo.languageMod==false)?"已关闭":"OFF")}}</button>
 		`
 	})
 
@@ -235,7 +235,7 @@ function loadVue() {
 	Vue.component('main-display', {
 		props: ['layer', 'data'],
 		template: `
-		<div><span v-if="player[layer].points.lt('1e1000')">{{options.ch?"您有":"You have"}} </span><h2 v-bind:style="{'color': tmp[layer].color, 'text-shadow': '0px 0px 10px ' + tmp[layer].color}">{{data ? format(player[layer].points, data) : formatWhole(player[layer].points)}}</h2> {{options.ch?tmp[layer].resource:tmp[layer].resourceEN}}<span v-if="layers[layer].effectDescription">, <span v-html="run(options.ch?layers[layer].effectDescription:layers[layer].effectDescriptionEN, layers[layer])"></span></span><br><br></div>
+		<div><span v-if="player[layer].points.lt('1e1000')">{{(options.ch || modInfo.languageMod==false)?"您有":"You have"}} </span><h2 v-bind:style="{'color': tmp[layer].color, 'text-shadow': '0px 0px 10px ' + tmp[layer].color}">{{data ? format(player[layer].points, data) : formatWhole(player[layer].points)}}</h2> {{(options.ch || modInfo.languageMod==false)?tmp[layer].resource:tmp[layer].resourceEN}}<span v-if="layers[layer].effectDescription">, <span v-html="run((options.ch || modInfo.languageMod==false)?layers[layer].effectDescription:layers[layer].effectDescriptionEN, layers[layer])"></span></span><br><br></div>
 		`
 	})
 
@@ -244,11 +244,11 @@ function loadVue() {
 		props: ['layer'],
 		template: `
 		<div style="margin-top: -13px">
-			<span v-if="tmp[layer].baseAmount"><br>{{options.ch?"您有":"You have"}} {{formatWhole(tmp[layer].baseAmount)}} {{options.ch?tmp[layer].baseResource:tmp[layer].baseResourceEN}}</span>
-			<span v-if="tmp[layer].passiveGeneration"><br>{{options.ch?"您每秒获得":"You are gaining "}} {{format(tmp[layer].resetGain.times(tmp[layer].passiveGeneration))}} {{options.ch?tmp[layer].resource:tmp[layer].resourceEN}}{{options.ch?"":" per second"}}</span>
+			<span v-if="tmp[layer].baseAmount"><br>{{(options.ch || modInfo.languageMod==false)?"您有":"You have"}} {{formatWhole(tmp[layer].baseAmount)}} {{(options.ch || modInfo.languageMod==false)?tmp[layer].baseResource:tmp[layer].baseResourceEN}}</span>
+			<span v-if="tmp[layer].passiveGeneration"><br>{{(options.ch || modInfo.languageMod==false)?"您每秒获得":"You are gaining "}} {{format(tmp[layer].resetGain.times(tmp[layer].passiveGeneration))}} {{(options.ch || modInfo.languageMod==false)?tmp[layer].resource:tmp[layer].resourceEN}}{{(options.ch || modInfo.languageMod==false)?"":" per second"}}</span>
 			<br><br>
-			<span v-if="tmp[layer].showBest">{{options.ch?"您最高拥有":"Your best resource this layer is "}} {{formatWhole(player[layer].best)}} {{options.ch?tmp[layer].resource:tmp[layer].resourceEN}}<br></span>
-			<span v-if="tmp[layer].showTotal">{{options.ch?"您总共拥有":"You have made a total of "}} {{formatWhole(player[layer].total)}} {{options.ch?tmp[layer].resource:tmp[layer].resourceEN}}<br></span>
+			<span v-if="tmp[layer].showBest">{{(options.ch || modInfo.languageMod==false)?"您最高拥有":"Your best resource this layer is "}} {{formatWhole(player[layer].best)}} {{(options.ch || modInfo.languageMod==false)?tmp[layer].resource:tmp[layer].resourceEN}}<br></span>
+			<span v-if="tmp[layer].showTotal">{{(options.ch || modInfo.languageMod==false)?"您总共拥有":"You have made a total of "}} {{formatWhole(player[layer].total)}} {{(options.ch || modInfo.languageMod==false)?tmp[layer].resource:tmp[layer].resourceEN}}<br></span>
 		</div>
 		`
 	})
@@ -276,10 +276,10 @@ function loadVue() {
 			<button v-bind:class="{ buyable: true, tooltipBox: true, can: tmp[layer].buyables[data].canBuy, locked: !tmp[layer].buyables[data].canAfford, bought: player[layer].buyables[data].gte(tmp[layer].buyables[data].purchaseLimit)}"
 			v-bind:style="[tmp[layer].buyables[data].canBuy ? {'background-color': tmp[layer].color} : {}, size ? {'height': size, 'width': size} : {}, tmp[layer].componentStyles.buyable, tmp[layer].buyables[data].style]"
 			v-on:click="buyBuyable(layer, data)" @mousedown="start" @mouseleave="stop" @mouseup="stop" @touchstart="start" @touchend="stop" @touchcancel="stop">
-				<span v-if= "tmp[layer].buyables[data].title"><h2 v-html="options.ch?tmp[layer].buyables[data].title:tmp[layer].buyables[data].titleEN"></h2><br></span>
-				<span v-bind:style="{'white-space': 'pre-line'}" v-html="run(options.ch?layers[layer].buyables[data].display:layers[layer].buyables[data].displayEN, layers[layer].buyables[data])"></span>
+				<span v-if= "tmp[layer].buyables[data].title"><h2 v-html="(options.ch || modInfo.languageMod==false)?tmp[layer].buyables[data].title:tmp[layer].buyables[data].titleEN"></h2><br></span>
+				<span v-bind:style="{'white-space': 'pre-line'}" v-html="run((options.ch || modInfo.languageMod==false)?layers[layer].buyables[data].display:layers[layer].buyables[data].displayEN, layers[layer].buyables[data])"></span>
 				<node-mark :layer='layer' :data='tmp[layer].buyables[data].marked'></node-mark>
-                <tooltip v-if="tmp[layer].buyables[data].tooltip" :text="options.ch?tmp[layer].buyables[data].tooltip:tmp[layer].buyables[data].tooltipEN"></tooltip>
+                <tooltip v-if="tmp[layer].buyables[data].tooltip" :text="(options.ch || modInfo.languageMod==false)?tmp[layer].buyables[data].tooltip:tmp[layer].buyables[data].tooltipEN"></tooltip>
 			</button>
 			<br v-if="(tmp[layer].buyables[data].sellOne !== undefined && !(tmp[layer].buyables[data].canSellOne !== undefined && tmp[layer].buyables[data].canSellOne == false)) || (tmp[layer].buyables[data].sellAll && !(tmp[layer].buyables[data].canSellAll !== undefined && tmp[layer].buyables[data].canSellAll == false))">
 			<sell-one :layer="layer" :data="data" v-bind:style="tmp[layer].componentStyles['sell-one']" v-if="(tmp[layer].buyables[data].sellOne)&& !(tmp[layer].buyables[data].canSellOne !== undefined && tmp[layer].buyables[data].canSellOne == false)"></sell-one>
@@ -456,7 +456,7 @@ function loadVue() {
 		template: `
 		<div v-if="tmp[layer].bars && tmp[layer].bars[data].unlocked" v-bind:style="{'position': 'relative'}"><div v-bind:style="[tmp[layer].bars[data].style, style.dims, {'display': 'table'}]">
 			<div class = "overlayTextContainer barBorder" v-bind:style="[tmp[layer].bars[data].borderStyle, style.dims]">
-				<span class = "overlayText" v-bind:style="[tmp[layer].bars[data].style, tmp[layer].bars[data].textStyle]" v-html="run(options.ch?layers[layer].bars[data].display : layers[layer].bars[data].displayEN, layers[layer].bars[data])"></span>
+				<span class = "overlayText" v-bind:style="[tmp[layer].bars[data].style, tmp[layer].bars[data].textStyle]" v-html="run((options.ch || modInfo.languageMod==false)?layers[layer].bars[data].display : layers[layer].bars[data].displayEN, layers[layer].bars[data])"></span>
 			</div>
 			<div class ="barBG barBorder" v-bind:style="[tmp[layer].bars[data].style, tmp[layer].bars[data].baseStyle, tmp[layer].bars[data].borderStyle,  style.dims]">
 				<div class ="fill" v-bind:style="[tmp[layer].bars[data].style, tmp[layer].bars[data].fillStyle, style.fillDims]"></div>
@@ -487,10 +487,10 @@ function loadVue() {
 		<div v-if="tmp[layer].achievements && tmp[layer].achievements[data]!== undefined && tmp[layer].achievements[data].unlocked" v-bind:class="{ [layer]: true, achievement: true, tooltipBox:true, locked: !hasAchievement(layer, data), bought: hasAchievement(layer, data)}"
 			v-bind:style="achievementStyle(layer, data)">
 			<tooltip :text="
-			(tmp[layer].achievements[data].tooltip == '') ? false : hasAchievement(layer, data) ? (tmp[layer].achievements[data].doneTooltip ? tmp[layer].achievements[data].doneTooltip : (tmp[layer].achievements[data].tooltip ? (options.ch?tmp[layer].achievements[data].tooltip:tmp[layer].achievements[data].tooltipEN) : (options.ch?'已完成!':'Completed!')))
-			: (tmp[layer].achievements[data].goalTooltip ? tmp[layer].achievements[data].goalTooltip : (tmp[layer].achievements[data].tooltip ? (options.ch?tmp[layer].achievements[data].tooltip:tmp[layer].achievements[data].tooltipEN) : (options.ch?'锁定':'Locked')))
+			(tmp[layer].achievements[data].tooltip == '') ? false : hasAchievement(layer, data) ? (tmp[layer].achievements[data].doneTooltip ? tmp[layer].achievements[data].doneTooltip : (tmp[layer].achievements[data].tooltip ? ((options.ch || modInfo.languageMod==false)?tmp[layer].achievements[data].tooltip:tmp[layer].achievements[data].tooltipEN) : ((options.ch || modInfo.languageMod==false)?'已完成!':'Completed!')))
+			: (tmp[layer].achievements[data].goalTooltip ? tmp[layer].achievements[data].goalTooltip : (tmp[layer].achievements[data].tooltip ? ((options.ch || modInfo.languageMod==false)?tmp[layer].achievements[data].tooltip:tmp[layer].achievements[data].tooltipEN) : ((options.ch || modInfo.languageMod==false)?'锁定':'Locked')))
 		"></tooltip>
-			<span v-if= "tmp[layer].achievements[data].name"><br><h3 v-bind:style="tmp[layer].achievements[data].textStyle" v-html="options.ch?tmp[layer].achievements[data].name:tmp[layer].achievements[data].nameEN"></h3><br></span>
+			<span v-if= "tmp[layer].achievements[data].name"><br><h3 v-bind:style="tmp[layer].achievements[data].textStyle" v-html="(options.ch || modInfo.languageMod==false)?tmp[layer].achievements[data].name:tmp[layer].achievements[data].nameEN"></h3><br></span>
 		</div>
 		`
 	})
