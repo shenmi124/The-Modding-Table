@@ -8,6 +8,7 @@ let modInfo = {
 
 	otherLanguageMod: false,// When on, it will ask the player to choose a language at the beginning of the game
 	languageMod: false,// Use when otherLanguageMod is off, default are true -> English, false -> Chinese
+	//It offers a portable way to translate, but it is not recommended
 
 	forceOneTab: false,// Enable Single-Tab Mode ( This feature doen't work fluently as you'd imagine, it's made for expert, and if you open it, it will show 'tree-tab' page everytime you refresh the page ( ps: you can change that at save.js, line 234 ) )
 
