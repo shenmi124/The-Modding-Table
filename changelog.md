@@ -1,5 +1,8 @@
 # The Modding Table changelog:
 
+# v3.0.3.3 = 24/12/23
+	 - Fix some bugs
+
 # v3.0.3.1 = 5/10/23
 	 - Fix lag
 

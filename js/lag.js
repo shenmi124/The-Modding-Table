@@ -27,6 +27,7 @@ addLayer("Language", {
                     player.Language.sure = true
                 }else{
                     options.ch=true
+                    setupModInfo()
                     showTab('none')
                 }
             }
@@ -41,6 +42,7 @@ addLayer("Language", {
                     player.Language.sure = true
                 }else{
                     options.ch=false
+                    setupModInfo()
                     showTab('none')
                 }
             }

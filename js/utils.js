@@ -261,7 +261,7 @@ function updateMilestones(layer) {
 		if (!(hasMilestone(layer, id)) && layers[layer].milestones[id].done()) {
 			player[layer].milestones.push(id)
 			if (layers[layer].milestones[id].onComplete) layers[layer].milestones[id].onComplete()
-			if (tmp[layer].milestonePopups || tmp[layer].milestonePopups === undefined) doPopup("milestone", tmp[layer].milestones[id].requirementDescription, (options.ch || modInfo.languageMod==false)?"获得里程碑!" : "Milestone Gotten!", 3, tmp[layer].color);
+			if (tmp[layer].milestonePopups || tmp[layer].milestonePopups === undefined) doPopup("milestone", (options.ch || modInfo.languageMod==false)?tmp[layer].milestones[id].requirementDescription : tmp[layer].milestones[id].requirementDescriptionEN, (options.ch || modInfo.languageMod==false)?"获得里程碑!" : "Milestone Gotten!", 3, tmp[layer].color);
 			player[layer].lastMilestone = id
 		}
 	}
@@ -273,7 +273,7 @@ function updateAchievements(layer) {
 		if (isPlainObject(layers[layer].achievements[id]) && !(hasAchievement(layer, id)) && layers[layer].achievements[id].done()) {
 			player[layer].achievements.push(id)
 			if (layers[layer].achievements[id].onComplete) layers[layer].achievements[id].onComplete()
-			if (tmp[layer].achievementPopups || tmp[layer].achievementPopups === undefined) doPopup("achievement", tmp[layer].achievements[id].name, (options.ch || modInfo.languageMod==false)?"获得成就!" : "Achievement Gotten!", 3, tmp[layer].color);
+			if (tmp[layer].achievementPopups || tmp[layer].achievementPopups === undefined) doPopup("achievement", (options.ch || modInfo.languageMod==false)?tmp[layer].achievements[id].name : tmp[layer].achievements[id].nameEN, (options.ch || modInfo.languageMod==false)?"获得成就!" : "Achievement Gotten!", 3, tmp[layer].color);
 		}
 	}
 }
