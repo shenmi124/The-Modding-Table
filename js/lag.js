@@ -18,8 +18,8 @@ addLayer("Language", {
     ],
     clickables: {
         11: {
-            display(){return '中文(Chinese)'+(player.Language.sure==true ? '<br><small>你确定吗?<br>再次点击生效<br>请确保你已经阅读过这些!</small>' : '')},
-            displayEN(){return '中文(Chinese)'+(player.Language.sure==true ? '<br><small>你确定吗?<br>再次点击生效<br>请确保你已经阅读过这些!</small>' : '')},
+            display(){return '<h2>中文(Chinese)</h2>'+(player.Language.sure==true ? '<br>你确定吗?<br>再次点击生效<br>请确保你已经阅读过这些!' : '')},
+            displayEN(){return '<h2>中文(Chinese)</h2>'+(player.Language.sure==true ? '<br>你确定吗?<br>再次点击生效<br>请确保你已经阅读过这些!' : '')},
             canClick(){return true},
 			style() {return {'width': "160px", "min-width": "160px", 'height': "160px", "border-radius": "5%", "margin-right": "20px",}},
             onClick(){
@@ -33,8 +33,8 @@ addLayer("Language", {
             }
         },  
         12: {
-            display(){return 'English(英文)'+(player.Language.sure==true ? "<br><small>Are you sure?<br>Click again to active<br>Make sure you've read this!</small>" : '')},
-            displayEN(){return 'English(英文)'+(player.Language.sure==true ? "<br><small>Are you sure?<br>Click again to active<br>Make sure you've read this!</small>" : '')},
+            display(){return '<h2>English(英文)</h2>'+(player.Language.sure==true ? "<br>Are you sure?<br>Click again to active<br>Make sure you've read this!" : '')},
+            displayEN(){return '<h2>English(英文)</h2>'+(player.Language.sure==true ? "<br>Are you sure?<br>Click again to active<br>Make sure you've read this!" : '')},
             canClick(){return true},
 			style() {return {'width': "160px", "min-width": "160px", 'height': "160px", "border-radius": "5%", "margin-right": "20px",}},
             onClick(){
