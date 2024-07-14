@@ -85,16 +85,6 @@ var systemComponents = {
 			}"
 			v-bind:style="constructNodeStyle(layer)">
 			<span v-html="(abb !== '' && tmp[layer].image === undefined) ? abb : '&nbsp;'"></span>
-			<tooltip
-      v-if="tmp[layer].tooltip != ''"
-			:text="(tmp[layer].isLayer) ? (
-				player[layer].unlocked ? (tmp[layer].tooltip ? tmp[layer].tooltip : formatWhole(player[layer].points) + ' ' + ((options.ch || modInfo.languageMod==false)?tmp[layer].resource:tmp[layer].resourceEN))
-				: (tmp[layer].tooltipLocked ? (options.ch || modInfo.languageMod==false)? tmp[layer].tooltipLocked : tmp[layer].tooltipLockedEN : ((options.ch || modInfo.languageMod==false)?'达到 ':'Reach ') + formatWhole(tmp[layer].requires) + ' ' + ((options.ch || modInfo.languageMod==false)?tmp[layer].baseResource:tmp[layer].baseResourceEN) + ((options.ch || modInfo.languageMod==false)?' 以解锁 (你有 ':' to unlock (You have ') + formatWhole(tmp[layer].baseAmount) + ' ' + ((options.ch || modInfo.languageMod==false)?tmp[layer].baseResource:tmp[layer].baseResourceEN) + ')')
-			)
-			: (
-				tmp[layer].canClick ? (tmp[layer].tooltip ? tmp[layer].tooltip : 'I am a button!')
-				: (tmp[layer].tooltipLocked ? (options.ch || modInfo.languageMod==false)? tmp[layer].tooltipLocked : tmp[layer].tooltipLockedEN : 'I am a button!')
-			)"></tooltip>
 			<node-mark :layer='layer' :data='tmp[layer].marked'></node-mark></span>
 		</button>
 		`

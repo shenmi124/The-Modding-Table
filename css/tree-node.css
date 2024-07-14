@@ -102,11 +102,6 @@
 	color: black;
     position: relative;
 }
-.notify {
-	transform: scale(1.05, 1.05);
-	border-color: rgba(0, 0, 0, 0.125);
-	box-shadow: var(--hqProperty2a), 0 0 20px #ff0000;
-}
 
 .mark {
 	position: relative;

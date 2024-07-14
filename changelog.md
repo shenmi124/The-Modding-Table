@@ -1,5 +1,10 @@
 # The Modding Table changelog:
 
+# v3.0.4.1 = 14/7/24
+	 - Fix milestone can't use.
+	 - Fix TreeButton will be red when have upgrades can bought.
+	 - Settings will be at the top in default
+
 # v3.0.3.3 = 24/12/23
 	 - Fix some bugs
 

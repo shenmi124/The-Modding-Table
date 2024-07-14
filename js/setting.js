@@ -16,8 +16,8 @@ function layerDisplayTotal(id){
 
 addLayer("OtherTab small", {
     name: "AllLayer",
-    position: -1,
-    row: 999,
+    position: 0,
+    row: 0,
     symbol() {return (options.ch || modInfo.languageMod==false) ? '↓ 其他页面 ↓' : '↓ Other Tab ↓'},
     symbolEN() {return (options.ch || modInfo.languageMod==false) ? '↓ 其他页面 ↓' : '↓ Other Tab ↓'},
     nodeStyle: {"font-size": "15px", "text-center": "center", "height": "30px"},
@@ -37,8 +37,8 @@ addLayer("OtherTab small", {
 
 addLayer("Setting", {
     name: "Setting",
-    position: 0,
-    row: 999,
+    position: 1,
+    row: 0,
     symbol() {return (options.ch || modInfo.languageMod==false) ? '设置' : 'Setting'},
     symbolEN() {return (options.ch || modInfo.languageMod==false) ? '设置' : 'Setting'},
     startData() { return {
@@ -57,7 +57,7 @@ addLayer("Setting", {
 addLayer("Information", {
     name: "Information",
     position: 2,
-    row: 999,
+    row: 0,
     symbol() {return (options.ch || modInfo.languageMod==false) ? '信息' : 'Information'},
     symbolEN() {return (options.ch || modInfo.languageMod==false) ? '信息' : 'Information'},
     startData() { return {
@@ -76,7 +76,7 @@ addLayer("Information", {
 addLayer("Changelog", {
     name: "Changelog",
     position: 3,
-    row: 999,
+    row: 0,
     symbol() {return (options.ch || modInfo.languageMod==false) ? '更新日志' : 'Changelog'},
     symbolEN() {return (options.ch || modInfo.languageMod==false) ? '更新日志' : 'Changelog'},
     startData() { return {

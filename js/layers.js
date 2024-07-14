@@ -1,7 +1,7 @@
 addLayer("1layer small", {// Add a * small* to generate a slightly different layer
     name: "sideLayer1",
     position: -1,
-    row: 0,
+    row: 1,
     symbol() {return (options.ch || modInfo.languageMod==false) ? '↓ 层级 1 ↓' : '↓ layer 1 ↓'},
     symbolEN() {return (options.ch || modInfo.languageMod==false) ? '↓ 层级 1 ↓' : '↓ layer 1 ↓'},
     nodeStyle: {"font-size": "15px", "text-center": "center", "height": "30px"},
@@ -44,7 +44,15 @@ addLayer("p", {
     gainExp() { // Calculate the exponent on main currency from bonuses
         return new Decimal(1)
     },
-    row: 0, // Row the layer is in on the tree (0 is the first row)
+    upgrades: {
+        11: {
+            title: "00 开始",
+            description: "每秒获得1升级点",
+            cost:function(){return new Decimal("0")},
+            unlocked(){return true}
+        },
+    },
+    row: 1, // Row the layer is in on the tree (0 is the first row)
     hotkeys: [
         {key: "p", description: "P: Reset for prestige points", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
