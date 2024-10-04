@@ -270,7 +270,7 @@ function loadVue() {
 	})
 
 	Vue.component('buyable', {
-		props: ['layer', 'data', 'size'],
+		props: ['layer', 'data'],
 		template: `
 		<div v-if="tmp[layer].buyables && tmp[layer].buyables[data]!== undefined && tmp[layer].buyables[data].unlocked" style="display: grid">
 			<button v-bind:class="{ buyable: true, tooltipBox: true, can: tmp[layer].buyables[data].canBuy, locked: !tmp[layer].buyables[data].canAfford, bought: player[layer].buyables[data].gte(tmp[layer].buyables[data].purchaseLimit)}"
@@ -333,7 +333,7 @@ function loadVue() {
 	Vue.component('clickable', {
 		props: ['layer', 'data'],
 		template: `
-		<div 
+		<button 
 			v-if="tmp[layer].clickables && tmp[layer].clickables[data]!== undefined && tmp[layer].clickables[data].unlocked" 
 			v-bind:class="{ upg: true, tooltipBox: true, can: tmp[layer].clickables[data].canClick, locked: !tmp[layer].clickables[data].canClick, metaClick: tmp[layer].clickables[data].metaClick}"
 			v-bind:style="[tmp[layer].clickables[data].canClick ? {'background-color': tmp[layer].color} : {}, tmp[layer].clickables[data].style]"
@@ -343,7 +343,7 @@ function loadVue() {
 			<node-mark :layer='layer' :data='tmp[layer].clickables[data].marked'></node-mark>
 			<tooltip v-if="tmp[layer].clickables[data].tooltip" :text="tmp[layer].clickables[data].tooltip"></tooltip>
 
-		</div>
+		</button>
 		`,
 		data() { return { interval: false, time: 0,}},
 		methods: {

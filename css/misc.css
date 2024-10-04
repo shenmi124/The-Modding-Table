@@ -107,10 +107,10 @@
 
 .vlBlock {
     width: calc(100% - 20px);
-    height: 12px;
-    margin-top: 71px;
+    height: 16px;
+    margin-top: 75px;
     position: absolute;
-    background-color: #0F0F13;
+    background-color: var(--background);
     transform: translateY(-2px);
 }
 

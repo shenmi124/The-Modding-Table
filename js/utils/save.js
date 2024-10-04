@@ -2,8 +2,8 @@
 function save(force) {
 	NaNcheck(player)
 	if (NaNalert && !force) return
-	localStorage.setItem(modInfo.id, btoa(unescape(encodeURIComponent(JSON.stringify(player)))));
-	localStorage.setItem(modInfo.id+"_options", btoa(unescape(encodeURIComponent(JSON.stringify(options)))));
+	localStorage.setItem(modInfo.id, LZString.compressToBase64(JSON.stringify(player)));
+	localStorage.setItem(modInfo.id+"_options", LZString.compressToBase64(JSON.stringify(options)));
 
 }
 function startPlayerBase() {
@@ -192,7 +192,7 @@ function load() {
 		options = getStartOptions();
 	}
 	else {
-		player = Object.assign(getStartPlayer(), JSON.parse(decodeURIComponent(escape(atob(get)))));
+		player = Object.assign(getStartPlayer(), JSON.parse(LZString.decompressFromBase64(get)));
 		fixSave();
 		loadOptions();
 	}
@@ -233,7 +233,7 @@ function load() {
 
 	if(modInfo.forceOneTab==true){
 		options.forceOneTab = true
-		showTab(modInfo.showTab)
+		showTab('tree-tab')
 	}else{
 		options.forceOneTab = false
 	}
@@ -244,7 +244,7 @@ function load() {
 function loadOptions() {
 	let get2 = localStorage.getItem(modInfo.id+"_options");
 	if (get2) 
-		options = Object.assign(getStartOptions(), JSON.parse(decodeURIComponent(escape(atob(get2)))));
+		options = Object.assign(getStartOptions(), JSON.parse(LZString.decompressFromBase64(get2)));
 	else 
 		options = getStartOptions()
 	if (themes.indexOf(options.theme) < 0) theme = "default"
@@ -284,7 +284,7 @@ function NaNcheck(data) {
 }
 function exportSave() {
 	//if (NaNalert) return
-	let str = btoa(JSON.stringify(player));
+	let str = LZString.compressToBase64(JSON.stringify(player));
 
 	const el = document.createElement("textarea");
 	el.value = str;
@@ -298,7 +298,7 @@ function importSave(imported = undefined, forced = false) {
 	if (imported === undefined)
 		imported = prompt("Paste your save here");
 	try {
-		tempPlr = Object.assign(getStartPlayer(), JSON.parse(atob(imported)));
+		tempPlr = Object.assign(getStartPlayer(), JSON.parse(LZString.decompressFromBase64(imported)));
 		if (tempPlr.versionType != modInfo.id && !forced && !confirm("This save appears to be for a different mod! Are you sure you want to import?")) // Wrong save (use "Forced" to force it to accept.)
 			return;
 		player = tempPlr;

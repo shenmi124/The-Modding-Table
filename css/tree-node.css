@@ -8,7 +8,7 @@
 	box-shadow: var(--hqProperty2a), var(--hqProperty2b);
 	text-align: left;
 	font-size: var(--tabFont);
-	font-family: "Courier New", "Courier Prime", "Lucida Console",cursive, monospace;
+	font-family: cursive, "Courier New", "Courier Prime", "Lucida Console", monospace;
 	font-weight: bold;
 	color: rgba(0, 0, 0, 0.5);
 	text-shadow: var(--hqProperty3);
@@ -32,7 +32,7 @@
 	box-shadow: var(--hqProperty2a), var(--hqProperty2b);
 	text-align: center;
 	font-size: var(--tabFont);
-	font-family: "Courier New", "Courier Prime", "Lucida Console",cursive,monospace;
+	font-family: cursive, "Courier New", "Courier Prime", "Lucida Console", monospace;
 	font-weight: bold;
 	color: rgba(0, 0, 0, 0.5);
 	text-shadow: var(--hqProperty3);
@@ -51,7 +51,7 @@
 	border-color: rgba(0, 0, 0, 0.125);
 	box-shadow: var(--hqProperty2a), var(--hqProperty2b);
 	font-size: 40px;
-	font-family: "Courier New", "Courier Prime", "Lucida Console",cursive, monospace;
+	font-family: cursive, "Courier New", "Courier Prime", "Lucida Console", monospace;
 	color: rgba(0, 0, 0, 0.5);
 	text-shadow: var(--hqProperty3);
 	padding: 0;
