@@ -1,13 +1,13 @@
-addLayer("1layer small", {// Add a * small* to generate a slightly different layer
+addLayer("1layer", {
     name: "sideLayer1",
     position: -1,
     row: 1,
     symbol() {return (options.ch || modInfo.languageMod==false) ? '↓ 层级 1 ↓' : '↓ layer 1 ↓'},
     symbolEN() {return (options.ch || modInfo.languageMod==false) ? '↓ 层级 1 ↓' : '↓ layer 1 ↓'},
-    nodeStyle: {"font-size": "15px", "text-center": "center", "height": "30px"},
+    small: true,// Set true to generate a slightly different layer
+    nodeStyle: {"font-size": "15px", "height": "30px"},// Change layer button' style
     startData() { return {
         unlocked: true,
-        small: true,
         points: new Decimal(0),// This actually does nothing, but you have to write this. (Unless you want add something in this layer. #Todo, might change that later.)
     }},
     color: "#fefefe",

@@ -1,5 +1,9 @@
 # The Modding Table changelog:
 
+# v3.0.5.2 = 19/10/24
+	 - Fixed buyable can't to use
+	 - Changed small layer's usage
+
 # v3.0.5.0 = 4/10/24
 	 - Fixed display about clickables.
 	 - Fixed microtabs has a styling error in some cases.
