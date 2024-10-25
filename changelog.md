@@ -1,5 +1,8 @@
 # The Modding Table changelog:
 
+# v3.0.5.3 = 25/10/24
+	 - Fixed a bug.
+
 # v3.0.5.2 = 19/10/24
 	 - Fixed buyable can't to use
 	 - Changed small layer's usage
