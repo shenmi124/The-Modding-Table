@@ -44,7 +44,7 @@ addLayer("p", {
     gainExp() { // Calculate the exponent on main currency from bonuses
         return new Decimal(1)
     },
-    buyables: {
+    upgrades: {
         11: {
             title: "00 开始",
             description: "每秒获得1升级点",
