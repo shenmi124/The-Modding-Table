@@ -6,6 +6,10 @@ function getActiveClass(layer){
 	$('#'+layer).addClass('active')
 }
 
+function geti18n(){
+	return options.ch || modInfo.languageMod==false
+}
+
 var systemComponents = {
 	'tab-buttons': {
 		props: ['layer', 'data', 'name'],
@@ -27,7 +31,7 @@ var systemComponents = {
 						player.subtabs[layer][name] = tab
 						updateTabFormats()
 						needCanvasUpdate = true
-					}">{{tab}}</button>
+					}">{{(geti18n()?data[tab].name:data[tab].nameI18N) ?? tab}}</button>
 			</div>
 		`
 	},
@@ -135,34 +139,34 @@ var systemComponents = {
     'info-tab': {
         template: `
         <div><br><br><br>
-        <h1>{{(options.ch || modInfo.languageMod==false)?modInfo.name:modInfo.nameEN}}</h1>
+        <h1>{{geti18n()?modInfo.name:modInfo.nameI18N}}</h1>
         <br><br><br>
 
-        <h2>{{ (options.ch || modInfo.languageMod==false)?"参与人员":"Authors" }}:</h2><br><br>
+        <h2>{{ geti18n()?"参与人员":"Authors" }}:</h2><br><br>
 		<div style="border: 3px solid #888; width:300px; height:30px; margin-top: 8px; padding:15px; border-radius: 5px; display: inline-table">
-			<h3>{{ (options.ch || modInfo.languageMod==false)?"本模组作者":"Mod Author" }}:</h3><br>
+			<h3>{{ geti18n()?"本模组作者":"Mod Author" }}:</h3><br>
 			{{ modInfo.author }}<br><br>
-			<h6 style="color:#aaa">({{ (options.ch || modInfo.languageMod==false)?"本Mod基于Shinwmyste的The Modding Table制作":"Based On Shinwmyste\'s The Modding Table" }})</h6>
+			<h6 style="color:#aaa">({{ geti18n()?"本Mod基于Shinwmyste的The Modding Table制作":"Based On Shinwmyste\'s The Modding Table" }})</h6>
 		</div>
 		<div style="border: 3px solid #888; width:300px; height:30px; margin-top: 8px; padding:15px; border-radius: 5px; display: inline-table">
-			<h3>{{ (options.ch || modInfo.languageMod==false)?"模组页主要作者":"The Modding Table Author" }}:</h3><br>
-			Shinwmyste<br><br><h6 style="color:#aaa">({{ (options.ch || modInfo.languageMod==false)?"制作":"Developed" }} The Modding Tree <a v-bind:href="'https://github.com/shenmi124/The-Modding-Table/blob/main/changelog.md'" target="_blank" class="link" v-bind:style = "{'font-size': '10px', 'display': 'inline'}">{{TMT_VERSION.newtmtNum}}</a>)</h6>
+			<h3>{{ geti18n()?"模组页主要作者":"The Modding Table Author" }}:</h3><br>
+			Shinwmyste<br><br><h6 style="color:#aaa">({{ geti18n()?"制作":"Developed" }} The Modding Tree <a v-bind:href="'https://github.com/shenmi124/The-Modding-Table/blob/main/changelog.md'" target="_blank" class="link" v-bind:style = "{'font-size': '10px', 'display': 'inline'}">{{TMT_VERSION.newtmtNum}}</a>)</h6>
 		</div>
 		<div style="border: 3px solid #888; width:300px; height:30px; margin-top: 8px; padding:15px; border-radius: 5px; display: inline-table">
-			<h3>{{ (options.ch || modInfo.languageMod==false)?"模组页主要帮助者":"The Modding Table Main Helper" }}:</h3><br>
+			<h3>{{ geti18n()?"模组页主要帮助者":"The Modding Table Main Helper" }}:</h3><br>
 			QwQe308<br><br>
-			<h6 style="color:#aaa">({{ (options.ch || modInfo.languageMod==false)?"一些零碎的改动":"Made Some Minor Changes" }})</h6>
+			<h6 style="color:#aaa">({{ geti18n()?"一些零碎的改动":"Made Some Minor Changes" }})</h6>
 		</div>
 		<div style="border: 3px solid #888; width:300px; height:30px; margin-top: 8px; padding:15px; border-radius: 5px; display: inline-table">
-			<h3>{{ (options.ch || modInfo.languageMod==false)?"模板支持":"Original TMT Author" }}:</h3><br>
+			<h3>{{ geti18n()?"模板支持":"Original TMT Author" }}:</h3><br>
 			Acamaeda<br><br>
 			<h6 style="color:#aaa">(The Modding Tree <a v-bind:href="'https://github.com/Acamaeda/The-Modding-Tree/blob/master/changelog.md'" target="_blank" class="link" v-bind:style = "{'font-size': '10px', 'display': 'inline'}">{{TMT_VERSION.tmtNum}}</a>)</h6>
 		</div>
 		<br><br><br><br>
 
-        <h2>{{ (options.ch || modInfo.languageMod==false)?"统计数据":"Statistics" }}:</h2><br><br>
+        <h2>{{ geti18n()?"统计数据":"Statistics" }}:</h2><br><br>
 		<div style="border: 3px solid #888; width:300px; height:30px; margin-top: 8px; padding:15px; border-radius: 5px; display: inline-table">
-			<h3>{{ (options.ch || modInfo.languageMod==false)?"游戏时长":"Game Time" }}:</h3><br>
+			<h3>{{ geti18n()?"游戏时长":"Game Time" }}:</h3><br>
 			{{ formatTime(player.timePlayed) }}<br><br>
 		</div>
 		<div style="border: 3px solid #888; width:300px; height:30px; margin-top: 8px; padding:15px; border-radius: 5px; display: inline-table">
@@ -172,26 +176,26 @@ var systemComponents = {
 
 		<br><br><br><br>
 		
-        <h2>{{ (options.ch || modInfo.languageMod==false)?"其他页面":"Other Pages" }}:</h2><br><br>
+        <h2>{{ geti18n()?"其他页面":"Other Pages" }}:</h2><br><br>
 		<div style="border: 3px solid #888; width:300px; height:30px; margin-top: 8px; padding:15px; border-radius: 5px; display: inline-table">
-			<h3>{{ (options.ch || modInfo.languageMod==false)?"Shinwmyste的Discord":"Shinwmyste's Discord" }}:</h3><br>
-			<a class="link" href="https://discord.gg/DTJYvatRQA" target="_blank">{{ (options.ch || modInfo.languageMod==false)?"点击跳转":"Click Here" }}</a><br>
-			<h6 style="color:#aaa">({{ (options.ch || modInfo.languageMod==false)?"快点来,非常好玩":"Enjoy Yourself There!" }})</h6>
+			<h3>{{ geti18n()?"Shinwmyste的Discord":"Shinwmyste's Discord" }}:</h3><br>
+			<a class="link" href="https://discord.gg/DTJYvatRQA" target="_blank">{{ geti18n()?"点击跳转":"Click Here" }}</a><br>
+			<h6 style="color:#aaa">({{ geti18n()?"快点来,非常好玩":"Enjoy Yourself There!" }})</h6>
 		</div>
 		<div style="border: 3px solid #888; width:300px; height:30px; margin-top: 8px; padding:15px; border-radius: 5px; display: inline-table">
-			<h3>{{ (options.ch || modInfo.languageMod==false)?"捐助页面":"Donate Page" }}:</h3><br>
-			<a class="link" href="https://afdian.net/@Mysterious124" target="_blank">{{ (options.ch || modInfo.languageMod==false)?"点击跳转":"Click Here" }}</a><br>
+			<h3>{{ geti18n()?"捐助页面":"Donate Page" }}:</h3><br>
+			<a class="link" href="https://afdian.net/@Mysterious124" target="_blank">{{ geti18n()?"点击跳转":"Click Here" }}</a><br>
 			<h6 style="color:#aaa">($_$)</h6>
 		</div>
 		<div style="border: 3px solid #888; width:300px; height:30px; margin-top: 8px; padding:15px; border-radius: 5px; display: inline-table">
-			<h3>{{ (options.ch || modInfo.languageMod==false)?"更新日志":"Changelog" }}:</h3><br>
-			<a class="link" onclick="showTab('changelog-tab');getActiveClass('Changelog')">{{ (options.ch || modInfo.languageMod==false)?"点击跳转":"Click Here" }}</a><br>
-			<h6 style="color:#aaa">({{ (options.ch || modInfo.languageMod==false)?"其实也可以点右上角的版本号":"The Top-Right Version Button Matters" }})</h6>
+			<h3>{{ geti18n()?"更新日志":"Changelog" }}:</h3><br>
+			<a class="link" onclick="showTab('changelog-tab');getActiveClass('Changelog')">{{ geti18n()?"点击跳转":"Click Here" }}</a><br>
+			<h6 style="color:#aaa">({{ geti18n()?"其实也可以点右上角的版本号":"The Top-Right Version Button Matters" }})</h6>
 		</div>
 		<div style="border: 3px solid #888; width:300px; height:30px; margin-top: 8px; padding:15px; border-radius: 5px; display: inline-table">
-			<h3>{{ (options.ch || modInfo.languageMod==false)?"模组树Discord":"The Modding Tree Discord" }}:</h3><br>
-			<a class="link" href="https://discord.gg/F3xveHV" target="_blank">{{ (options.ch || modInfo.languageMod==false)?"点击跳转":"Click Here" }}</a><br>
-			<h6 style="color:#aaa">({{ (options.ch || modInfo.languageMod==false)?"就是这些":"That\'s all" }})</h6>
+			<h3>{{ geti18n()?"模组树Discord":"The Modding Tree Discord" }}:</h3><br>
+			<a class="link" href="https://discord.gg/F3xveHV" target="_blank">{{ geti18n()?"点击跳转":"Click Here" }}</a><br>
+			<h6 style="color:#aaa">({{ geti18n()?"就是这些":"That\'s all" }})</h6>
 		</div>
     `
     },
@@ -200,29 +204,29 @@ var systemComponents = {
         template: ` 
         <table><br><br><br><br><br><br>
             <tr>
-				<td><button class="opt" onclick="save()">{{(options.ch || modInfo.languageMod==false)?'本地存档' :'Save'}}</button></td>
-                <td><button class="opt" onclick="toggleOpt('autosave')">{{(options.ch || modInfo.languageMod==false)?'自动存档' :'AutoSave'}}: {{ options.autosave?((options.ch || modInfo.languageMod==false)?"已开启":"ON"):((options.ch || modInfo.languageMod==false)?"已关闭":"OFF") }}</button></td>
-                <td><button class="opt" onclick="hardReset()">{{(options.ch || modInfo.languageMod==false)?'硬重置(删除存档)' :'HardReset'}}</button></td>
-				<td><button class="opt" onclick="exportSave()">{{(options.ch || modInfo.languageMod==false)?'导出存档(复制到黏贴板)' :'Export'}}</button></td>
-				<td><button class="opt" onclick="importSave()">{{(options.ch || modInfo.languageMod==false)?'导入存档':'Import'}}</button></td>
+				<td><button class="opt" onclick="save()">{{geti18n()?'本地存档' :'Save'}}</button></td>
+                <td><button class="opt" onclick="toggleOpt('autosave')">{{geti18n()?'自动存档' :'AutoSave'}}: {{ options.autosave?(geti18n()?"已开启":"ON"):(geti18n()?"已关闭":"OFF") }}</button></td>
+                <td><button class="opt" onclick="hardReset()">{{geti18n()?'硬重置(删除存档)' :'HardReset'}}</button></td>
+				<td><button class="opt" onclick="exportSave()">{{geti18n()?'导出存档(复制到黏贴板)' :'Export'}}</button></td>
+				<td><button class="opt" onclick="importSave()">{{geti18n()?'导入存档':'Import'}}</button></td>
 			</tr><br>
 			<tr>
-                <td><button class="opt" onclick="toggleOpt('offlineProd')">{{(options.ch || modInfo.languageMod==false)?'离线进度' :'Offline Prod'}}: {{ options.offlineProd?((options.ch || modInfo.languageMod==false)?"已开启":"ON"):((options.ch || modInfo.languageMod==false)?"已关闭":"OFF") }}</button></td>
+                <td><button class="opt" onclick="toggleOpt('offlineProd')">{{geti18n()?'离线进度' :'Offline Prod'}}: {{ options.offlineProd?(geti18n()?"已开启":"ON"):(geti18n()?"已关闭":"OFF") }}</button></td>
             </tr><br>
             <tr>
-                <td><button class="opt" onclick="toggleOpt('hideChallenges')">{{(options.ch || modInfo.languageMod==false)?'已完成挑战':'Completed Challenges'}}: {{ options.hideChallenges?((options.ch || modInfo.languageMod==false)?"隐藏":"HIDDEN"):((options.ch || modInfo.languageMod==false)?"显示":"SHOWN") }}</button></td>
-                <td><button class="opt" onclick="adjustMSDisp()">{{(options.ch || modInfo.languageMod==false)?'显示里程碑':'Show Milestones'}}: {{(options.ch || modInfo.languageMod==false)? MS_DISPLAYS[MS_SETTINGS.indexOf(options.msDisplay)] : MS_DISPLAYS_EN[MS_SETTINGS.indexOf(options.msDisplay)]}}</button></td>
+                <td><button class="opt" onclick="toggleOpt('hideChallenges')">{{geti18n()?'已完成挑战':'Completed Challenges'}}: {{ options.hideChallenges?(geti18n()?"隐藏":"HIDDI18N"):(geti18n()?"显示":"SHOWN") }}</button></td>
+                <td><button class="opt" onclick="adjustMSDisp()">{{geti18n()?'显示里程碑':'Show Milestones'}}: {{geti18n()? MS_DISPLAYS[MS_SETTINGS.indexOf(options.msDisplay)] : MS_DISPLAYS_I18N[MS_SETTINGS.indexOf(options.msDisplay)]}}</button></td>
 			</tr> <br>
 			<tr>
-                <td><button class="opt" onclick="toggleOpt('mouse')">{{(options.ch || modInfo.languageMod==false)?'优化鼠标操作' :'Optimized mouse operation'}}: {{ options.mouse ? ((options.ch || modInfo.languageMod==false)?"已开启":"ON"):((options.ch || modInfo.languageMod==false)?"已关闭":"OFF")}}</button></td>
+                <td><button class="opt" onclick="toggleOpt('mouse')">{{geti18n()?'优化鼠标操作' :'Optimized mouse operation'}}: {{ options.mouse ? (geti18n()?"已开启":"ON"):(geti18n()?"已关闭":"OFF")}}</button></td>
 			</tr><br>
 			<tr>
 				<td><button class="opt" v-if="modInfo.otherLanguageMod==true" onclick="
                 options.ch=!options.ch;
-                needsCanvasUpdate = true; document.title = ((options.ch || modInfo.languageMod==false)? modInfo.name : modInfo.nameEN);
-                VERSION.withName = VERSION.withoutName + (VERSION.name ? ': ' + ((options.ch || modInfo.languageMod==false)? VERSION.name :VERSION.nameEN) : '');
+                needsCanvasUpdate = true; document.title = (geti18n()? modInfo.name : modInfo.nameI18N);
+                VERSION.withName = VERSION.withoutName + (VERSION.name ? ': ' + (geti18n()? VERSION.name :VERSION.nameI18N) : '');
 				setupModInfo();
-                ">{{(options.ch || modInfo.languageMod==false)?'语言':'Language'}}: {{ (options.ch || modInfo.languageMod==false)?"中文(Chinese)":"英文(English)" }}</button></td>
+                ">{{geti18n()?'语言':'Language'}}: {{ geti18n()?"中文(Chinese)":"英文(English)" }}</button></td>
 			</tr>
         </table>`
     },

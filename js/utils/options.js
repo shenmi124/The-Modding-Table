@@ -52,7 +52,7 @@ function toggleAuto(toggle) {
 }
 
 const MS_DISPLAYS = ["所有", "最后一个, 自动化, 未完成", "自动化, 未完成", "未完成", "无"];
-const MS_DISPLAYS_EN = ["ALL", "LAST, AUTO, INCOMPLETE", "AUTOMATION, INCOMPLETE", "INCOMPLETE", "NONE"];
+const MS_DISPLAYS_I18N = ["ALL", "LAST, AUTO, INCOMPLETE", "AUTOMATION, INCOMPLETE", "INCOMPLETE", "NONE"];
 
 const MS_SETTINGS = ["always", "last", "automation", "incomplete", "never"];
 

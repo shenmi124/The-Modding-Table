@@ -1,5 +1,11 @@
 # The Modding Table changelog:
 
+# v3.0.7.1 = 9/11/24
+	 - Fixed milliones can't to use.
+	 - Now nameEN -> nameI18N.
+	 - Added a optional to microtabs.
+		- name(and nameI18N): it can change the microtabs' name, and won't make it's ID change.
+
 # v3.0.6.0 = 9/11/24
      - More Docs.
 	 - Changed the default style of microtabs.
@@ -16,23 +22,23 @@
 	 - Fixed display about clickables.
 	 - Fixed microtabs has a styling error in some cases.
 	 - The default font has been changed.
-	 - Changed the save and encode mod
-		- Allow other characters and languages (e.g. Chinese) to exist in the save (microtabs)
-	    - But this results in the old (moddel) version can't being migrated to the new version
+	 - Changed the save and encode mod.
+		- Allow other characters and languages (e.g. Chinese) to exist in the save (microtabs).
+	    - But this results in the old (moddel) version can't being migrated to the new version.
 
 # v3.0.4.1 = 14/7/24
 	 - Fixed milestone can't use.
 	 - Fixed TreeButton will be red when have upgrades can bought.
-	 - Settings will be at the top in default
+	 - Settings will be at the top in default.
 
 # v3.0.3.3 = 24/12/23
-	 - Fixed some bugs
+	 - Fixed some bugs.
 
 # v3.0.3.1 = 5/10/23
-	 - Fixed lag
+	 - Fixed lag.
 
 # v3.0.3 = 20/9/23
-	 - Fixed subtab
+	 - Fixed subtab.
 
 # v3.0.2.11 = 8/8/23
 	 - Fixed two bugs.

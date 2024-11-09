@@ -3,7 +3,7 @@ addLayer("1layer", {
     position: -1,
     row: 1,
     symbol() {return (options.ch || modInfo.languageMod==false) ? '↓ 层级 1 ↓' : '↓ layer 1 ↓'},
-    symbolEN() {return (options.ch || modInfo.languageMod==false) ? '↓ 层级 1 ↓' : '↓ layer 1 ↓'},
+    symbolI18N() {return (options.ch || modInfo.languageMod==false) ? '↓ 层级 1 ↓' : '↓ layer 1 ↓'},
     small: true,// Set true to generate a slightly different layer
     nodeStyle: {"font-size": "15px", "height": "30px"},// Change layer button' style
     startData() { return {
@@ -22,7 +22,7 @@ addLayer("1layer", {
 addLayer("p", {
     name: "prestige", // This is optional, only used in a few places, If absent it just uses the layer id
     symbol: "Prestige", // This appears on the layer's node. Default is the id with the first letter capitalized
-    symbolEN: "Prestige", // The second name of this appears on the layer's node ( If you open otherLanguageMod )
+    symbolI18N: "Prestige", // The second name of this appears on the layer's node ( If you open otherLanguageMod )
     position: 0, // Horizontal position within a row. By default it uses the layer id and sorts in alphabetical order
     startData() { return {
         unlocked: true,
@@ -31,9 +31,9 @@ addLayer("p", {
     color: "#4BDC13",
     requires: new Decimal(10), // Can be a function that takes requirement increases into account
     resource: "prestige points", // Name of prestige currency
-    resourceEN: "prestige points", // The second name of prestige currency ( If you open otherLanguageMod )
+    resourceI18N: "prestige points", // The second name of prestige currency ( If you open otherLanguageMod )
     baseResource: "points", // Name of resource prestige is based on
-    baseResourceEN: "points", // The second name of resource prestige is based on ( If you open otherLanguageMod )
+    baseResourceI18N: "points", // The second name of resource prestige is based on ( If you open otherLanguageMod )
     baseAmount() {return player.points}, // Get the current amount of baseResource
     type: "normal", // normal: cost to gain currency depends on amount gained. static: cost depends on how much you already have
     exponent: 0.5, // Prestige currency exponent
@@ -58,11 +58,12 @@ addLayer("p", {
     ],
     microtabs:{
         mute1:{
-            "升级":{
+            "tx1":{
+                name(){return '1'},
                 content:[
                 ],
             },
-            "刷屏":{
+            "tx2":{
                 content:[
                 ],
                 unlocked(){return true},

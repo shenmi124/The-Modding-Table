@@ -1,13 +1,13 @@
 let modInfo = {
 	name: "The ??? Table",
-	nameEN: "The ??? Table",// When you open the otherLanguageMod, this is the second language
+	nameI18N: "The ??? Table",// When you open the otherLanguageMod, this is the second language
 	id: "mymod2",
 	author: "nobody",
 	pointsName: "points",
 	modFiles: ["layers.js", "tree.js"],
 
-	otherLanguageMod: false,// When on, it will ask the player to choose a language at the beginning of the game
-	languageMod: false,// Use when otherLanguageMod is off, default are true -> English, false -> Chinese
+	otherLanguageMod: true,// When on, it will ask the player to choose a language at the beginning of the game
+	languageMod: false,// Use when otherLanguageMod is off, false -> normal display, ture -> add i18n at last (etc. namei18n)
 	//It offers a portable way to translate, but it is not recommended
 
 	forceOneTab: false,// Enable Single-Tab Mode ( This feature doen't work fluently as you'd imagine, it's made for expert )
@@ -43,7 +43,7 @@ let VERSION = {
 }
 
 function changelog(){
-	return (options.ch || modInfo.languageMod==false)?`
+	return geti18n()?`
 		<br><br><br><h1>更新日志:</h1><br>(不存在<span style='color: red'><s>剧透警告</s></span>)<br><br>
 		<span style="font-size: 17px;">
 			<h3><s>不,你应该自己写这个</s></h3><br><br>
@@ -61,7 +61,7 @@ function changelog(){
 } 
 
 function winText(){
-	return (options.ch || modInfo.languageMod==false)?`你暂时完成了游戏!`:`Congratulations! You have reached the end and beaten this game, but for now...`
+	return geti18n()?`你暂时完成了游戏!`:`Congratulations! You have reached the end and beaten this game, but for now...`
 }
 
 // If you add new functions anywhere inside of a layer, and those functions have an effect when called, add them here.
@@ -119,7 +119,7 @@ function getPointsDisplay(){
 	}
 	a += '<br>'
 	if(!(options.ch==undefined && modInfo.otherLanguageMod==true)){
-		a += `<span class="overlayThing">${((options.ch || modInfo.languageMod==false)?"你有":"You have")} <h2  class="overlayThing" id="points"> ${format(player.points)}</h2> ${modInfo.pointsName}</span>`
+		a += `<span class="overlayThing">${(geti18n()?"你有":"You have")} <h2  class="overlayThing" id="points"> ${format(player.points)}</h2> ${modInfo.pointsName}</span>`
 		if(canGenPoints()){
 			a += `<br><span class="overlayThing">(`+(tmp.other.oompsMag != 0 ? format(tmp.other.oomps) + " OOM" + (tmp.other.oompsMag < 0 ? "^OOM" : tmp.other.oompsMag > 1 ? "^" + tmp.other.oompsMag : "") + "s" : formatSmall(getPointGen()))+`/sec)</span>`
 		}
