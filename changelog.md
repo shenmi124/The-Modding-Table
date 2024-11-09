@@ -1,7 +1,7 @@
 # The Modding Table changelog:
 
-# v3.0.7.1 = 9/11/24
-	 - Fixed milliones can't to use.
+# v3.0.7.2 = 9/11/24
+	 - Fixed milestone can't to use.
 	 - Now nameEN -> nameI18N.
 	 - Added a optional to microtabs.
 		- name(and nameI18N): it can change the microtabs' name, and won't make it's ID change.
