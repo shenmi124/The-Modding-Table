@@ -6,7 +6,9 @@ node:
 
 Ture node:
  - Subtab cannot be used, but you can still use tabFormat and microtabs
-   - Because for TMTa, tabFormat has a large change, so subtab cannot be used in the change
+   - Because for TMTa, tabFormat has a large change, so subtab cannot be used in the changes
+	- Added a optional to microtabs
+	 - name(and nameI18N): it can change the microtabs name, and wont make its ID change
  - The remaining changes are annotated in the layer.js and mod.js
 
 翻译:
@@ -19,4 +21,6 @@ Ture node:
 真正的Doc:
  - Subtab不能被使用,但是你仍然可以使用tabFormat和microtabs
    - 因为TMTa对tabFormat改动比较大,导致在更新中Subtab失去了其应有的功能
+	- 增加了一个可选项对于microtabs
+	 - name(and nameI18N): 可以修改microtabs的显示名称,同时不会改变其id
  - 其余改动均在layer.js和mod.js标有注释
