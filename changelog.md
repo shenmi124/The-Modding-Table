@@ -1,10 +1,10 @@
 # The Modding Table changelog:
 
 # v3.0.7.2 = 9/11/24
-	 - Fixed milestone can't to use.
-	 - Now nameEN -> nameI18N.
-	 - Added a optional to microtabs.
-		- name(and nameI18N): it can change the microtabs' name, and won't make it's ID change.
+	 -Fixed milestone being unable to use.
+	 - 'anyEN' is renamed to 'anyI18N'.
+	 - Added an option related to microtabs.
+ 	    - name(and nameI18N): It can now change the tab's name without its ID being changed.
 
 # v3.0.6.0 = 9/11/24
      - More Docs.
