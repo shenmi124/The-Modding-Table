@@ -67,7 +67,11 @@ addLayer("p", {
         },
     },
     tabFormat: [
-       ["display-text", function() { return getPointsDisplay() }],"main-display",["microtabs","tab"]
+       ["display-text", function() { return getPointsDisplay() }],
+       "main-display",
+       "prestige-button",
+       "blank",
+       ["microtabs","tab"]
     ],
     layerShown(){return true},
 })
