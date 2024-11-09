@@ -57,21 +57,17 @@ addLayer("p", {
         {key: "p", description: "P: Reset for prestige points", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
     microtabs:{
-        mute1:{
-            "tx1":{
-                name(){return '1'},
+        tab:{
+            "main":{
+                name(){return 'main'}, // Name of tab button
+                nameI18N(){return 'main'}, // The second name of tab button ( If you open otherLanguageMod )
                 content:[
                 ],
-            },
-            "tx2":{
-                content:[
-                ],
-                unlocked(){return true},
-            },
+            }
         },
     },
     tabFormat: [
-       ["display-text", function() { return getPointsDisplay() }],"main-display",["microtabs","mute1"]
+       ["display-text", function() { return getPointsDisplay() }],"main-display",["microtabs","tab"]
     ],
     layerShown(){return true},
 })
