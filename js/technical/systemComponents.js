@@ -17,11 +17,12 @@ var systemComponents = {
 						tabButton: true,
 						notify: subtabShouldNotify(layer, name, tab),
 						resetNotify: subtabResetNotify(layer, name, tab),
-						AcSub: tab==player.subtabs[layer][name]
+						AcSub: tab==player.subtabs[layer][name],
+						[tab]: tab==player.subtabs[layer][name]
 					}"
 					:class=""
 					v-bind:id="[tab]"
-					v-bind:style="[{'border-color': tmp[layer].color}, (data[tab].glowColor && subtabShouldNotify(layer, name, tab) ? {'box-shadow': 'var(--hqProperty2a), 0 0 20px '  + data[tab].glowColor} : {}), tmp[layer].componentStyles['tab-button'], data[tab].buttonStyle]"
+					v-bind:style="[(data[tab].glowColor && subtabShouldNotify(layer, name, tab) ? {'box-shadow': 'var(--hqProperty2a), 0 0 20px '  + data[tab].glowColor} : {}), tmp[layer].componentStyles['tab-button'], data[tab].buttonStyle]"
 					v-on:click="function(){
 						player.subtabs[layer][name] = tab
 						updateTabFormats()

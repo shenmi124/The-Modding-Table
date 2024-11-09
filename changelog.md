@@ -1,5 +1,10 @@
 # The Modding Table changelog:
 
+# v3.0.6.0 = 9/11/24
+     - More Docs.
+	 - Changed the default style of microtabs.
+	 - Now selected microtabs' class will have its own name(id).
+
 # v3.0.5.3 = 25/10/24
 	 - Fixed a bug.
 

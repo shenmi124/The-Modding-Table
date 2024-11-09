@@ -3,7 +3,7 @@ by Shinwmste
 
 An incremental game engine based on The Modding Tree. It still requires programming knowledge, but it's mostly pretty easy things and copy/paste.
 
-[Doc](https://github.com/shenmi124/The-Modding-Table/tree/main/docs) <i>has not yet.</i>(lol)
+[Doc](https://github.com/shenmi124/The-Modding-Table/tree/main/docs)
 
 Thanks<s>(::thinks::)</s>:
 (Original Author)

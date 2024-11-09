@@ -56,5 +56,21 @@ addLayer("p", {
     hotkeys: [
         {key: "p", description: "P: Reset for prestige points", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
+    microtabs:{
+        mute1:{
+            "升级":{
+                content:[
+                ],
+            },
+            "刷屏":{
+                content:[
+                ],
+                unlocked(){return true},
+            },
+        },
+    },
+    tabFormat: [
+       ["display-text", function() { return getPointsDisplay() }],"main-display",["microtabs","mute1"]
+    ],
     layerShown(){return true},
 })
