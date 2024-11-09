@@ -5,7 +5,7 @@ An incremental game engine based on The Modding Tree. It still requires programm
 
 [Doc](https://github.com/shenmi124/The-Modding-Table/tree/main/docs)
 
-Thanks<s>(::thinks::)</s>:)
+Thanks<s>(::thinks::)</s>:
 <br>
 (Original Author)
 <br>
