@@ -19,10 +19,10 @@ let modInfo = {
 
 var colors = {
 	button: {
-		width: '253px',//UI Button
-		height: '40px',//UI Button
-		font: '30px',//UI Button
-		border: '3px'//UI Button
+		width: '253px',// Table Button
+		height: '40px',// Table Button
+		font: '25px',// Table Button
+		border: '3px'// Table Button
 	},
 	default: {
 		1: "#ffffff",//Branch color 1

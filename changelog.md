@@ -1,5 +1,10 @@
 # The Modding Table changelog:
 
+# v3.0.8.2 = 11/11/24
+	 - Fixed display issues related to milestones.
+	 - Changed the default style of tablebutton.
+	 - Changed the default style of achievements.
+
 # v3.0.7.2 = 9/11/24
 	 - Fixed milestones being unusable.
 	 - 'anyEN' is renamed to 'anyI18N'.

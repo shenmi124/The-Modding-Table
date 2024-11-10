@@ -149,11 +149,11 @@ var systemComponents = {
 			<h6 style="color:#aaa">({{ geti18n()?"本Mod基于Shinwmyste的The Modding Table制作":"Based On Shinwmyste\'s The Modding Table" }})</h6>
 		</div>
 		<div style="border: 3px solid #888; width:300px; height:30px; margin-top: 8px; padding:15px; border-radius: 5px; display: inline-table">
-			<h3>{{ geti18n()?"模组页主要作者":"The Modding Table Author" }}:</h3><br>
+			<h3>{{ geti18n()?"模组页作者":"The Modding Table Author" }}:</h3><br>
 			Shinwmyste<br><br><h6 style="color:#aaa">({{ geti18n()?"制作":"Developed" }} The Modding Tree <a v-bind:href="'https://github.com/shenmi124/The-Modding-Table/blob/main/changelog.md'" target="_blank" class="link" v-bind:style = "{'font-size': '10px', 'display': 'inline'}">{{TMT_VERSION.newtmtNum}}</a>)</h6>
 		</div>
 		<div style="border: 3px solid #888; width:300px; height:30px; margin-top: 8px; padding:15px; border-radius: 5px; display: inline-table">
-			<h3>{{ geti18n()?"模组页主要帮助者":"The Modding Table Main Helper" }}:</h3><br>
+			<h3>{{ geti18n()?"模组页帮助者":"The Modding Table Helper" }}:</h3><br>
 			QwQe308<br><br>
 			<h6 style="color:#aaa">({{ geti18n()?"一些零碎的改动":"Made Some Minor Changes" }})</h6>
 		</div>

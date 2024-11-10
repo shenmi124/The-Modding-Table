@@ -63,6 +63,12 @@ addLayer("p", {
                 nameI18N(){return 'main'}, // Second name for internationalization (i18n) if otherLanguageMod is enabled
                 content:[
                 ],
+            },
+            "another":{
+                name(){return 'another'},
+                nameI18N(){return 'another'},
+                content:[
+                ],
             }
         },
     },
