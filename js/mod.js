@@ -1,17 +1,17 @@
 let modInfo = {
 	name: "The ??? Table",
-	nameI18N: "The ??? Table",// When you open the otherLanguageMod, this is the second language
+	nameI18N: "The ??? Table",// When you enabled the otherLanguageMod, this is the name in the second language
 	id: "mymod2",
 	author: "nobody",
 	pointsName: "points",
 	modFiles: ["layers.js", "tree.js"],
 
-	otherLanguageMod: true,// When on, it will ask the player to choose a language at the beginning of the game
-	languageMod: false,// Use when otherLanguageMod is off, false -> normal display, ture -> add i18n at last (etc. namei18n)
-	//It offers a portable way to translate, but it is not recommended
+	otherLanguageMod: true,// When enabled, it will ask the player to choose a language at the beginning of the game
+	languageMod: false,// Use when otherLanguageMod is off: false -> normal display, true -> add i18n at the end (e.g. nameI18N)
+	// It offers a portable way to translate, but it is not recommended
 
-	forceOneTab: false,// Enable Single-Tab Mode ( This feature doen't work fluently as you'd imagine, it's made for expert )
-	showTab: 'tree-node',// if you open forceOneTab, it will show this page everytime you refresh the page
+	forceOneTab: false,// Enable Single-Tab Mode (This feature doesn't work as smoothly as you might expect; it's designed for experts)
+	showTab: 'tree-node',// If forceOneTab is enabled, it will always show this page when the page is refreshed
 
 	initialStartPoints: new Decimal (10), // Used for hard resets and new players
 	offlineLimit: 1,  // In hours
@@ -90,7 +90,7 @@ function getPointGen() {
 function addedPlayerData() { return {
 }}
 
-// Display extra things at the top of the page
+// Display extra information at the top of the page
 var displayThings = [
 	function() {
 		if(options.ch==undefined && modInfo.otherLanguageMod==true){return '<big><br>You should choose your language first<br>你需要先选择语言</big>'}
@@ -98,7 +98,7 @@ var displayThings = [
 	}
 ]
 
-// You can write stuff here to display them on top-left corner easily
+// You can write code here to easily display information in the top-left corner
 function displayThingsRes(){
 	return 'Points: '+format(player.points)+' | '
 }

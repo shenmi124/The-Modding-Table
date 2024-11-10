@@ -1,26 +1,26 @@
 (There is nothing here lol)
 
-node:
- - Actually, there is no difference between the use of TMTa and TMT, so go to the doc of TMT!
-   - TMT Doc link: https://github.com/Acamaeda/The-Modding-Tree/blob/master/docs/!general-info.md
+Node:
+  - Actually, there is no difference between the use of TMTa and TMT, so please refer to the TMT documentation.
+  - TMT Documentation: https://github.com/Acamaeda/The-Modding-Tree/blob/master/docs/!general-info.md
 
-Ture node:
- - Subtab cannot be used, but you can still use tabFormat and microtabs
-   - Because for TMTa, tabFormat has a large change, so subtab cannot be used in the changes
-	- Added a optional to microtabs
-	 - name(and nameI18N): it can change the microtabs name, and wont make its ID change
- - The remaining changes are annotated in the layer.js and mod.js
+True Node:
+  - Subtabs cannot be used, but you can still use tabFormat and microtabs.
+    -In TMTa, there are significant changes to tabFormat, which is why subtabs are not supported.
+  - An optional feature has been added to microtabs:
+    - name (and nameI18N): This allows you to change the display name of microtabs without affecting their ID.
+  -The remaining changes are documented in layer.js and mod.js.
 
 翻译:
 (啥都没有(雾))
 
 注:
- - 实际上TMTa和TMT并没有什么不同,所以你可以去看TMT的doc
-   - TMT Doc 链接: https://github.com/Acamaeda/The-Modding-Tree/blob/master/docs/!general-info.md
+  - 实际上TMTa和TMT并没有什么不同,所以你可以去看TMT的doc
+    - TMT Doc 链接: https://github.com/Acamaeda/The-Modding-Tree/blob/master/docs/!general-info.md
 
 真正的Doc:
- - Subtab不能被使用,但是你仍然可以使用tabFormat和microtabs
-   - 因为TMTa对tabFormat改动比较大,导致在更新中Subtab失去了其应有的功能
-	- 增加了一个可选项对于microtabs
-	 - name(and nameI18N): 可以修改microtabs的显示名称,同时不会改变其id
- - 其余改动均在layer.js和mod.js标有注释
+  - Subtab不能被使用,但是你仍然可以使用tabFormat和microtabs
+    - 因为TMTa对tabFormat改动比较大,导致在更新中Subtab失去了其应有的功能
+  - 增加了一个可选项对于microtabs
+    - name(以及nameI18N): 可以修改microtabs的显示名称,同时不会改变其id
+  - 其余改动均在layer.js和mod.js标有注释

@@ -1,35 +1,35 @@
 # The Modding Table changelog:
 
 # v3.0.7.2 = 9/11/24
-	 -Fixed milestone being unable to use.
+	 - Fixed milestones being unusable.
 	 - 'anyEN' is renamed to 'anyI18N'.
 	 - Added an option related to microtabs.
- 	    - name(and nameI18N): It can now change the tab's name without its ID being changed.
+ 	    - name(and nameI18N): It can now change the tab's name without changing its ID.
 
 # v3.0.6.0 = 9/11/24
-     - More Docs.
+     - More documentation.
 	 - Changed the default style of microtabs.
-	 - Now selected microtabs' class will have its own name(id).
+	 - Now the selected microtabs' class will have its own name (ID).
 
 # v3.0.5.3 = 25/10/24
 	 - Fixed a bug.
 
 # v3.0.5.2 = 19/10/24
-	 - Fixed buyable can't to use
-	 - Changed small layer's usage
+	 - Fixed buyables not being usable.
+	 - Changed the usage of small layers.
 
 # v3.0.5.0 = 4/10/24
-	 - Fixed display about clickables.
-	 - Fixed microtabs has a styling error in some cases.
+	 - Fixed display issues related to clickables.
+	 - Fixed a styling error in microtabs in some cases.
 	 - The default font has been changed.
 	 - Changed the save and encode mod.
-		- Allow other characters and languages (e.g. Chinese) to exist in the save (microtabs).
-	    - But this results in the old (moddel) version can't being migrated to the new version.
+		- Now allows other characters and languages (e.g. Chinese) in the save (microtabs).
+	    - However, this change prevents old (model) versions from being migrated to the new version. 
 
 # v3.0.4.1 = 14/7/24
-	 - Fixed milestone can't use.
-	 - Fixed TreeButton will be red when have upgrades can bought.
-	 - Settings will be at the top in default.
+	 - Fixed milestones not being usable.
+	 - Fixed TreeButton turning red when upgrades are available for purchase.
+	 - Settings will now be at the top by default.
 
 # v3.0.3.3 = 24/12/23
 	 - Fixed some bugs.
@@ -38,27 +38,27 @@
 	 - Fixed lag.
 
 # v3.0.3 = 20/9/23
-	 - Fixed subtab.
+	 - Fixed an issue with subtabs.
 
 # v3.0.2.11 = 8/8/23
 	 - Fixed two bugs.
-	 - Now you can change the Tree Button.
+	 - You can now change the Tree Button.
 
 # v3.0.1.9 = 8/8/23
-	 - Fixed a bug about clickables.
-	 - Modify the css.
+	 - Fixed a bug related to clickables.
+	 - Modified the CSS.
 
 # v3.0.1.7 = 28/7/23
-	 - Fixed a bug again.
-	 - Modify the text again.
-	 - Added a doc( only same as The Modding Tree ).
+	 - Fixed a bug.
+	 - Modified the text again.
+	 - Added documentation (same as The Modding Tree).
 
 # v3.0.0.6 = 26/7/23
 	 - Fixed a bug.
-	 - Modify the text.
+	 - Modified the text.
 
 # v3.0.0.4 = 25/7/23
-	 - Fixed tow bugs.
+	 - Fixed two bugs.
 
 # v3.0 = 23/7/23
-	 - Developed The Modding Table, Which, you could say, is another form of TMT.
+	 - Developed The Modding Table, which is another form of TMT.
