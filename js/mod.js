@@ -6,8 +6,8 @@ let modInfo = {
 	pointsName: "points",
 	modFiles: ["layers.js", "tree.js"],
 
-	otherLanguageMod: true,// When enabled, it will ask the player to choose a language at the beginning of the game
-	languageMod: false,// Use when otherLanguageMod is off: false -> normal display, true -> add i18n at the end (e.g. nameI18N)
+	otherLanguageMod: false,// When enabled, it will ask the player to choose a language at the beginning of the game
+	languageMod: false,// Use when otherLanguageMod is off: false -> normal display (English), true -> add i18n at the end (e.g. nameI18N) (Chinese)
 	// It offers a portable way to translate, but it is not recommended
 
 	forceOneTab: false,// Enable Single-Tab Mode (This feature doesn't work as smoothly as you might expect; it's designed for experts)

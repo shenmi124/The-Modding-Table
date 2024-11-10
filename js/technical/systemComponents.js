@@ -90,8 +90,8 @@ var systemComponents = {
 				small: tmp[layer].small
 			}"
 			v-bind:style="constructNodeStyle(layer)">
-			<span v-html="(abb !== '' && tmp[layer].image === undefined) ? abb : '&nbsp;'"></span>
-			<node-mark :layer='layer' :data='tmp[layer].marked'></node-mark></span>
+			<span v-html="(abb !== '' && tmp[layer].image === undefined) ? (abb+(tmp[layer].notify && player[layer].unlocked?'<red>!</red>':'')) : '&nbsp;'"></span>
+			<node-mark :layer='layer' :data='tmp[layer].marked'></node-mark>
 		</button>
 		`
 	},

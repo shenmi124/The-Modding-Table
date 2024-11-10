@@ -62,6 +62,7 @@ addLayer("p", {
                 name(){return 'main'}, // Name of tab button
                 nameI18N(){return 'main'}, // Second name for internationalization (i18n) if otherLanguageMod is enabled
                 content:[
+                    ['upgrade', 11]
                 ],
             },
             "another":{

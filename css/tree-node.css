@@ -153,3 +153,7 @@
 .star:after {
 	transform: rotate(35deg);
 }
+
+red {
+	color: red;
+}

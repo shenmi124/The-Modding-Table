@@ -1,8 +1,10 @@
 # The Modding Table changelog:
 
-# v3.0.8.2 = 11/11/24
+# v3.0.8.3 = 11/11/24
 	 - Fixed display issues related to milestones.
+	 - When a table button triggers a notification, a red exclamation mark (!) will appear at the end of its name.
 	 - Changed the default style of tablebutton.
+	 - Changed the default style of microtabs.
 	 - Changed the default style of achievements.
 
 # v3.0.7.2 = 9/11/24
