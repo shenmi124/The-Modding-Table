@@ -76,4 +76,5 @@ addLayer("p", {
     layerShown(){return true},
 })
 
-// You can delete second name of every option if otherLanguageMod is not enabled
+// You can delete the second name from each option if otherLanguageMod is not enabled.
+// You can use geti18n() to determine the player's current language, which will return a boolean value.
