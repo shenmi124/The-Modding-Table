@@ -119,9 +119,9 @@ function getPointsDisplay(){
 	}
 	a += '<br>'
 	if(!(options.ch==undefined && modInfo.otherLanguageMod==true)){
-		a += `<span class="overlayThing">${(geti18n()?"你有":"You have")} <h2  class="overlayThing" id="points"> ${format(player.points)}</h2> ${modInfo.pointsName}</span>`
+		a += `<span class="overlayThing">${(geti18n()?"你有":"You have")} <h2  class="overlayThing" id="points"> ${format(player.points)}</h2> ${geti18n()?modInfo.pointsName:modInfo.pointsNameI18N}</span>`
 		if(canGenPoints()){
-			a += `<br><span class="overlayThing">(`+(tmp.other.oompsMag != 0 ? format(tmp.other.oomps) + " OOM" + (tmp.other.oompsMag < 0 ? "^OOM" : tmp.other.oompsMag > 1 ? "^" + tmp.other.oompsMag : "") + "s" : formatSmall(getPointGen()))+`/sec)</span>`
+			a += `<br><span class="overlayThing">(`+(tmp.other.oompsMag != 0 ? format(tmp.other.oomps) + " OoM" + (tmp.other.oompsMag < 0 ? "^OoM" : tmp.other.oompsMag > 1 ? "^" + tmp.other.oompsMag : "") + "s" : formatSmall(getPointGen()))+`/sec)</span>`
 		}
 		a += `<div style="margin-top: 3px"></div>`
 	}

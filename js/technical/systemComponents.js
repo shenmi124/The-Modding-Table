@@ -170,7 +170,7 @@ var systemComponents = {
 			{{ formatTime(player.timePlayed) }}<br><br>
 		</div>
 		<div style="border: 3px solid #888; width:300px; height:30px; margin-top: 8px; padding:15px; border-radius: 5px; display: inline-table">
-			<h3>{{ modInfo.pointsName }}:</h3><br>
+			<h3>{{ geti18n()?modInfo.pointsName:modInfo.pointsNameI18N }}:</h3><br>
 			{{ format(player.points) }}<br><br>
 		</div>
 

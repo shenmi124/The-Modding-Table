@@ -144,7 +144,7 @@ function loadVue() {
 			<span v-else>
 				<span v-if="geti18n()" v-html="tmp[layer].challenges[data].challengeDescription"></span>
 				<span v-else v-html="tmp[layer].challenges[data].challengeDescriptionI18N"></span>
-				{{geti18n()?'目标':'Goal'}}:  <span v-if="tmp[layer].challenges[data].goalDescription" v-html="tmp[layer].challenges[data].goalDescription"></span><span v-else>{{format(tmp[layer].challenges[data].goal)}} {{tmp[layer].challenges[data].currencyDisplayName ? tmp[layer].challenges[data].currencyDisplayName : modInfo.pointsName}}</span><br>
+				{{geti18n()?'目标':'Goal'}}:  <span v-if="tmp[layer].challenges[data].goalDescription" v-html="tmp[layer].challenges[data].goalDescription"></span><span v-else>{{format(tmp[layer].challenges[data].goal)}} {{tmp[layer].challenges[data].currencyDisplayName ? tmp[layer].challenges[data].currencyDisplayName : geti18n()?modInfo.pointsName:modInfo.pointsNameI18N}}</span><br>
 				{{geti18n()?'奖励':'Reward'}}: <span v-html="geti18n()?tmp[layer].challenges[data].rewardDescription:tmp[layer].challenges[data].rewardDescriptionI18N"></span><br>
 				<span v-if="layers[layer].challenges[data].rewardDisplay!==undefined">{{geti18n()?'当前效果':'Currently'}}: <span v-html="(tmp[layer].challenges[data].rewardDisplay) ? (run(layers[layer].challenges[data].rewardDisplay, layers[layer].challenges[data])) : format(tmp[layer].challenges[data].rewardEffect)"></span></span>
 			</span>
