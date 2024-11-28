@@ -1,5 +1,8 @@
 # The Modding Table changelog:
 
+# v3.0.8.4 = 11/11/24
+	 - Fixed upgrades tooltip and milestone tooltip not being usable.
+
 # v3.0.8.3 = 11/11/24
 	 - Fixed display issues related to milestones.
 	 - When a table button triggers a notification, a red exclamation mark (!) will appear at the end of its name.
