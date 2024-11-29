@@ -12,14 +12,18 @@ addLayer("Language", {
     layerShown(){return options.ch==undefined && modInfo.otherLanguageMod==true},
     tabFormat: [
         "blank",
-        ["display-text", function() { return "<h3>选择语言(英文版可能会有一些bug)<br>Choose your language(there may be some bugs in English mode)<br><br>你可以在设置中改变语言<br>You can change the language in the settings<br><br><a href='https://afdian.net/@Mysterious124' class='link' target='_blank'>点我捐助</a><br><a href='https://afdian.net/@Mysterious124' class='link' target='_blank'>Click me to donate</a><br><br><a href='https://discord.gg/DdWRz6cJ' class='link' target='_blank'>Shinwmyste Game Discord</a><br>如果你后悔了,你可以在选择语言后的信息页面中重新加入<br>If you regret not joining discord, you can do it in the 'Information' tab after selection.</h3>" }],
-        "blank", "blank",
+        ["display-text", function() { return "<h3>本游戏基于The Modding <b>Table</b>制作<br>This game based on The Modding <b>Table</b><br><br>选择语言<br>Choose your language<br><br>你可以在设置中改变语言<br>You can change the language in the settings.</h3>" }],
+        "blank", 
+        "blank",
         'clickables',
+        "blank",
+        "blank",
+        ["display-text", function() { return "<a href='https://afdian.net/@Mysterious124' class='link' target='_blank'>点我捐助</a><br><a href='https://afdian.net/@Mysterious124' class='link' target='_blank'>Click me to donate</a><br><a href='https://discord.gg/DdWRz6cJ' class='link' target='_blank'>Shinwmyste Game Discord</a>" }],
     ],
     clickables: {
         11: {
-            display(){return '<h2>中文(Chinese)</h2>'+(player.Language.sure==true ? '<br>你确定吗?<br>再次点击生效<br>请确保你已经阅读过这些!' : '')},
-            displayI18N(){return '<h2>中文(Chinese)</h2>'+(player.Language.sure==true ? '<br>你确定吗?<br>再次点击生效<br>请确保你已经阅读过这些!' : '')},
+            display(){return '<h2>中文<br>(Chinese)</h2>'+(player.Language.sure==true ? '<br>你确定吗?<br>再次点击生效<br>请确保你已经阅读过这些!' : '')},
+            displayI18N(){return '<h2>中文<br>(Chinese)</h2>'+(player.Language.sure==true ? '<br>你确定吗?<br>再次点击生效<br>请确保你已经阅读过这些!' : '')},
             canClick(){return true},
 			style() {return {'width': "160px", "min-width": "160px", 'height': "160px", "border-radius": "5%", "margin-right": "20px",}},
             onClick(){
@@ -33,8 +37,8 @@ addLayer("Language", {
             }
         },  
         12: {
-            display(){return '<h2>English(英文)</h2>'+(player.Language.sure==true ? "<br>Are you sure?<br>Click again to active<br>Make sure you've read this!" : '')},
-            displayI18N(){return '<h2>English(英文)</h2>'+(player.Language.sure==true ? "<br>Are you sure?<br>Click again to active<br>Make sure you've read this!" : '')},
+            display(){return '<h2>English<br>(英文)</h2>'+(player.Language.sure==true ? "<br>Are you sure?<br>Click again to active<br>Make sure you've read this!" : '')},
+            displayI18N(){return '<h2>English<br>(英文)</h2>'+(player.Language.sure==true ? "<br>Are you sure?<br>Click again to active<br>Make sure you've read this!" : '')},
             canClick(){return true},
 			style() {return {'width': "160px", "min-width": "160px", 'height': "160px", "border-radius": "5%", "margin-right": "20px",}},
             onClick(){
