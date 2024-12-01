@@ -19,7 +19,7 @@ let modInfo = {
 
 var colors = {
 	button: {
-		width: '253px',// Table Button
+		width: '250px',// Table Button
 		height: '40px',// Table Button
 		font: '25px',// Table Button
 		border: '3px'// Table Button
