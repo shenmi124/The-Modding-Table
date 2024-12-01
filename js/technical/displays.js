@@ -18,12 +18,14 @@ function constructNodeStyle(layer){
 		style.push({'background-color': tmp[layer].color})
 	if (tmp[layer].image !== undefined)
 		style.push({'background-image': 'url("' + tmp[layer].image + '")'})
-	if(tmp[layer].notify && player[layer].unlocked)
-		style.push({'box-shadow': 'var(--hqProperty2a), 0 0 20px ' + tmp[layer].trueGlowColor})
 	style.push(tmp[layer].nodeStyle)
+	if(player.tab==layer){
+		style.push(tmp[layer].activeStyle)
+	}else if(player.hoverTab==layer){
+		style.push(tmp[layer].hoverStyle)
+	}
     return style
 }
-
 
 function challengeStyle(layer, id) {
 	if (player[layer].activeChallenge == id && canCompleteChallenge(layer, id)) return "canComplete"

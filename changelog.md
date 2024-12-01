@@ -1,5 +1,10 @@
 # The Modding Table changelog:
 
+# v3.0.9.0 = 11/11/24
+	 - Added two options related to table buttons(such as nodeStyle):
+	    - activeStyle: It can change the tab's style when it is selected.
+	    - hoverStyle: It can change the tab's style when it is hovered over.
+
 # v3.0.8.4 = 11/11/24
 	 - Fixed upgrades tooltip and milestone tooltip not being usable.
 

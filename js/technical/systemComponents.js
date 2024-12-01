@@ -40,6 +40,8 @@ var systemComponents = {
 		props: ['layer', 'abb', 'size', 'prev'],
 		template: `
 		<button v-if="nodeShown(layer) && ((options.ch!==undefined && modInfo.otherLanguageMod==true) || modInfo.otherLanguageMod==false)"
+			onmouseover="player.hoverTab = this.id"
+			onmouseleave="player.hoverTab = undefined"
 			v-bind:id="layer"
 			v-on:click="function() {
 				if(layer=='Information'){
@@ -89,7 +91,8 @@ var systemComponents = {
 				active: player.tab==layer,
 				small: tmp[layer].small
 			}"
-			v-bind:style="constructNodeStyle(layer)">
+			v-bind:style="constructNodeStyle(layer)"
+			>
 			<span v-html="(abb !== '' && tmp[layer].image === undefined) ? (abb+(tmp[layer].notify && player[layer].unlocked?'<red>!</red>':'')) : '&nbsp;'"></span>
 			<node-mark :layer='layer' :data='tmp[layer].marked'></node-mark>
 		</button>
