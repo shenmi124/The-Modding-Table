@@ -9,6 +9,7 @@ function save(force) {
 function startPlayerBase() {
 	return {
 		tab: layoutInfo.startTab,
+		hoverTab: "none",
 		navTab: (layoutInfo.showTree ? layoutInfo.startNavTab : "none"),
 		time: Date.now(),
 		notify: {},

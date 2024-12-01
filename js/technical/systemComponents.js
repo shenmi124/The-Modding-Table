@@ -40,8 +40,8 @@ var systemComponents = {
 		props: ['layer', 'abb', 'size', 'prev'],
 		template: `
 		<button v-if="nodeShown(layer) && ((options.ch!==undefined && modInfo.otherLanguageMod==true) || modInfo.otherLanguageMod==false)"
-			onmouseover="player.hoverTab = this.id"
-			onmouseleave="player.hoverTab = undefined"
+			v-on:mouseover="player.hoverTab = layer"
+			v-on:mouseleave="player.hoverTab = 'none'"
 			v-bind:id="layer"
 			v-on:click="function() {
 				if(layer=='Information'){
