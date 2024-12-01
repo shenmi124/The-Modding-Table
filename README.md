@@ -12,13 +12,6 @@ Thanks<s>(::thinks::)</s> :
 [Acamaeda](https://github.com/Acamaeda)
 <br>
 <br>
-(Main Helper)
-<br>
-[QwQe308](https://github.com/QwQe308)
-<br>
-<br>
 (Helper)
 <br>
-[3^3](https://github.com/factorXXX)
-<br>
-Anonymous * 2 ( not there name ) ( “( not there name )” is not there name ) ( “( “( not there name )” is not there name )” is not there either ) <s>( ( “( “( not there name )” is not there name )” is not there either ) 🤔 )</s>
+[QwQe308](https://github.com/QwQe308)
