@@ -1,5 +1,9 @@
 # The Modding Table changelog:
 
+# v3.0.9.1 = 9/11/24
+     - More documentation.
+	 - Changed the default style of body.
+
 # v3.0.9.0 = 11/11/24
 	 - Added two options related to table buttons(such as nodeStyle):
 	    - activeStyle: It can change the tab's style when it is selected.
