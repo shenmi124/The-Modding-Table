@@ -506,7 +506,7 @@ function loadVue() {
 		template: `<div>
 		<span class="upgRow" v-for="(row, r) in data" style="margin-top: -4px;"><table class='untable'>
 			<span v-for="(node, id) in row" style = "{width: 0px}">
-				<tree-node :layer='node' :prev='layer' :abb='tmp[node].symbol' :key="key + '-' + r + '-' + id"></tree-node>
+				<tree-node :layer='node' :prev='layer' :abb='geti18n()?tmp[node].symbol:tmp[node].symbolI18N' :key="key + '-' + r + '-' + id"></tree-node>
 			</span>
 		</span></div>
 		`
