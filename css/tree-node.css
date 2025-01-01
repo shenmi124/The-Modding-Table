@@ -67,7 +67,7 @@
 }
 
 .resetNotify {
-	text-shadow: #6d6d6d 2px 2px;
+	text-shadow: #6d6d6d 1px 1px;
 }
 
 .treeNode.can:not(.small).active {
