@@ -84,7 +84,7 @@ a {
 	display: block;
 	color: #41f5f5;
 	cursor: pointer;
-	font-family: "Courier New", "Courier Prime", "Lucida Console",'Noto Sans SC', monospace;
+	font-family: "Courier New", "Courier Prime", "Lucida Console", monospace;
 	-webkit-text-stroke-width: 1px;
 	-webkit-text-stroke-color: #02f2f2;
 	text-decoration: none;

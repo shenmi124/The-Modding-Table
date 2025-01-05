@@ -46,7 +46,7 @@
     margin-bottom: 5px;
     transform: translateX(-50%);
     padding: 7px;
-	font-family: "Courier New", "Courier Prime", "Lucida Console",'Noto Sans SC', monospace;
+	font-family: "Courier New", "Courier Prime", "Lucida Console", monospace;
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
     border-radius: 3px;
@@ -120,7 +120,7 @@
 
 /* Other */
 .digitalTime {
-	font-family: "Courier New", "Courier Prime", "Lucida Console",'Noto Sans SC', monospace;
+	font-family: "Courier New", "Courier Prime", "Lucida Console", monospace;
     background-color:black;
     border: 4px solid #686868;
     color: red;

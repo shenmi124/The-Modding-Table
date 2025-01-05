@@ -1,6 +1,6 @@
 * {
 	text-align: center;
-	font-family: cursive, "Inconsolata", 'Noto Sans SC', monospace;
+	font-family: cursive, "Inconsolata",  monospace;
 	font-weight: bold;
 	table-align: center;
 	margin: auto;
@@ -11,7 +11,7 @@
 
 h1, h2, h3, b, input, .pesterlog > * > * {
 	display: inline;
-	font-family: "Courier New", "Courier Prime", "Lucida Console",'Noto Sans SC', monospace;
+	font-family: "Courier New", "Courier Prime", "Lucida Console", monospace;
 }
 
 *:focus {
