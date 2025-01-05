@@ -207,6 +207,7 @@ function load() {
 	versionCheck();
 	changeTheme();
 	changeTreeQuality();
+	cursiveSetting();
 	updateLayers();
 	setupModInfo();
 

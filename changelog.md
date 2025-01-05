@@ -1,7 +1,9 @@
 # The Modding Table changelog:
 
-# v3.0.9.4 = 1/5/25
-	 - Changed the font.
+# v3.0.10.0 = 1/5/25
+	 - Added an option to set font.
+	 - Changed the default font.
+	 - Fixed a bug.
 
 # v3.0.9.3 = 1/1/25
 	 - Changed the default style of tablebutton when it can be reset.
@@ -50,7 +52,7 @@
 # v3.0.5.0 = 10/4/24
 	 - Fixed display issues related to clickables.
 	 - Fixed a styling error in microtabs in some cases.
-	 - The default font has been changed.
+	 - Changed the default font.
 	 - Changed the save and encode mod.
 		- Now allows other characters and languages (e.g. Chinese) in the save (microtabs).
 	    - However, this change prevents old (model) versions from being migrated to the new version. 
@@ -70,7 +72,7 @@
 	 - Fixed an issue with subtabs.
 
 # v3.0.2.11 = 8/8/23
-	 - Fixed two bugs.
+	 - Fixed some bugs.
 	 - You can now change the Tree Button.
 
 # v3.0.1.9 = 8/8/23

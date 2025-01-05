@@ -16,6 +16,7 @@ function getStartOptions() {
 		tooltipForcing: true,
 		ch: undefined,
 		mouse: true,
+		cursive: false,
 	}
 }
 
@@ -26,6 +27,9 @@ function toggleOpt(name) {
 	options[name] = !options[name];
 	if(name == 'mouse'){
 		mouseSetting()
+	}
+	if(name == 'cursive'){
+		cursiveSetting()
 	}
 	if (name == "hqTree")
 		changeTreeQuality();
@@ -38,6 +42,10 @@ function updateStyle() {
 	let css = document.getElementById("styleStuff");
 	css.href = options.oldStyle ? "oldStyle.css" : "style.css";
 	needCanvasUpdate = true;
+}
+function cursiveSetting(){
+	let on = options.cursive
+	document.body.style.setProperty('--font', on ? 'cursive, "Inconsolata", monospace' : '"Inconsolata", monospace');
 }
 function changeTreeQuality() {
 	var on = options.hqTree;

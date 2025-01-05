@@ -17,6 +17,7 @@ var systemComponents = {
 			<div class="upgRow">
 				<div v-for="tab in Object.keys(data)">
 					<button v-if="data[tab].unlocked == undefined || data[tab].unlocked"
+					style="font-family: cursive;"
 					v-bind:class="{
 						tabButton: true,
 						notify: subtabShouldNotify(layer, name, tab),
@@ -72,8 +73,6 @@ var systemComponents = {
 
 				getActiveClass(layer)
 			}"
-
-
 			v-bind:class="{
 				treeNode: tmp[layer].isLayer,
 				treeButton: !tmp[layer].isLayer,
@@ -91,9 +90,8 @@ var systemComponents = {
 				active: player.tab==layer,
 				small: tmp[layer].small
 			}"
-			v-bind:style="constructNodeStyle(layer)"
-			>
-			<span v-html="(abb !== '' && tmp[layer].image === undefined) ? (abb+(tmp[layer].notify && player[layer].unlocked?'<red>!</red>':'')) : '&nbsp;'"></span>
+			v-bind:style="constructNodeStyle(layer)">
+			<span style="font-family: cursive;" v-html="(abb !== '' && tmp[layer].image === undefined) ? (abb+(tmp[layer].notify && player[layer].unlocked?'<red>!</red>':'')) : '&nbsp;'"></span>
 			<node-mark :layer='layer' :data='tmp[layer].marked'></node-mark>
 		</button>
 		`
@@ -166,20 +164,13 @@ var systemComponents = {
 			<h6 style="color:#aaa">(The Modding Tree <a v-bind:href="'https://github.com/Acamaeda/The-Modding-Tree/blob/master/changelog.md'" target="_blank" class="link" v-bind:style = "{'font-size': '10px', 'display': 'inline'}">{{TMT_VERSION.tmtNum}}</a>)</h6>
 		</div>
 		<br><br><br><br>
-
-        <h2>{{ geti18n()?"统计数据":"Statistics" }}:</h2><br><br>
-		<div style="border: 3px solid #888; width:300px; height:30px; margin-top: 8px; padding:15px; border-radius: 5px; display: inline-table">
-			<h3>{{ geti18n()?"游戏时长":"Game Time" }}:</h3><br>
-			{{ formatTime(player.timePlayed) }}<br><br>
-		</div>
-		<div style="border: 3px solid #888; width:300px; height:30px; margin-top: 8px; padding:15px; border-radius: 5px; display: inline-table">
-			<h3>{{ geti18n()?modInfo.pointsName:modInfo.pointsNameI18N }}:</h3><br>
-			{{ format(player.points) }}<br><br>
-		</div>
-
-		<br><br><br><br>
 		
         <h2>{{ geti18n()?"其他页面":"Other Pages" }}:</h2><br><br>
+		<div style="border: 3px solid #888; width:300px; height:30px; margin-top: 8px; padding:15px; border-radius: 5px; display: inline-table">
+			<h3>{{ geti18n()?"更新日志":"Changelog" }}:</h3><br>
+			<a class="link" onclick="showTab('changelog-tab');getActiveClass('Changelog')">{{ geti18n()?"点击跳转":"Click Here" }}</a><br>
+			<h6 style="color:#aaa">({{ geti18n()?"其实也可以点右上角的版本号":"The Top-Right Version Button Matters" }})</h6>
+		</div>
 		<div style="border: 3px solid #888; width:300px; height:30px; margin-top: 8px; padding:15px; border-radius: 5px; display: inline-table">
 			<h3>{{ geti18n()?"Shinwmyste的Discord":"Shinwmyste's Discord" }}:</h3><br>
 			<a class="link" href="https://discord.gg/DTJYvatRQA" target="_blank">{{ geti18n()?"点击跳转":"Click Here" }}</a><br>
@@ -189,11 +180,6 @@ var systemComponents = {
 			<h3>{{ geti18n()?"捐助页面":"Donate Page" }}:</h3><br>
 			<a class="link" href="https://afdian.net/@Mysterious124" target="_blank">{{ geti18n()?"点击跳转":"Click Here" }}</a><br>
 			<h6 style="color:#aaa">($_$)</h6>
-		</div>
-		<div style="border: 3px solid #888; width:300px; height:30px; margin-top: 8px; padding:15px; border-radius: 5px; display: inline-table">
-			<h3>{{ geti18n()?"更新日志":"Changelog" }}:</h3><br>
-			<a class="link" onclick="showTab('changelog-tab');getActiveClass('Changelog')">{{ geti18n()?"点击跳转":"Click Here" }}</a><br>
-			<h6 style="color:#aaa">({{ geti18n()?"其实也可以点右上角的版本号":"The Top-Right Version Button Matters" }})</h6>
 		</div>
 		<div style="border: 3px solid #888; width:300px; height:30px; margin-top: 8px; padding:15px; border-radius: 5px; display: inline-table">
 			<h3>{{ geti18n()?"模组树Discord":"The Modding Tree Discord" }}:</h3><br>
@@ -207,23 +193,26 @@ var systemComponents = {
         template: ` 
         <table><br><br><br><br><br><br>
             <tr>
-				<td><button class="opt" onclick="save()">{{geti18n()?'本地存档' :'Save'}}</button></td>
-                <td><button class="opt" onclick="toggleOpt('autosave')">{{geti18n()?'自动存档' :'AutoSave'}}: {{ options.autosave?(geti18n()?"已开启":"ON"):(geti18n()?"已关闭":"OFF") }}</button></td>
-                <td><button class="opt" onclick="hardReset()">{{geti18n()?'硬重置(删除存档)' :'HardReset'}}</button></td>
-				<td><button class="opt" onclick="exportSave()">{{geti18n()?'导出存档(复制到黏贴板)' :'Export'}}</button></td>
+				<td><h1>{{geti18n()?'存档':'Save'}}&nbsp;&nbsp;&nbsp;</h1></td>
+				<td><button class="opt" onclick="save()">{{geti18n()?'本地存档':'Save'}}</button></td>
+                <td><button class="opt" onclick="toggleOpt('autosave')">{{geti18n()?'自动存档':'AutoSave'}}: {{ options.autosave?(geti18n()?"已开启":"ON"):(geti18n()?"已关闭":"OFF") }}</button></td>
+                <td><button class="opt" onclick="hardReset()">{{geti18n()?'硬重置(删除存档)':'HardReset'}}</button></td>
+				<td><button class="opt" onclick="exportSave()">{{geti18n()?'导出存档(复制到黏贴板)':'Export'}}</button></td>
 				<td><button class="opt" onclick="importSave()">{{geti18n()?'导入存档':'Import'}}</button></td>
 			</tr><br>
 			<tr>
-                <td><button class="opt" onclick="toggleOpt('offlineProd')">{{geti18n()?'离线进度' :'Offline Prod'}}: {{ options.offlineProd?(geti18n()?"已开启":"ON"):(geti18n()?"已关闭":"OFF") }}</button></td>
+				<td><h1>{{geti18n()?'优化':'Qol'}}&nbsp;&nbsp;&nbsp;</h1></td>
+                <td><button class="opt" onclick="toggleOpt('offlineProd')">{{geti18n()?'离线进度':'Offline Prod'}}: {{ options.offlineProd?(geti18n()?"已开启":"ON"):(geti18n()?"已关闭":"OFF") }}</button></td>
+                <td><button class="opt" onclick="toggleOpt('mouse')">{{geti18n()?'优化鼠标操作':'Optimized mouse operation'}}: {{ options.mouse ? (geti18n()?"已开启":"ON"):(geti18n()?"已关闭":"OFF")}}</button></td>
             </tr><br>
             <tr>
+				<td><h1>{{geti18n()?'显示':'Display'}}&nbsp;&nbsp;&nbsp;</h1></td>
                 <td><button class="opt" onclick="toggleOpt('hideChallenges')">{{geti18n()?'已完成挑战':'Completed Challenges'}}: {{ options.hideChallenges?(geti18n()?"隐藏":"HIDDI18N"):(geti18n()?"显示":"SHOWN") }}</button></td>
                 <td><button class="opt" onclick="adjustMSDisp()">{{geti18n()?'显示里程碑':'Show Milestones'}}: {{geti18n()? MS_DISPLAYS[MS_SETTINGS.indexOf(options.msDisplay)] : MS_DISPLAYS_I18N[MS_SETTINGS.indexOf(options.msDisplay)]}}</button></td>
+                <td><button class="opt" onclick="toggleOpt('cursive')">{{geti18n()?'全页面草书字体':'Cursive Font'}}: {{ options.cursive?(geti18n()?"已开启":"ON"):(geti18n()?"已关闭":"OFF") }}<br><h6>{{geti18n()?"(注: 字体会根据你的浏览器的默认字体而改变, 对于不同浏览器可能会有不同效果, 对于部分浏览器可能无效)":"(Note: The font will change according to your browser's default font. Effects may vary across different browsers, and may not work in some browsers)"}}</h6></button></td>
 			</tr> <br>
 			<tr>
-                <td><button class="opt" onclick="toggleOpt('mouse')">{{geti18n()?'优化鼠标操作' :'Optimized mouse operation'}}: {{ options.mouse ? (geti18n()?"已开启":"ON"):(geti18n()?"已关闭":"OFF")}}</button></td>
-			</tr><br>
-			<tr>
+				<td><h1>{{modInfo.otherLanguageMod?(geti18n()?'语言':'language'):""}}&nbsp;&nbsp;&nbsp;</h1></td>
 				<td><button class="opt" v-if="modInfo.otherLanguageMod==true" onclick="
                 options.ch=!options.ch;
                 needsCanvasUpdate = true; document.title = (geti18n()? modInfo.name : modInfo.nameI18N);

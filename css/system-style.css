@@ -1,6 +1,6 @@
 * {
 	text-align: center;
-	font-family: cursive, "Inconsolata",  monospace;
+	font-family: var(--font);
 	font-weight: bold;
 	table-align: center;
 	margin: auto;
