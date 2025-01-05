@@ -1,8 +1,11 @@
 # The Modding Table changelog:
 
+# v3.0.9.4 = 1/5/25
+	 - Changed the font.
+
 # v3.0.9.3 = 1/1/25
 	 - Changed the default style of tablebutton when it can be reset.
-	 - Changed the Metadata
+	 - Changed the Metadata.
 
 # v3.0.9.2 = 12/19/24
      - More default classes have been provided for most components (mostly consisting of the component's original type and it's layers ID).
