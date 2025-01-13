@@ -217,17 +217,17 @@ function load() {
 	updateTabFormats()
 	loadVue();
 
-	if(modInfo.otherLanguageMod===true && player.Language.sure===false){
+	if(modInfo.internationalizationMod===true && player.Language.sure===false){
 		options.ch = undefined
-	}else if(modInfo.otherLanguageMod===false){
+	}else if(modInfo.internationalizationMod===false){
 		options.ch = undefined
 	}
 
-	if(modInfo.otherLanguageMod){
-		modInfo.languageMod = undefined
+	if(modInfo.internationalizationMod){
+		modInfo.changedDefaultLanguage = undefined
 	}
 
-	if(modInfo.otherLanguageMod===true && options.ch===undefined){
+	if(modInfo.internationalizationMod===true && options.ch===undefined){
 		showTab('Language')
 	}else{
 		getActiveClass(player.tab)

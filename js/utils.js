@@ -261,7 +261,7 @@ function updateMilestones(layer) {
 		if (!(hasMilestone(layer, id)) && layers[layer].milestones[id].done()) {
 			player[layer].milestones.push(id)
 			if (layers[layer].milestones[id].onComplete) layers[layer].milestones[id].onComplete()
-			if (tmp[layer].milestonePopups || tmp[layer].milestonePopups === undefined) doPopup("milestone", geti18n()?tmp[layer].milestones[id].requirementDescription : tmp[layer].milestones[id].requirementDescriptionI18N, geti18n()?"获得里程碑!" : "Milestone Gotten!", 3, tmp[layer].color);
+			if (tmp[layer].milestonePopups || tmp[layer].milestonePopups === undefined) doPopup("milestone", i18n(tmp[layer].milestones[id].requirementDescription, tmp[layer].milestones[id].requirementDescriptionI18N), i18n("获得里程碑!", "Milestone Gotten!", false), 3, tmp[layer].color);
 			player[layer].lastMilestone = id
 		}
 	}
@@ -273,7 +273,7 @@ function updateAchievements(layer) {
 		if (isPlainObject(layers[layer].achievements[id]) && !(hasAchievement(layer, id)) && layers[layer].achievements[id].done()) {
 			player[layer].achievements.push(id)
 			if (layers[layer].achievements[id].onComplete) layers[layer].achievements[id].onComplete()
-			if (tmp[layer].achievementPopups || tmp[layer].achievementPopups === undefined) doPopup("achievement", geti18n()?tmp[layer].achievements[id].name : tmp[layer].achievements[id].nameI18N, geti18n()?"获得成就!" : "Achievement Gotten!", 3, tmp[layer].color);
+			if (tmp[layer].achievementPopups || tmp[layer].achievementPopups === undefined) doPopup("achievement", i18n(tmp[layer].achievements[id].name, tmp[layer].achievements[id].nameI18N), i18n("获得成就!", "Achievement Gotten!", false), 3, tmp[layer].color);
 		}
 	}
 }
@@ -288,10 +288,10 @@ function addTime(diff, layer) {
 
 	//I am not that good to perfectly fix that leak. ~ DB Aarex
 	if (time + 0 !== time) {
-		console.log(geti18n()?"检测到内存缺失. 尝试修复中..." : "Memory leak detected. Trying to fix...")
+		console.log(i18n("检测到内存缺失. 尝试修复中...", "Memory leak detected. Trying to fix...", false))
 		time = toNumber(time)
 		if (isNaN(time) || time == 0) {
-			console.log(geti18n()?"修复失败! 重置中..." : "Couldn't fix! Resetting...")
+			console.log(i18n("修复失败! 重置中...", "Couldn't fix! Resetting...", false))
 			time = layer ? player.timePlayed : 0
 			if (!layer) player.timePlayedReset = true
 		}

@@ -1,5 +1,10 @@
 # The Modding Table changelog:
 
+# v3.1.0.0 = 1/14/25
+	 - Complete the documentation.
+	 - Modify the usage of i18n.
+	 - For more detailed changes, please check the documentation.
+
 # v3.0.10.0 = 1/5/25
 	 - Added an option to set font.
 	 - Changed the default font.

@@ -74,7 +74,7 @@
 			<overlay-head v-if="!(tmp.gameEnded && !player.keepGoing)"></overlay-head>
 			<div class="sideLayers">
 				<div v-for="(node, index) in OTHER_LAYERS['side']">
-					<tree-node :layer='node' :abb='tmp[node].symbol' :size="'small'" :key="'side' + index"></tree-node>
+					<tree-node :layer='node' :abb='i18n(tmp[node].symbol, tmp[node].symbolI18N)' :size="'small'" :key="'side' + index"></tree-node>
 				</div>
 			</div>
 		</div>

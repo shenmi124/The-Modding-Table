@@ -2,14 +2,14 @@ function prestigeButtonText(layer) {
 	if (layers[layer].prestigeButtonText !== undefined)
 		return run(layers[layer].prestigeButtonText(), layers[layer])
 	if (tmp[layer].type == "normal")
-		return `${player[layer].points.lt(1e3) ? (tmp[layer].resetDescription !== undefined ? tmp[layer].resetDescription : (geti18n() ? "重置以获得 " : 'Reset for ' )) : ""}+<b>${formatWhole(tmp[layer].resetGain)}</b> ${tmp[layer].resource} ${tmp[layer].resetGain.lt(100) && player[layer].points.lt(1e3) ? `<br><br>`+(geti18n() ? "下一个在:" : "Neat at:")+` ${(tmp[layer].roundUpCost ? formatWhole(tmp[layer].nextAt) : format(tmp[layer].nextAt))} ${tmp[layer].baseResource}` : ""}`
+		return `${player[layer].points.lt(1e3) ? (tmp[layer].resetDescription !== undefined ? tmp[layer].resetDescription : (i18n("重置以获得 ", 'Reset for ', false))) : ""}+<b>${formatWhole(tmp[layer].resetGain)}</b> ${tmp[layer].resource} ${tmp[layer].resetGain.lt(100) && player[layer].points.lt(1e3) ? `<br><br>`+(i18n("下一个在:", "Neat at:", false))+` ${(tmp[layer].roundUpCost ? formatWhole(tmp[layer].nextAt) : format(tmp[layer].nextAt))} ${tmp[layer].baseResource}` : ""}`
 	if (tmp[layer].type == "static")
-		return `${tmp[layer].resetDescription !== undefined ? tmp[layer].resetDescription : (geti18n() ? "重置以获得 " : 'Reset for ' )}+<b>${formatWhole(tmp[layer].resetGain)}</b> ${tmp[layer].resource}<br><br>${player[layer].points.lt(30) ? (tmp[layer].baseAmount.gte(tmp[layer].nextAt) && (tmp[layer].canBuyMax !== undefined) && tmp[layer].canBuyMax ? (geti18n() ? "下一个:" : "Next:") : (geti18n() ? "需求:" : "Req:")) : ""} ${formatWhole(tmp[layer].baseAmount)} / ${(tmp[layer].roundUpCost ? formatWhole(tmp[layer].nextAtDisp) : format(tmp[layer].nextAtDisp))} ${tmp[layer].baseResource}		
+		return `${tmp[layer].resetDescription !== undefined ? tmp[layer].resetDescription : (i18n("重置以获得 ", 'Reset for ', false))}+<b>${formatWhole(tmp[layer].resetGain)}</b> ${tmp[layer].resource}<br><br>${player[layer].points.lt(30) ? (tmp[layer].baseAmount.gte(tmp[layer].nextAt) && (tmp[layer].canBuyMax !== undefined) && tmp[layer].canBuyMax ? (i18n("下一个:", "Next:", false)) : (i18n("需求:", "Req:", false))) : ""} ${formatWhole(tmp[layer].baseAmount)} / ${(tmp[layer].roundUpCost ? formatWhole(tmp[layer].nextAtDisp) : format(tmp[layer].nextAtDisp))} ${tmp[layer].baseResource}		
 		`
 	if (tmp[layer].type == "none")
 		return ""
     
-        return geti18n() ? "你需要为声望按钮写一段文字" : 'You need prestige button text'
+        return i18n("你需要为声望按钮写一段文字", 'You need prestige button text', false)
 }
 
 function constructNodeStyle(layer){

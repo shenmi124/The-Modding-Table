@@ -14,18 +14,17 @@ function layerDisplayTotal(id){
     }
 }
 
-addLayer("OtherTab small", {
+addLayer("OtherTab", {
     name: "AllLayer",
-    position: 0,
+    position: -999,
     row: 0,
-    symbol() {return geti18n() ? '↓ 其他页面 ↓' : '↓ Other Tab ↓'},
-    symbolI18N() {return geti18n() ? '↓ 其他页面 ↓' : '↓ Other Tab ↓'},
+    symbol() {return i18n('其他页面', 'Other Tab', false)},
     nodeStyle: {"font-size": "15px", "text-center": "center", "height": "30px"},
     startData() { return {
         unlocked: true,
-        small: true,
         points: new Decimal(0),
     }},
+    small: true,
     color: "#fefefe",
     type: "none",
     tooltip(){return false},
@@ -37,13 +36,11 @@ addLayer("OtherTab small", {
 
 addLayer("Setting", {
     name: "Setting",
-    position: 1,
+    position: -998,
     row: 0,
-    symbol() {return geti18n() ? '设置' : 'Setting'},
-    symbolI18N() {return geti18n() ? '设置' : 'Setting'},
+    symbol() {return i18n('设置', 'Setting', false)},
     startData() { return {
         unlocked: true,
-        small: true,
         points: new Decimal(0),
     }},
     color: "rgb(230, 230, 236)",
@@ -56,13 +53,11 @@ addLayer("Setting", {
 
 addLayer("Information", {
     name: "Information",
-    position: 2,
+    position: -997,
     row: 0,
-    symbol() {return geti18n() ? '信息' : 'Information'},
-    symbolI18N() {return geti18n() ? '信息' : 'Information'},
+    symbol() {return i18n('信息', 'Information', false)},
     startData() { return {
         unlocked: true,
-        small: true,
         points: new Decimal(0),
     }},
     color: "rgb(230, 230, 236)",
@@ -75,13 +70,11 @@ addLayer("Information", {
 
 addLayer("Changelog", {
     name: "Changelog",
-    position: 3,
+    position: -996,
     row: 0,
-    symbol() {return geti18n() ? '更新日志' : 'Changelog'},
-    symbolI18N() {return geti18n() ? '更新日志' : 'Changelog'},
+    symbol() {return i18n('更新日志', 'Changelog', false)},
     startData() { return {
         unlocked: true,
-        small: true,
         points: new Decimal(0),
     }},
     color: "rgb(230, 230, 236)",

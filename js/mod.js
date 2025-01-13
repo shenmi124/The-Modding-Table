@@ -1,14 +1,15 @@
 let modInfo = {
 	name: "The ??? Table",
-	nameI18N: "The ??? Table",// When you enabled the otherLanguageMod, this is the name in the second language
+	nameI18N: "The ??? Table",// When you enabled the internationalizationMod, this is the name in the second language
 	id: "mymod2",
 	author: "nobody",
 	pointsName: "points",
 	modFiles: ["layers.js", "tree.js"],
 
-	otherLanguageMod: false,// When enabled, it will ask the player to choose a language at the beginning of the game
-	languageMod: false,// Use when otherLanguageMod is off: false -> normal display (English), true -> add i18n at the end (e.g. nameI18N) (Chinese)
-	// It offers a portable way to translate, but it is not recommended
+	internationalizationMod: false,
+	// When enabled, it will ask the player to choose a language at the beginning of the game
+	changedDefaultLanguage: false,
+	// Changes the mod default language. false -> English, true -> Chinese
 
 	forceOneTab: false,// Enable Single-Tab Mode (This feature doesn't work as smoothly as you might expect; it's designed for experts)
 	showTab: 'tree-node',// If forceOneTab is enabled, it will always show this page when the page is refreshed
@@ -43,25 +44,25 @@ let VERSION = {
 }
 
 function changelog(){
-	return geti18n()?`
+	return i18n(`
 		<br><br><br><h1>更新日志:</h1><br>(不存在<span style='color: red'><s>剧透警告</s></span>)<br><br>
 		<span style="font-size: 17px;">
-			<h3><s>不,你应该自己写这个</s></h3><br><br>
+			<h3><s>你应该自己写这个</s></h3><br><br>
 			<h3>v3.0 - 史无前例的改动</h3><br>
 				- 开发了 The Modding Table, 这何尝不是一种TMT<br>
 			<br><br>
-		`:`
+		`, `
 		<br><br><br><h1>ChangeLog:</h1><br>(No<span style='color: red'><s> Spoiler Warning!</s></span>)<br><br>
 		<span style="font-size: 17px;">
-			<h3><s>NO, YOU SHOULD WRITE THIS YOURSELF</s></h3><br><br>
+			<h3><s>YOU SHOULD WRITE THIS YOURSELF</s></h3><br><br>
 			<h3>v3.0 - Unprecedented changes</h3><br>
 				- Developed The Modding Table, Which, you could say, is another form of TMT<br>
 			<br><br>
-	`
+	`, false)
 } 
 
 function winText(){
-	return geti18n()?`你暂时完成了游戏!`:`Congratulations! You have reached the end and beaten this game, but for now...`
+	return i18n(`你暂时完成了游戏!`, `Congratulations! You have reached the end and beaten this game, but for now...`, false)
 }
 
 // If you add new functions anywhere inside of a layer, and those functions have an effect when called, add them here.
@@ -93,7 +94,7 @@ function addedPlayerData() { return {
 // Display extra information at the top of the page
 var displayThings = [
 	function() {
-		if(options.ch==undefined && modInfo.otherLanguageMod==true){return '<big><br>You should choose your language first<br>你需要先选择语言</big>'}
+		if(options.ch==undefined && modInfo.internationalizationMod==true){return '<big><br>You should choose your language first<br>你需要先选择语言</big>'}
 		return '<div class="res">'+displayThingsRes()+'</div><br><div class="vl2"></div></span>'
 	}
 ]
@@ -108,7 +109,6 @@ function isEndgame() {
 	return false
 }
 
-// 
 function getPointsDisplay(){
 	let a = ''
 	if(player.devSpeed && player.devSpeed!=1){
@@ -118,8 +118,8 @@ function getPointsDisplay(){
 		a += options.ch ? '<br>离线加速剩余时间: '+formatTime(player.offTime.remain) : '<br>Offline Time: '+formatTime(player.offTime.remain)
 	}
 	a += '<br>'
-	if(!(options.ch==undefined && modInfo.otherLanguageMod==true)){
-		a += `<span class="overlayThing">${(geti18n()?"你有":"You have")} <h2  class="overlayThing" id="points"> ${format(player.points)}</h2> ${geti18n()?modInfo.pointsName:modInfo.pointsNameI18N}</span>`
+	if(!(options.ch==undefined && modInfo.internationalizationMod==true)){
+		a += `<span class="overlayThing">${(i18n("你有", "You have", false))} <h2 class="overlayThing" id="points"> ${format(player.points)}</h2> ${i18n(modInfo.pointsName, modInfo.pointsNameI18N)}</span>`
 		if(canGenPoints()){
 			a += `<br><span class="overlayThing">(`+(tmp.other.oompsMag != 0 ? format(tmp.other.oomps) + " OoM" + (tmp.other.oompsMag < 0 ? "^OoM" : tmp.other.oompsMag > 1 ? "^" + tmp.other.oompsMag : "") + "s" : formatSmall(getPointGen()))+`/sec)</span>`
 		}

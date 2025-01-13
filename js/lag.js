@@ -9,7 +9,7 @@ addLayer("Language", {
     }},
     color: "#fff",
     type: "none",
-    layerShown(){return options.ch==undefined && modInfo.otherLanguageMod==true},
+    layerShown(){return options.ch==undefined && modInfo.internationalizationMod==true},
     tabFormat: [
         "blank",
         ["display-text", function() { return "<h3>本游戏基于The Modding <b>Table</b>制作<br>This game based on The Modding <b>Table</b><br><br>选择语言<br>Choose your language<br><br>你可以在设置中改变语言<br>You can change the language in the settings.</h3>" }],

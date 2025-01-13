@@ -119,7 +119,7 @@ function mouseSetting(){
 			}
 		}else{
 			document.onmousedown = function(){
-				return true
+				return false
 			}
 			document.onmouseup = function(){
 				return false
