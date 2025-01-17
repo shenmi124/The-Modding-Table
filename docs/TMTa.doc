@@ -23,6 +23,9 @@ True Doc:
       - You can delete the second name from each option if internationalizationMod is not enabled.
       - TMT has too much text content, I cannot guarantee all text-returning options are covered, please let me know if there is anything missing
 
+	 - Changed the save and encode mod.
+		- Now allows other characters and languages (e.g. Chinese) in the save (for e.g. microtabs)
+
   - The remaining changes are documented in layer.js and mod.js
 
 
@@ -51,5 +54,8 @@ True Doc:
       - 使用函数i18n(text, otherText)返回两种不同语言的文字,通常来说text为英文,otherText为中文.如果changedDefaultLanguage启用则相反
       - 如果没有用到i18n你可以删除所有第二种语言的可选项
       - TMT的文本量太大了,我无法保证所有能够返回文字的可选项,如果有遗漏请告诉我
+
+	 - 改变了模板的存档系统
+		- 现在存档可以储存其他的图标或者语言(用于例如microtabs).
 
   - 其余改动均在layer.js和mod.js标有注释
