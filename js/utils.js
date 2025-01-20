@@ -12,9 +12,12 @@ function respecBuyables(layer) {
 function canAffordUpgrade(layer, id) {
 	let upg = tmp[layer].upgrades[id]
 	if(tmp[layer].deactivated) return false
-	if (tmp[layer].upgrades[id].canAfford === false) return false
+	if(tmp[layer].upgrades[id].hardAfford!==undefined){
+		return tmp[layer].upgrades[id].hardAfford
+	}
+	if(tmp[layer].upgrades[id].canAfford === false) return false
 	let cost = tmp[layer].upgrades[id].cost
-	if (cost !== undefined) 
+	if(cost !== undefined)
 		return canAffordPurchase(layer, upg, cost)
 
 	return true
@@ -24,8 +27,6 @@ function canBuyBuyable(layer, id) {
 	let b = temp[layer].buyables[id]
 	return (b.unlocked && run(b.canAfford, b) && player[layer].buyables[id].lt(b.purchaseLimit) && !tmp[layer].deactivated)
 }
-
-
 
 function canAffordPurchase(layer, thing, cost) {
 	if (thing.currencyInternalName) {
@@ -57,6 +58,7 @@ function buyUpg(layer, id) {
 	if (!tmp[layer].upgrades[id].unlocked) return
 	if (player[layer].upgrades.includes(id)) return
 	if (upg.canAfford === false) return
+	if (upg.hardAfford === false) return
 	let pay = layers[layer].upgrades[id].pay
 	if (pay !== undefined)
 		run(pay, layers[layer].upgrades[id])
