@@ -13,6 +13,9 @@ True Doc:
 	  - activeStyle: It can change the tab style when it is selected
 	  - hoverStyle: It can change the tab style when it is hovered over
 
+	- Added a option related to upgrades:
+	 	- hardAfford: If it returns true, the upgrade will be forced to be buyable
+
   - About i18n:
     - Added 2 optional in modInfo:
       - internationalizationMod: When true, the game will prompt players to select a (usually Chinese/English) at the start
@@ -44,6 +47,9 @@ True Doc:
 	- 增加了两个可选项对于tab button(用法同nodeStyle):
 	  - activeStyle: 当tab被选中时生效的style
 	  - hoverStyle: 当鼠标在tab上的时候生效的style
+    
+	- 增加了一个可选项对于upgrades:
+	 	- hardAfford: 如果它返回为true,强制此升级可被购买
 
   - 关于i18n
     - 在modInfo中增添了2个配置:

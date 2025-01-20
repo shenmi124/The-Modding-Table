@@ -1,5 +1,9 @@
 # The Modding Table changelog:
 
+# v3.1.0.2 = 1/20/25
+	 - Added a option related to upgrades.
+	 	- hardAfford: If it returns true, the upgrade will be forced to be buyable
+
 # v3.1.0.0 = 1/14/25
 	 - Complete the documentation.
 	 - Modify the usage of i18n.
