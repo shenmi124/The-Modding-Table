@@ -206,7 +206,7 @@ var systemComponents = {
 		</div>
 		<div style="border: 3px solid #888; width:300px; height:30px; margin-top: 8px; padding:15px; border-radius: 5px; display: inline-table">
 			<h3>{{i18n("捐助页面", "Donate Page", false)}}:</h3><br>
-			<a class="link" href="https://afdian.net/@Mysterious124" target="_blank">{{i18n("点击跳转", "Click Here", false)}}</a><br>
+			<a class="link" href="https://afdian.com/a/Shinwmyste" target="_blank">{{i18n("点击跳转", "Click Here", false)}}</a><br>
 			<h6 style="color:#aaa">($_$)</h6>
 		</div>
 		<div style="border: 3px solid #888; width:300px; height:30px; margin-top: 8px; padding:15px; border-radius: 5px; display: inline-table">
