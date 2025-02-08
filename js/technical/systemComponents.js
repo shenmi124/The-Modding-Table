@@ -94,7 +94,9 @@ var systemComponents = {
 				}
 				else {run(layers[layer].onClick, layers[layer])}
 
-				getActiveClass(layer)
+				if(player[layer].unlocked){
+					getActiveClass(layer)
+				}
 			}"
 			v-bind:class="{
 				treeNode: tmp[layer].isLayer,
