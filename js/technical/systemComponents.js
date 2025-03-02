@@ -172,16 +172,16 @@ var systemComponents = {
 		<div style="border: 3px solid #888; width:300px; height:30px; margin-top: 8px; padding:15px; border-radius: 5px; display: inline-table">
 			<h3>{{i18n("本模组作者", "Mod Author", false)}}:</h3><br>
 			{{ modInfo.author }}<br><br>
-			<h6 style="color:#aaa">({{i18n("本Mod基于Shinwmyste的The Modding Table制作", "Based On Shinwmyste\'s The Modding Table", false)}})</h6>
+			<h6 style="color:#aaa">({{i18n("本Mod基于辉影神秘的The Modding Table制作", "Based On Shinwmyste\'s The Modding Table", false)}})</h6>
 		</div>
 		<div style="border: 3px solid #888; width:300px; height:30px; margin-top: 8px; padding:15px; border-radius: 5px; display: inline-table">
 			<h3>{{i18n("模组页作者", "The Modding Table Author", false)}}:</h3><br>
-			Shinwmyste<br><br><h6 style="color:#aaa">({{i18n("制作", "Developed", false)}} The Modding Tree <a v-bind:href="'https://github.com/shenmi124/The-Modding-Table/blob/main/changelog.md'" target="_blank" class="link" v-bind:style = "{'font-size': '10px', 'display': 'inline'}">{{TMT_VERSION.newtmtNum}}</a>)</h6>
+			辉影神秘<br><br><h6 style="color:#aaa">({{i18n("制作", "Developed", false)}} The Modding Table <a v-bind:href="'https://github.com/shenmi124/The-Modding-Table/blob/main/changelog.md'" target="_blank" class="link" v-bind:style = "{'font-size': '10px', 'display': 'inline'}">{{TMT_VERSION.newtmtNum}}</a>)</h6>
 		</div>
 		<div style="border: 3px solid #888; width:300px; height:30px; margin-top: 8px; padding:15px; border-radius: 5px; display: inline-table">
-			<h3>{{i18n("模组页帮助者", "The Modding Table Helper", false)}}:</h3><br>
-			QwQe308<br><br>
-			<h6 style="color:#aaa">({{i18n("一些零碎的改动", "Made Some Minor Changes", false)}})</h6>
+			<h3>{{i18n("模组页版本", "The Modding Table Version", false)}}:</h3><br>
+			<a v-bind:href="'https://github.com/shenmi124/The-Modding-Table/blob/main/changelog.md'" target="_blank" class="link" v-bind:style = "{'display': 'inline'}">{{TMT_VERSION.newtmtNum}}</a><br><br>
+			<h6 style="color:#aaa">({{i18n("同时感谢QwQe308的参与制作", "Also Thanks To QwQe308 For Their Help", false)}})</h6>
 		</div>
 		<div style="border: 3px solid #888; width:300px; height:30px; margin-top: 8px; padding:15px; border-radius: 5px; display: inline-table">
 			<h3>{{i18n("模板支持", "Original TMT Author", false)}}:</h3><br>
@@ -197,7 +197,7 @@ var systemComponents = {
 			<h6 style="color:#aaa">({{i18n("其实也可以点右上角的版本号", "The Top-Right Version Button Matters", false)}})</h6>
 		</div>
 		<div style="border: 3px solid #888; width:300px; height:30px; margin-top: 8px; padding:15px; border-radius: 5px; display: inline-table">
-			<h3>{{i18n("Shinwmyste的Discord", "Shinwmyste's Discord", false)}}:</h3><br>
+			<h3>{{i18n("辉影神秘的Discord", "Shinwmyste's Discord", false)}}:</h3><br>
 			<a class="link" href="https://discord.gg/DTJYvatRQA" target="_blank">{{i18n("点击跳转", "Click Here", false)}}</a><br>
 			<h6 style="color:#aaa">({{i18n("加入DC群", "Join Discord", false)}})</h6>
 		</div>

@@ -14,11 +14,11 @@ function layerDisplayTotal(id){
     }
 }
 
-addLayer("OtherTab", {
+addLayer("SideTab", {
     name: "AllLayer",
     position: -999,
     row: 0,
-    symbol() {return i18n('其他页面', 'Other Tab', false)},
+    symbol() {return i18n('其他页面', 'Side Tab', false)},
     nodeStyle: {"font-size": "15px", "text-center": "center", "height": "30px"},
     startData() { return {
         unlocked: true,
