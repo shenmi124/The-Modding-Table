@@ -11,9 +11,6 @@ let modInfo = {
 	changedDefaultLanguage: false,
 	// Changes the mod default language. false -> English, true -> Chinese
 
-	forceOneTab: false,// Enable Single-Tab Mode (This feature doesn't work as smoothly as you might expect; it's designed for experts)
-	showTab: 'tree-node',// If forceOneTab is enabled, it will always show this page when the page is refreshed
-
 	initialStartPoints: new Decimal (10), // Used for hard resets and new players
 	offlineLimit: 1,  // In hours
 }
@@ -35,6 +32,11 @@ var colors = {
 		background: "#0f0f0f",
 		background_tooltip: "rgba(0, 0, 0, 0.75)",
 	},
+}
+
+// When enabled, it will hidden left table
+function hiddenLeftTable(){
+	return false
 }
 
 // Set your version in num and name

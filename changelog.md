@@ -1,5 +1,8 @@
 # The Modding Table changelog:
 
+# v3.1.0.3 = 1/20/25
+	 - Added a function about left table.
+
 # v3.1.0.2 = 1/20/25
 	 - Added a option related to upgrades.
 	 	- hardAfford: If it returns true, the upgrade will be forced to be buyable

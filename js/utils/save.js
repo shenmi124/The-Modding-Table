@@ -233,13 +233,6 @@ function load() {
 		getActiveClass(player.tab)
 	}
 
-	if(modInfo.forceOneTab==true){
-		options.forceOneTab = true
-		showTab('tree-tab')
-	}else{
-		options.forceOneTab = false
-	}
-
 	mouseSetting()
 }
 

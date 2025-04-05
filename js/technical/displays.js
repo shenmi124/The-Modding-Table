@@ -64,6 +64,9 @@ function updateWidth() {
 		document.body.style.setProperty('--tabHeight', colors.button.height)
 		document.body.style.setProperty('--tabFont', colors.button.font)
 		document.body.style.setProperty('--tabBorder', colors.button.border)
+		if(hiddenLeftTable()){
+			document.body.style.setProperty('--tabWidth', '0px')
+		}
 	}
 
 	tmp.other.splitScreen = splitScreen
