@@ -101,13 +101,6 @@ function mouseSetting(){
 			document.onselectstart = function(){
 				return false
 			}
-		}else{
-			document.onmousedown = function(){
-				return false
-			}
-			document.onmouseup = function(){
-				return true
-			}
 		}
 	}else{
 		document.oncontextmenu = function(event){
@@ -116,13 +109,6 @@ function mouseSetting(){
 		if(document.all){
 			document.onselectstart = function(){
 				return true
-			}
-		}else{
-			document.onmousedown = function(){
-				return false
-			}
-			document.onmouseup = function(){
-				return false
 			}
 		}
 	}
