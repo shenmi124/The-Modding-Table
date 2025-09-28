@@ -5,7 +5,7 @@ var needCanvasUpdate = true;
 const TMT_VERSION = {
 	tmtNum: "2.6.6.2",
 	tmtName: "Fixed Reality",
-	newtmtNum: "3.1.0.4",
+	newtmtNum: "3.1.0.5",
 }
 
 function getResetGain(layer, useType = null) {
