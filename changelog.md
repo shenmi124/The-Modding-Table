@@ -1,5 +1,8 @@
 # The Modding Table changelog:
 
+# v3.1.0.4 = 9/28/25
+	 - Fixed a bug about i18n.
+
 # v3.1.0.3 = 1/20/25
 	 - Added a function about left table.
 

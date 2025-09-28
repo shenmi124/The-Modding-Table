@@ -143,9 +143,9 @@ function loadVue() {
 			<span v-if="layers[layer].challenges[data].fullDisplay" v-html="run(layers[layer].challenges[data].fullDisplay, layers[layer].challenges[data])"></span>
 			<span v-else>
 				<span v-html="i18n(tmp[layer].challenges[data].challengeDescription, tmp[layer].challenges[data].challengeDescriptionI18N)"></span>
-				{{i18n('目标', 'Goal')}}:  <span v-if="tmp[layer].challenges[data].goalDescription" v-html="tmp[layer].challenges[data].goalDescription"></span><span v-else>{{format(tmp[layer].challenges[data].goal)}} {{tmp[layer].challenges[data].currencyDisplayName ? tmp[layer].challenges[data].currencyDisplayName : i18n(modInfo.pointsName, modInfo.pointsNameI18N)}}</span><br>
-				{{i18n('奖励', 'Reward')}}: <span v-html="i18n(tmp[layer].challenges[data].rewardDescription, tmp[layer].challenges[data].rewardDescriptionI18N)"></span><br>
-				<span v-if="layers[layer].challenges[data].rewardDisplay!==undefined">{{i18n('当前效果', 'Currently')}}: <span v-html="(tmp[layer].challenges[data].rewardDisplay) ? (run(layers[layer].challenges[data].rewardDisplay, layers[layer].challenges[data])) : format(tmp[layer].challenges[data].rewardEffect)"></span></span>
+				{{i18n('目标', 'Goal', false)}}:  <span v-if="tmp[layer].challenges[data].goalDescription" v-html="tmp[layer].challenges[data].goalDescription"></span><span v-else>{{format(tmp[layer].challenges[data].goal)}} {{tmp[layer].challenges[data].currencyDisplayName ? tmp[layer].challenges[data].currencyDisplayName : i18n(modInfo.pointsName, modInfo.pointsNameI18N)}}</span><br>
+				{{i18n('奖励', 'Reward', false)}}: <span v-html="i18n(tmp[layer].challenges[data].rewardDescription, tmp[layer].challenges[data].rewardDescriptionI18N)"></span><br>
+				<span v-if="layers[layer].challenges[data].rewardDisplay!==undefined">{{i18n('当前效果', 'Currently', false)}}: <span v-html="(tmp[layer].challenges[data].rewardDisplay) ? (run(layers[layer].challenges[data].rewardDisplay, layers[layer].challenges[data])) : format(tmp[layer].challenges[data].rewardEffect)"></span></span>
 			</span>
 			<node-mark :layer='layer' :data='tmp[layer].challenges[data].marked' :offset="20" :scale="1.5"></node-mark></span>
 
@@ -178,8 +178,8 @@ function loadVue() {
 			<span v-else>
 				<span v-if="tmp[layer].upgrades[data].title"><h3 v-html="i18n(tmp[layer].upgrades[data].title, tmp[layer].upgrades[data].titleI18N)"></h3><br></span>
 				<span v-html="i18n(tmp[layer].upgrades[data].description, tmp[layer].upgrades[data].descriptionI18N)"></span>
-				<span v-if="layers[layer].upgrades[data].effectDisplay"><br>{{i18n('当前效果', 'Currently')}}: <span v-html="run(i18n(layers[layer].upgrades[data].effectDisplay, layers[layer].upgrades[data].effectDisplayI18N), layers[layer].upgrades[data])"></span></span>
-				<br><br>{{i18n('价格', 'Cost')}}: {{ formatWhole(tmp[layer].upgrades[data].cost) }} {{(tmp[layer].upgrades[data].currencyDisplayName ? tmp[layer].upgrades[data].currencyDisplayName : (i18n(tmp[layer].resource, tmp[layer].resourceI18N)))}}
+				<span v-if="layers[layer].upgrades[data].effectDisplay"><br>{{i18n('当前效果', 'Currently', false)}}: <span v-html="run(i18n(layers[layer].upgrades[data].effectDisplay, layers[layer].upgrades[data].effectDisplayI18N), layers[layer].upgrades[data])"></span></span>
+				<br><br>{{i18n('价格', 'Cost', false)}}: {{ formatWhole(tmp[layer].upgrades[data].cost) }} {{(tmp[layer].upgrades[data].currencyDisplayName ? tmp[layer].upgrades[data].currencyDisplayName : (i18n(tmp[layer].resource, tmp[layer].resourceI18N)))}}
 			</span>
 			<tooltip v-if="tmp[layer].upgrades[data].tooltip" :text="i18n(tmp[layer].upgrades[data].tooltip, tmp[layer].upgrades[data].tooltipI18N)"></tooltip>
 			</button>
@@ -215,7 +215,7 @@ function loadVue() {
 	Vue.component('toggle', {
 		props: ['layer', 'data'],
 		template: `
-		<button class="smallUpg can" v-bind:style="{'background-color': tmp[data[0]].color}" v-on:click="toggleAuto(data)">{{player[data[0]][data[1]]?(i18n("已开启", "ON")):(i18n("已关闭", "OFF")}}</button>
+		<button class="smallUpg can" v-bind:style="{'background-color': tmp[data[0]].color}" v-on:click="toggleAuto(data)">{{player[data[0]][data[1]]?(i18n("已开启", "ON", false)):(i18n("已关闭", "OFF", false)}}</button>
 		`
 	})
 
@@ -234,7 +234,7 @@ function loadVue() {
 	Vue.component('main-display', {
 		props: ['layer', 'data'],
 		template: `
-		<div><span v-if="player[layer].points.lt('1e1000')">{{i18n("您有", "You have")}} </span><h2 v-bind:style="{'color': tmp[layer].color, 'text-shadow': '0px 0px 10px ' + tmp[layer].color}">{{data ? format(player[layer].points, data) : formatWhole(player[layer].points)}}</h2> {{i18n(tmp[layer].resource, tmp[layer].resourceI18N)}}<span v-if="layers[layer].effectDescription">, <span v-html="run(i18n(layers[layer].effectDescription, layers[layer].effectDescriptionI18N), layers[layer])"></span></span><br><br></div>
+		<div><span v-if="player[layer].points.lt('1e1000')">{{i18n("您有", "You have", false)}} </span><h2 v-bind:style="{'color': tmp[layer].color, 'text-shadow': '0px 0px 10px ' + tmp[layer].color}">{{data ? format(player[layer].points, data) : formatWhole(player[layer].points)}}</h2> {{i18n(tmp[layer].resource, tmp[layer].resourceI18N)}}<span v-if="layers[layer].effectDescription">, <span v-html="run(i18n(layers[layer].effectDescription, layers[layer].effectDescriptionI18N), layers[layer])"></span></span><br><br></div>
 		`
 	})
 
@@ -243,11 +243,11 @@ function loadVue() {
 		props: ['layer'],
 		template: `
 		<div style="margin-top: -13px">
-			<span v-if="tmp[layer].baseAmount"><br>{{i18n("您有", "You have")}} {{formatWhole(tmp[layer].baseAmount)}} {{i18n(tmp[layer].baseResource, tmp[layer].baseResourceI18N)}}</span>
-			<span v-if="tmp[layer].passiveGeneration"><br>{{i18n("您每秒获得", "You are gaining ")}} {{format(tmp[layer].resetGain.times(tmp[layer].passiveGeneration))}} {{i18n(tmp[layer].resource, tmp[layer].resourceI18N)}}{{i18n("", " per second")}}</span>
+			<span v-if="tmp[layer].baseAmount"><br>{{i18n("您有", "You have", false)}} {{formatWhole(tmp[layer].baseAmount)}} {{i18n(tmp[layer].baseResource, tmp[layer].baseResourceI18N)}}</span>
+			<span v-if="tmp[layer].passiveGeneration"><br>{{i18n("您每秒获得", "You are gaining ", false)}} {{format(tmp[layer].resetGain.times(tmp[layer].passiveGeneration))}} {{i18n(tmp[layer].resource, tmp[layer].resourceI18N)}}{{i18n("", " per second", false)}}</span>
 			<br><br>
-			<span v-if="tmp[layer].showBest">{{i18n("您最高拥有", "Your best resource this layer is ")}} {{formatWhole(player[layer].best)}} {{i18n(tmp[layer].resource, tmp[layer].resourceI18N)}}<br></span>
-			<span v-if="tmp[layer].showTotal">{{i18n("您总共拥有", "You have made a total of ")}} {{formatWhole(player[layer].total)}} {{i18n(?tmp[layer].resource, tmp[layer].resourceI18N)}}<br></span>
+			<span v-if="tmp[layer].showBest">{{i18n("您最高拥有", "Your best resource this layer is ", false)}} {{formatWhole(player[layer].best)}} {{i18n(tmp[layer].resource, tmp[layer].resourceI18N)}}<br></span>
+			<span v-if="tmp[layer].showTotal">{{i18n("您总共拥有", "You have made a total of ", false)}} {{formatWhole(player[layer].total)}} {{i18n(?tmp[layer].resource, tmp[layer].resourceI18N)}}<br></span>
 		</div>
 		`
 	})
@@ -486,8 +486,8 @@ function loadVue() {
 		<div v-if="tmp[layer].achievements && tmp[layer].achievements[data]!== undefined && tmp[layer].achievements[data].unlocked" v-bind:class="{ [layer]: true, achievement: true, tooltipBox:true, locked: !hasAchievement(layer, data), bought: hasAchievement(layer, data)}"
 			v-bind:style="achievementStyle(layer, data)">
 			<tooltip :text="
-			(tmp[layer].achievements[data].tooltip == '') ? false : hasAchievement(layer, data) ? (tmp[layer].achievements[data].doneTooltip ? tmp[layer].achievements[data].doneTooltip : (tmp[layer].achievements[data].tooltip ? (i18n(tmp[layer].achievements[data].tooltip, tmp[layer].achievements[data].tooltipI18N)) : (i18n('已完成!', 'Completed!'))))
-			: (tmp[layer].achievements[data].goalTooltip ? tmp[layer].achievements[data].goalTooltip : (tmp[layer].achievements[data].tooltip ? (i18n(tmp[layer].achievements[data].tooltip, tmp[layer].achievements[data].tooltipI18N)) : (i18n('锁定', 'Locked'))))
+			(tmp[layer].achievements[data].tooltip == '') ? false : hasAchievement(layer, data) ? (tmp[layer].achievements[data].doneTooltip ? tmp[layer].achievements[data].doneTooltip : (tmp[layer].achievements[data].tooltip ? (i18n(tmp[layer].achievements[data].tooltip, tmp[layer].achievements[data].tooltipI18N)) : (i18n('已完成!', 'Completed!', false))))
+			: (tmp[layer].achievements[data].goalTooltip ? tmp[layer].achievements[data].goalTooltip : (tmp[layer].achievements[data].tooltip ? (i18n(tmp[layer].achievements[data].tooltip, tmp[layer].achievements[data].tooltipI18N)) : (i18n('锁定', 'Locked', false))))
 		"></tooltip>
 			<span v-if= "tmp[layer].achievements[data].name"><br><h3 v-bind:style="tmp[layer].achievements[data].textStyle" v-html="i18n(tmp[layer].achievements[data].name, tmp[layer].achievements[data].nameI18N)"></h3><br></span>
 		</div>
